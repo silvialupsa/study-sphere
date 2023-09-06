@@ -5,5 +5,4 @@ public enum Facilities {
     INFORMATICS_LAB,
     CHEMISTRY_LAB,
     PHYSICS_LAB,
-
 }

@@ -3,7 +3,7 @@ package com.studysphere.backend.model;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Person {
+public abstract class Person {
     private Long id;
     private String name;
     private LocalDate birthdate;
