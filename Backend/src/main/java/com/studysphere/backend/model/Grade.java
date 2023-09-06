@@ -3,16 +3,20 @@ import java.util.*;
 
 public class Grade {
     private final Long id;
+    private final GradeClass gradeClass;
     private final String name;
     private final Professor classMaster;
+    private List<Student> studentList;
     private Map<Professor, List<Subject>> professorListMap;
     private Calendar calendar;
     private List<String> messagesGroup;
 
-    public Grade(Long id, String name, Professor classMaster, Map<Professor, List<Subject>> professorListMap, Calendar calendar, List<String> messagesGroup) {
+    public Grade(Long id, GradeClass gradeClass, String name, Professor classMaster, List<Student> studentList, Map<Professor, List<Subject>> professorListMap, Calendar calendar, List<String> messagesGroup) {
         this.id = id;
+        this.gradeClass = gradeClass;
         this.name = name;
         this.classMaster = classMaster;
+        this.studentList= studentList;
         this.professorListMap = professorListMap;
         this.calendar = calendar;
         this.messagesGroup = messagesGroup;
