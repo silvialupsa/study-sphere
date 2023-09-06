@@ -21,7 +21,7 @@ public class Grade {
     private String name;
     private Professor classMaster;
     private List<Student> studentList;
-    private Map<Professor, List<Subject>> professorListMap;
+    private List<Professor> professorList;
     private Calendar calendar;
     private List<String> messagesGroup;
 }
