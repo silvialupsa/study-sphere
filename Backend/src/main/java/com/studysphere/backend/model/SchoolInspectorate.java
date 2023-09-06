@@ -16,6 +16,7 @@ public class SchoolInspectorate {
     @GeneratedValue
     private Long id;
     private String name;
-    @OneToMany(mappedBy = "inspectorates", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+
+    @OneToMany(mappedBy = "schoolInspectorate", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<School> schoolList;
 }

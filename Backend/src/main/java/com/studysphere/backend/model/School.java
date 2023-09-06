@@ -28,6 +28,7 @@ public class School {
 //    private Professor schoolPrincipal;
 //    private List<Grade> gradeList;
 //    private List<Student> studentList;
+    @Enumerated(EnumType.STRING)
     private List<Facilities> facilitiesList;
 
 
