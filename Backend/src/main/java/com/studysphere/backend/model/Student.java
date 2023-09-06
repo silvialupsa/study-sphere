@@ -23,6 +23,7 @@ public class Student extends Person{
     }
 
     public List<DailyGoals> getDailyGoalsList() {
+
         return dailyGoalsList;
     }
 
