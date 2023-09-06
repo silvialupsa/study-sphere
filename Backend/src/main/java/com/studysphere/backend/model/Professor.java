@@ -4,11 +4,9 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Professor extends Person{
-    private Subject subject;
-    private GradeClass gradeClass;
-    public Professor(Long id, String name, LocalDate birthdate, List<String> messages, Subject subject, GradeClass gradeClass) {
+    private List<Subject> subjectList;
+    public Professor(Long id, String name, LocalDate birthdate, List<String> messages, List<Subject> subjectList) {
         super(id, name, birthdate, messages);
-        this.subject = subject;
-        this.gradeClass= gradeClass;
+        this.subjectList = subjectList;
     }
 }
