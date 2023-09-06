@@ -9,4 +9,12 @@ public class Professor extends Person{
         super(id, name, birthdate, messages);
         this.subjectList = subjectList;
     }
+
+    public List<Subject> getSubjectList() {
+        return subjectList;
+    }
+
+    public void setSubjectList(List<Subject> subjectList) {
+        this.subjectList = subjectList;
+    }
 }

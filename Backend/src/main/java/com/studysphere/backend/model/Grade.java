@@ -22,6 +22,18 @@ public class Grade {
         this.messagesGroup = messagesGroup;
     }
 
+    public GradeClass getGradeClass() {
+        return gradeClass;
+    }
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
+    }
+
     public Long getId() {
         return id;
     }
@@ -57,4 +69,5 @@ public class Grade {
     public void setMessagesGroup(List<String> messagesGroup) {
         this.messagesGroup = messagesGroup;
     }
+
 }
