@@ -1,5 +1,7 @@
 package com.studysphere.backend.model;
 
+import com.studysphere.backend.model.types.GradeClass;
+
 import java.time.LocalDate;
 import java.util.*;
 

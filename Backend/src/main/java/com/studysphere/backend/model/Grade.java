@@ -1,4 +1,7 @@
 package com.studysphere.backend.model;
+import com.studysphere.backend.model.types.GradeClass;
+import com.studysphere.backend.model.types.Subject;
+
 import java.util.*;
 
 public class Grade {

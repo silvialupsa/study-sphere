@@ -1,5 +1,7 @@
 package com.studysphere.backend.model;
 
+import com.studysphere.backend.model.types.Facilities;
+
 import java.util.List;
 
 public class School {

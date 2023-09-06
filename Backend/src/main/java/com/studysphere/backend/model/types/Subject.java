@@ -1,4 +1,4 @@
-package com.studysphere.backend.model;
+package com.studysphere.backend.model.types;
 
 public enum Subject {
     ROMANIAN,
