@@ -26,7 +26,11 @@ public class School {
     private SchoolInspectorate schoolInspectorate;
 
 //    private Professor schoolPrincipal;
-//    private List<Grade> gradeList;
+
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<Grade> gradeList;
+
+//
 //    private List<Student> studentList;
     @Enumerated(EnumType.STRING)
     private List<Facilities> facilitiesList;

@@ -1,4 +1,5 @@
 package com.studysphere.backend.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.studysphere.backend.model.types.GradeClass;
 import com.studysphere.backend.model.types.Subject;
 import jakarta.persistence.*;
@@ -8,20 +9,25 @@ import lombok.NoArgsConstructor;
 
 import java.util.*;
 
-//@Entity
-//@Table(name="grades")
+@Entity
+@Table(name="grades")
 @Data
-//@AllArgsConstructor
-//@NoArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 public class Grade {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private GradeClass gradeClass;
     private String name;
-    private Professor classMaster;
-    private List<Student> studentList;
-    private List<Professor> professorList;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "schools.id", nullable = false)
+    private School school;
+//    private Professor classMaster;
+//    private List<Student> studentList;
+//    private List<Professor> professorList;
     private Calendar calendar;
-    private List<String> messagesGroup;
+//    private List<String> messagesGroup;
 }
