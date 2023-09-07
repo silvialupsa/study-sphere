@@ -2,8 +2,10 @@ package com.studysphere.backend.model.people;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.studysphere.backend.model.Attendance;
+import com.studysphere.backend.model.DailyGoals;
 import com.studysphere.backend.model.people.Parent;
 import com.studysphere.backend.model.people.Person;
+import com.studysphere.backend.model.types.GradeClass;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,9 +22,13 @@ public class Student {
     @OneToOne
     private Person person;
 
+    @ElementCollection // Use ElementCollection to store a collection of strings
+    @CollectionTable(name = "student_daily_goals", joinColumns = @JoinColumn(name = "student_id"))
+    @Column(name = "goal")
+    private List<String> dailyGoals;
 
-//    private List<DailyGoals> dailyGoalsList;
-//    private GradeClass gradeClass;
+    private GradeClass gradeClass;
+
     @OneToMany(mappedBy = "student")
     @JsonIgnore
     private List<Attendance> attendance;
