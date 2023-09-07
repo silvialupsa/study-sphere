@@ -3,6 +3,7 @@ package com.studysphere.backend.model.people;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.studysphere.backend.model.Attendance;
 import com.studysphere.backend.model.DailyGoals;
+import com.studysphere.backend.model.School;
 import com.studysphere.backend.model.people.Parent;
 import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.types.GradeClass;
@@ -32,9 +33,14 @@ public class Student {
     @OneToMany(mappedBy = "student")
     @JsonIgnore
     private List<Attendance> attendance;
-//    private Calendar calendar;
+
+    private Calendar calendar;
 
     @ManyToMany
     @JoinTable(name = "parents_students")
     private List<Parent> parents;
+
+    @ManyToOne
+    @JoinColumn(name = "schools.id", nullable = false)
+    private School school;
 }

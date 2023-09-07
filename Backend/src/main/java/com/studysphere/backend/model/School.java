@@ -1,6 +1,8 @@
 package com.studysphere.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.studysphere.backend.model.people.Professor;
+import com.studysphere.backend.model.people.Student;
 import com.studysphere.backend.model.types.Facilities;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,13 +24,16 @@ public class School {
     @JoinColumn(name = "inspectorates.id", nullable = false)
     private SchoolInspectorate schoolInspectorate;
 
-//    private Professor schoolPrincipal;
+    @OneToOne
+    private Professor schoolPrincipal;
 
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Grade> gradeList;
 
-//
-//    private List<Student> studentList;
+    @JsonIgnore
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<Student> studentList;
+
     @Enumerated(EnumType.STRING)
     private List<Facilities> facilitiesList;
 
