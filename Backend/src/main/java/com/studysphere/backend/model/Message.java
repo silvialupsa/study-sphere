@@ -1,18 +1,21 @@
 package com.studysphere.backend.model;
 
+import com.studysphere.backend.model.people.Person;
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Entity
-@RequiredArgsConstructor
+@Data
 public class Message{
     @Id
     @GeneratedValue
     private Long id;
-    @OneToOne
+    @ManyToOne
+    @JoinColumn
     private Person receiver;
-    @OneToOne
+    @ManyToOne
+    @JoinColumn
     private Person sender;
     private String message;
 

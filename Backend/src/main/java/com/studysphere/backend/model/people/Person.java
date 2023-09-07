@@ -1,5 +1,7 @@
-package com.studysphere.backend.model;
+package com.studysphere.backend.model.people;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.studysphere.backend.model.Message;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,20 +11,26 @@ import lombok.RequiredArgsConstructor;
 import java.time.LocalDate;
 import java.util.List;
 
+
+
 @Data
 @Entity
-@Table(name = "persons")
 @AllArgsConstructor
 @NoArgsConstructor
-@Inheritance(strategy = InheritanceType.JOINED)
-public  class Person {
+public class Person {
     @Id
     @GeneratedValue
     private Long id;
     private String name;
     private LocalDate birthdate;
 
-    @OneToMany
-    private List<Message> messages;
+    @JsonIgnore
+    @OneToMany(mappedBy = "receiver")
+    private List<Message> messagesReceived;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "sender")
+    private List<Message> messagesSent;
+
 
 }

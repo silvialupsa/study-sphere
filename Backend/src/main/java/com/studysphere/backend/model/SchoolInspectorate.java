@@ -7,11 +7,7 @@ import lombok.*;
 import java.util.*;
 
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@Table(name = "inspectorates")
 public class SchoolInspectorate {
     @Id
     @GeneratedValue

@@ -11,9 +11,6 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "schools")
-@AllArgsConstructor
-@NoArgsConstructor
 public class School {
     @Id
     @GeneratedValue

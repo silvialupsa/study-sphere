@@ -10,10 +10,7 @@ import lombok.NoArgsConstructor;
 import java.util.*;
 
 @Entity
-@Table(name="grades")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Grade {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
