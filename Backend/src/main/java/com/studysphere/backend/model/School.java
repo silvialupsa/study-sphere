@@ -20,7 +20,7 @@ public class School {
     private Long id;
     private String name;
 
-    @JsonIgnore
+
     @ManyToOne
     @JoinColumn(name = "inspectorates.id", nullable = false)
     private SchoolInspectorate schoolInspectorate;
