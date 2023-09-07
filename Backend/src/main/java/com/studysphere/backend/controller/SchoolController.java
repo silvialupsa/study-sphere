@@ -1,11 +1,30 @@
 package com.studysphere.backend.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.studysphere.backend.model.School;
+import com.studysphere.backend.service.SchoolService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-//@RestController
-//@RequestMapping("/school")
+import java.util.*;
+
+@RestController
+@RequestMapping("/schools")
+@RequiredArgsConstructor
 public class SchoolController {
+    private SchoolService schoolService;
+
+    @GetMapping("/all")
+    @CrossOrigin("*")
+    public ResponseEntity<List<School>> getAllSchools(){
+        return ResponseEntity.ok(schoolService.getAllSchools());
+    }
+
+    @PostMapping("/add")
+    public void postSchool(@RequestBody School school){
+        schoolService.addSchool(school);
+    }
+
 
 }

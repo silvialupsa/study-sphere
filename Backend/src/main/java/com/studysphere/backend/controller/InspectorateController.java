@@ -13,7 +13,7 @@ import java.util.*;
 @RequiredArgsConstructor
 public class InspectorateController {
     private final InspectorateService inspectorateService;
-    @GetMapping("/getAll")
+    @GetMapping("/all")
     @CrossOrigin(origins = "*")
     public ResponseEntity<List<SchoolInspectorate>> getAllInspectorates() {
         return ResponseEntity.ok(inspectorateService.getAllInspectorates());
