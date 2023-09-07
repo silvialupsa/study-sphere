@@ -1,10 +1,11 @@
 package com.studysphere.backend.model.people;
 
-import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.types.Subject;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 

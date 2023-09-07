@@ -15,8 +15,6 @@ import java.util.List;
 
 @Data
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 public class Person {
     @Id
     @GeneratedValue
