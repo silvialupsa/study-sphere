@@ -29,5 +29,7 @@ public class Grade {
 //    private List<Student> studentList;
 //    private List<Professor> professorList;
     private Calendar calendar;
-//    private List<String> messagesGroup;
+
+    @ManyToMany
+    private List<Message> messagesGroup;
 }
