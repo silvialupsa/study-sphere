@@ -19,13 +19,12 @@ public class Grade {
     private GradeClass gradeClass;
     private String name;
 
-    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "schools.id", nullable = false)
+    @JoinColumn(name = "school.id")
     private School school;
 
-    @OneToOne
-    private Professor classMaster;
+//    @OneToOne
+//    private Professor classMaster;
 
     @OneToMany
     private List<Student> studentList;
