@@ -10,7 +10,7 @@ import java.util.*;
 @Service
 @RequiredArgsConstructor
 public class GradeService {
-    private GradeRepository gradeRepository;
+    private final GradeRepository gradeRepository;
 
     public List<Grade> getAllGrades(){
         return gradeRepository.findAll();
