@@ -1,40 +1,21 @@
 package com.studysphere.backend.model;
 
-import java.text.SimpleDateFormat;
+import com.studysphere.backend.model.people.Student;
+import jakarta.persistence.*;
+import lombok.Data;
+import org.hibernate.sql.ast.tree.expression.SqlTuple;
+
 import java.util.Date;
+import java.util.List;
 
+@Data
+@Entity
 public class DailyGoals {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private Date date;
-    private String[] goals;
 
-    public DailyGoals(String[] goals) {
-        this.date = new Date(); // Set the date to today
-        this.goals = goals;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public String[] getGoals() {
-        return goals;
-    }
-
-    public void setGoals(String[] goals) {
-        this.goals = goals;
-    }
-
-
-    @Override
-    public String toString() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String formattedDate = dateFormat.format(date);
-        StringBuilder sb = new StringBuilder();
-        sb.append("Date: ").append(formattedDate).append("\n");
-        sb.append("Goals:\n");
-        for (String goal : goals) {
-            sb.append("- ").append(goal).append("\n");
-        }
-        return sb.toString();
-    }
+    @ManyToOne
+    private Student student;
 }

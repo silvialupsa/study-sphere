@@ -1,19 +1,17 @@
 package com.studysphere.backend.model;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.studysphere.backend.model.types.GradeClass;
-import com.studysphere.backend.model.types.Subject;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import java.util.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.studysphere.backend.model.people.Professor;
+import com.studysphere.backend.model.people.Student;
+import com.studysphere.backend.model.types.GradeClass;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.Calendar;
+import java.util.List;
 
 @Entity
-@Table(name="grades")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Grade {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,9 +23,18 @@ public class Grade {
     @ManyToOne
     @JoinColumn(name = "schools.id", nullable = false)
     private School school;
-//    private Professor classMaster;
-//    private List<Student> studentList;
-//    private List<Professor> professorList;
+
+    @OneToOne
+    private Professor classMaster;
+
+    @OneToMany
+    private List<Student> studentList;
+
+    @OneToMany
+    private List<Professor> professorList;
+
     private Calendar calendar;
-//    private List<String> messagesGroup;
+
+    @ManyToMany
+    private List<Message> messagesGroup;
 }

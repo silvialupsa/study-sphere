@@ -13,7 +13,8 @@ import java.util.*;
 @RequestMapping("/schools")
 @RequiredArgsConstructor
 public class SchoolController {
-    private SchoolService schoolService;
+    private final SchoolService schoolService;
+
 
     @GetMapping("/all")
     @CrossOrigin("*")
