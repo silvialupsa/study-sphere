@@ -22,8 +22,8 @@ public class Parent {
     @OneToOne
     private Person person;
 
-    @JsonIgnore
     @ManyToMany(mappedBy = "parents")
+    @JsonIgnore
     private List<Student> children;
 
 }

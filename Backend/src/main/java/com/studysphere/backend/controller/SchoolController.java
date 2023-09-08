@@ -26,5 +26,4 @@ public class SchoolController {
         schoolService.addSchool(school);
     }
 
-
 }

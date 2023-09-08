@@ -27,6 +27,7 @@ public class School {
     @OneToOne
     private Professor schoolPrincipal;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Grade> gradeList;
 

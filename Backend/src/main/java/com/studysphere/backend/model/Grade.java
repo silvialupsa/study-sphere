@@ -21,6 +21,7 @@ public class Grade {
 
     @ManyToOne
     @JoinColumn(name = "school.id")
+    @JsonIgnore
     private School school;
 
 //    @OneToOne
