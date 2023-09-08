@@ -20,8 +20,6 @@ public class Parent {
     @OneToOne
     private Person person;
 
-
-
    @ManyToMany(mappedBy = "parents")
     private List<Student> children;
 

@@ -18,6 +18,4 @@ public class DailyGoals {
 
     @ManyToOne
     private Student student;
-
-
 }
