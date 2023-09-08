@@ -12,14 +12,11 @@ import java.util.*;
 @RequiredArgsConstructor
 public class SchoolService {
     private final SchoolRepository schoolRepository;
-//    private final InspectorateRepository inspectorateRepository;
-
     public List<School> getAllSchools(){
         return schoolRepository.findAll();
     }
 
     public void addSchool(School school){
-//        school.setSchoolInspectorate(inspectorateRepository.findById(inspectorateId).orElse(null));
         schoolRepository.save(school);
     }
 }

@@ -15,17 +15,15 @@ import java.util.*;
 public class SchoolController {
     private final SchoolService schoolService;
 
-
     @GetMapping("/all")
     @CrossOrigin("*")
-    public ResponseEntity<List<School>> getAllSchools(){
+    public ResponseEntity<List<School>> getAllSchools() {
         return ResponseEntity.ok(schoolService.getAllSchools());
     }
 
     @PostMapping("/add")
-    public void postSchool(@RequestBody School school){
+    public void postSchool(@RequestBody School school) {
         schoolService.addSchool(school);
     }
-
 
 }

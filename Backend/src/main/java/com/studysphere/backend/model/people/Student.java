@@ -40,6 +40,7 @@ public class Student {
     @JoinTable(name = "parents_students")
     private List<Parent> parents;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "schools.id", nullable = false)
     private School school;
