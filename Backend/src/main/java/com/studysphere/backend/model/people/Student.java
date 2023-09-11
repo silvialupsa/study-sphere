@@ -23,19 +23,20 @@ public class Student {
     @OneToOne
     private Person person;
 
-    @ElementCollection // Use ElementCollection to store a collection of strings
-    @CollectionTable(name = "student_daily_goals", joinColumns = @JoinColumn(name = "student_id"))
-    @Column(name = "goal")
-    private List<String> dailyGoals;
+    @JsonIgnore
+    @OneToMany(mappedBy = "student")
+    private List<DailyGoals> dailyGoals;
 
     private GradeClass gradeClass;
 
-    @OneToMany(mappedBy = "student")
+
     @JsonIgnore
+    @OneToMany(mappedBy = "student")
     private List<Attendance> attendance;
 
     private Calendar calendar;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "parents_students")
     private List<Parent> parents;
