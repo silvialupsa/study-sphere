@@ -38,5 +38,4 @@ public class School {
     @Enumerated(EnumType.STRING)
     private List<Facilities> facilitiesList;
 
-
 }

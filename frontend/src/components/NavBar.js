@@ -24,7 +24,7 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item ">
-                {/*    /!*<Link to="/" className="nav-link" style={linkStyle}>Home</Link>*!/*/}
+                    {/*    /!*<Link to="/" className="nav-link" style={linkStyle}>Home</Link>*!/*/}
 
                     <a  className="nav-link" href="/" style={linkStyle}>Home <span
                         className="sr-only">(current)</span></a>
@@ -51,14 +51,13 @@ const NavBar = () => {
             </ul>
             <form className="form-inline my-2 my-lg-0">
                 <div className="d-flex">
-                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button id="search-button" type="button" className="btn btn-primary">
-                    <FontAwesomeIcon icon={faSearch} />
-                </button>
+                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <button id="search-button" type="button" className="btn btn-primary">
+                        <FontAwesomeIcon icon={faSearch} />
+                    </button>
                 </div>
             </form>
         </div>
     </nav>);
 };
 export default NavBar
-
