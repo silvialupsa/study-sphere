@@ -2,7 +2,9 @@ import logo from '../Study-bleu.png';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from "react";
-import {Link} from "react-router-dom";
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     const navStyle = {
@@ -13,51 +15,71 @@ const NavBar = () => {
         color: 'white',
     };
 
-    return (<nav className="navbar navbar-expand-lg navbar-light" style={navStyle}>
-        <img src={logo} width={80}/>
-        <button className="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-        </button>
+    const dropdownStyle = {
+        backgroundColor: 'rgb(28, 52, 84)', // Apply the same background color as the navbar
+        border: 'none', // Remove the border if necessary
+    };
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
-                <li className="nav-item ">
-                    {/*    /!*<Link to="/" className="nav-link" style={linkStyle}>Home</Link>*!/*/}
+    return (
+        <nav className="navbar navbar-expand-lg navbar-light" style={navStyle}>
+            <img src={logo} width={80} />
+            <button
+                className="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span className="navbar-toggler-icon"></span>
+            </button>
 
-                    <a  className="nav-link" href="/" style={linkStyle}>Home <span
-                        className="sr-only">(current)</span></a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#" style={linkStyle}>About Us</a>
-                </li>
-                <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" style={linkStyle} id="navbarDropdown"
-                       role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Features
-                    </a>
-                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a className="dropdown-item" href="#" style={linkStyle}>Action</a>
-                        <a className="dropdown-item" href="#" style={linkStyle}>Another action</a>
-                        <div className="dropdown-divider"></div>
-                        <a className="dropdown-item" href="#" style={linkStyle}>Something else here</a>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item ">
+                        <a className="nav-link" href="/" style={linkStyle}>
+                            Home <span className="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#" style={linkStyle}>
+                            About Us
+                        </a>
+                    </li>
+                    <DropdownButton
+                        id="dropdown-button-light-example2"
+                        variant="$blue-700"
+                        title="Features"
+                        className="mt-2"
+                        data-bs-theme="dark"
+                    >
+                        <Dropdown.Item href="#/action-1">Feature 1</Dropdown.Item>
+                        <Dropdown.Item href="#/action-2">Feature 2</Dropdown.Item>
+                        <Dropdown.Item href="#/action-3">Feature 3</Dropdown.Item>
+                    </DropdownButton>
+                    <li className="nav-item">
+                        <a className="nav-link disabled" href="#" style={linkStyle}>
+                            Plans
+                        </a>
+                    </li>
+                </ul>
+                <form className="form-inline my-2 my-lg-0">
+                    <div className="d-flex">
+                        <input
+                            className="form-control mr-sm-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                        />
+                        <button id="search-button" type="button" className="btn btn-primary">
+                            <FontAwesomeIcon icon={faSearch} />
+                        </button>
                     </div>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link disabled" href="#" style={linkStyle}>Plans </a>
-                </li>
-            </ul>
-            <form className="form-inline my-2 my-lg-0">
-                <div className="d-flex">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button id="search-button" type="button" className="btn btn-primary">
-                        <FontAwesomeIcon icon={faSearch} />
-                    </button>
-                </div>
-            </form>
-        </div>
-    </nav>);
+                </form>
+            </div>
+        </nav>
+    );
 };
-export default NavBar
+
+export default NavBar;
