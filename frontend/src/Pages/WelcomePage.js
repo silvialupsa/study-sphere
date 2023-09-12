@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const WelcomePage = () => {
     return (
-        
         <div className="container">
             <div className="row">
                 <div className="col-md-6 offset-md-3 text-center">
