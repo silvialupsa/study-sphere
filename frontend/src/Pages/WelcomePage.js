@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Carousel from "../components/Carousel";
 
 const WelcomePage = () => {
     return (
@@ -9,6 +10,7 @@ const WelcomePage = () => {
                     <h1>Welcome to Our School</h1>
                     <p>This is the welcome page of our school website.</p>
                     <Link to="/students" className="btn btn-primary">Go to Student List</Link>
+                    <Carousel/>
                 </div>
             </div>
         </div>
