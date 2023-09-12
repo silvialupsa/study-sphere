@@ -24,19 +24,19 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item ">
-                {/*    /!*<Link to="/" className="nav-link" style={linkStyle}>Home</Link>*!/*/}
+                    {/*    /!*<Link to="/" className="nav-link" style={linkStyle}>Home</Link>*!/*/}
 
                     <a  className="nav-link" href="/" style={linkStyle}>Home <span
                         className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#" style={linkStyle}>Link</a>
+                    <a className="nav-link" href="#" style={linkStyle}>About Us</a>
                 </li>
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" style={linkStyle} id="navbarDropdown"
                        role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
+                        Features
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a className="dropdown-item" href="#" style={linkStyle}>Action</a>
@@ -46,19 +46,18 @@ const NavBar = () => {
                     </div>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link disabled" href="#" style={linkStyle}>Disabled </a>
+                    <a className="nav-link disabled" href="#" style={linkStyle}>Plans </a>
                 </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
                 <div className="d-flex">
-                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button id="search-button" type="button" className="btn btn-primary">
-                    <FontAwesomeIcon icon={faSearch} />
-                </button>
+                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <button id="search-button" type="button" className="btn btn-primary">
+                        <FontAwesomeIcon icon={faSearch} />
+                    </button>
                 </div>
             </form>
         </div>
     </nav>);
 };
 export default NavBar
-
