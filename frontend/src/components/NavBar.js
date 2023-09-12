@@ -1,6 +1,8 @@
 import logo from '../Study-bleu.png';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import {Link} from "react-router-dom";
 
 const NavBar = () => {
     const navStyle = {
@@ -21,8 +23,10 @@ const NavBar = () => {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                    <a className="nav-link" href="#" style={linkStyle}>Home <span
+                <li className="nav-item ">
+                {/*    /!*<Link to="/" className="nav-link" style={linkStyle}>Home</Link>*!/*/}
+
+                    <a  className="nav-link" href="/" style={linkStyle}>Home <span
                         className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item">

@@ -7,10 +7,10 @@ const StudentTable = ({ students }) => {
             <table className="table table-striped">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Birthdate</th>
-                    <th>Grade Class</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Birthdate</th>
+                    <th scope="col">Grade Class</th>
                 </tr>
                 </thead>
                 <tbody>
