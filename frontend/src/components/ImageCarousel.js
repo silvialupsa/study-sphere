@@ -2,7 +2,8 @@ import React from "react";
 import image1 from '../Images/image1.jpg';
 import image2 from '../Images/image2.jpg';
 import image3 from '../Images/image3.jpg';
-const Carousel = () => {
+
+const ImageCarousel = () => {
     return (
         <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
@@ -28,4 +29,4 @@ const Carousel = () => {
     );
 };
 
-export default Carousel;
+export default ImageCarousel;
