@@ -30,13 +30,13 @@ const NavBar = () => {
                         className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#" style={linkStyle}>Link</a>
+                    <a className="nav-link" href="#" style={linkStyle}>About Us</a>
                 </li>
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" style={linkStyle} id="navbarDropdown"
                        role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
+                        Features
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a className="dropdown-item" href="#" style={linkStyle}>Action</a>
@@ -46,7 +46,7 @@ const NavBar = () => {
                     </div>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link disabled" href="#" style={linkStyle}>Disabled </a>
+                    <a className="nav-link disabled" href="#" style={linkStyle}>Plans </a>
                 </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
