@@ -5,6 +5,7 @@ import React from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 const NavBar = () => {
     const navStyle = {
@@ -15,9 +16,14 @@ const NavBar = () => {
         color: 'white',
     };
 
-    const dropdownStyle = {
-        backgroundColor: 'rgb(28, 52, 84)', // Apply the same background color as the navbar
-        border: 'none', // Remove the border if necessary
+    const redButtonStyle = {
+        backgroundColor: 'red',
+        borderColor: 'white',
+    };
+
+    const loginButtonStyle = {
+        backgroundColor: 'green',
+        borderColor: 'green',
     };
 
     return (
@@ -52,8 +58,7 @@ const NavBar = () => {
                         variant="$blue-700"
                         title="Features"
                         className="mt-2"
-                        data-bs-theme="dark"
-                    >
+                        data-bs-theme="dark">
                         <Dropdown.Item href="#/action-1">Feature 1</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">Feature 2</Dropdown.Item>
                         <Dropdown.Item href="#/action-3">Feature 3</Dropdown.Item>
@@ -77,6 +82,8 @@ const NavBar = () => {
                         </button>
                     </div>
                 </form>
+                <Button style={loginButtonStyle}>Log in</Button>
+                <Button style={redButtonStyle}>Get started</Button>
             </div>
         </nav>
     );
