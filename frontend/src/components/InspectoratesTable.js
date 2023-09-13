@@ -18,7 +18,9 @@ const InspectoratesTable = ({ inspectorates }) => {
                         <td>{inspectorates.id}</td>
                         <td>{inspectorates.name}</td>
                         <td>{inspectorates.schoolList?.map((school)=> (
-                            <span>{school.name}, </span>
+                            inspectorates.schoolList.indexOf(school) === inspectorates.schoolList.length-1?
+                            <span>{school.name} </span>  :
+                                <span>{school.name}, </span>
                         ))}</td>
                     </tr>
                 ))}

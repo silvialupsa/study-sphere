@@ -20,7 +20,9 @@ const ParentTable = ({parents}) => {
                         <td>{parent.person.name}</td>
                         <td>{parent.person.birthdate}</td>
                         <td>{parent.children?.map((child)=> (
-                            <span>{child.person.name}, </span>
+                            parent.children.indexOf(child) === parent.children.length-1?
+                                <span>{child.person.name} </span>  :
+                                <span>{child.person.name}, </span>
                         ))}</td>
                     </tr>
                 ))}
