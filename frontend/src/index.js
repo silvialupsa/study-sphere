@@ -7,6 +7,7 @@ import StudentList from './Pages/StudentList';
 import WelcomePage from "./Pages/WelcomePage";
 import NavBar from "./components/NavBar";
 import GradeList from "./Pages/GradeList";
+import SchoolList from "./Pages/SchoolList";
 
 const root = document.getElementById('root');
 
@@ -18,6 +19,7 @@ ReactDOM.render(
                 <Route path = "/" exact component = {WelcomePage}/>
                 <Route path="/students" component={StudentList} />
                 <Route path="/grades" component={GradeList}/>
+                <Route path="/schools" component={SchoolList}/>
             </Switch>
         </Router>
     </React.StrictMode>,
