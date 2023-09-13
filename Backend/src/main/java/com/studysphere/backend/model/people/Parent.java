@@ -1,6 +1,7 @@
 package com.studysphere.backend.model.people;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.studysphere.backend.model.Message;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -22,8 +23,7 @@ public class Parent {
     @OneToOne
     private Person person;
 
-    @ManyToMany(mappedBy = "parents")
-    @JsonIgnore
+    @JsonManagedReference
+    @ManyToMany(mappedBy = "parents", fetch = FetchType.EAGER)
     private List<Student> children;
-
 }

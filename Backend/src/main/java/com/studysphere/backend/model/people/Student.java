@@ -1,5 +1,6 @@
 package com.studysphere.backend.model.people;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.studysphere.backend.model.Attendance;
 import com.studysphere.backend.model.DailyGoals;
@@ -36,9 +37,10 @@ public class Student {
 
     private Calendar calendar;
 
-    @JsonIgnore
+
     @ManyToMany
     @JoinTable(name = "parents_students")
+    @JsonBackReference
     private List<Parent> parents;
 
     @JsonIgnore

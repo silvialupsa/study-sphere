@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GradeTable = ({ grades, schools }) => {
+const GradeTable = ({ grades}) => {
     return (
         <div className="Student-table">
             <h2>Grade List</h2>
