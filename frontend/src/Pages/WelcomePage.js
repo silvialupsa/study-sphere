@@ -14,6 +14,7 @@ const WelcomePage = () => {
                     <Link to="/grades" className="btn btn-primary">Go to Grade List</Link>
                     <Link to="/schools" className="btn btn-primary">Go to School List</Link>
                     <Link to="/inspectorates" className="btn btn-primary">Go to Inspectorates List</Link>
+                    <Link to="/parents" className="btn btn-primary">Go to Parent List</Link>
                     <ImageCarousel/>
                     <PartnersCarousel/>
                 </div>
