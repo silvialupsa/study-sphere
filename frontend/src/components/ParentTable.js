@@ -9,7 +9,6 @@ const ParentTable = ({parents}) => {
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Grade Class</th>
                     <th scope="col">Birthdate</th>
                     <th scope="col">Children</th>
                 </tr>
@@ -18,10 +17,10 @@ const ParentTable = ({parents}) => {
                 {parents?.map((parent) => (
                     <tr key={parent.id}>
                         <td>{parent.id}</td>
-                        <td>{parent.name}</td>
-                        <td>{parent.birthdate}</td>
+                        <td>{parent.person.name}</td>
+                        <td>{parent.person.birthdate}</td>
                         <td>{parent.children?.map((child)=> (
-                            <span>{child.name}, </span>
+                            <span>{child.person.name}, </span>
                         ))}</td>
                     </tr>
                 ))}
