@@ -1,6 +1,8 @@
 package com.studysphere.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.studysphere.backend.model.people.Professor;
 import com.studysphere.backend.model.people.Student;
 import com.studysphere.backend.model.types.Facilities;
@@ -22,10 +24,12 @@ public class School {
 
     @ManyToOne
     @JoinColumn(name = "inspectorates.id", nullable = false)
+    @JsonBackReference
     private SchoolInspectorate schoolInspectorate;
 
     @OneToOne
     private Professor schoolPrincipal;
+
 
     @JsonIgnore
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)

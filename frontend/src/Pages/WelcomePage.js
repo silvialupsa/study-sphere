@@ -12,6 +12,7 @@ const WelcomePage = () => {
                     <p>This is the welcome page of our school website.</p>
                     <Link to="/students" className="btn btn-primary">Go to Student List</Link>
                     <Link to="/grades" className="btn btn-primary">Go to Grade List</Link>
+                    <Link to="/inspectorates" className="btn btn-primary">Go to Inspectorates List</Link>
                     <ImageCarousel/>
                     <PartnersCarousel/>
                 </div>
