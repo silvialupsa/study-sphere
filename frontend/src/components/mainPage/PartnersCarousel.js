@@ -39,7 +39,7 @@ function PartnersCarousel() {
     ));
 
     return (
-        <div className="container">
+        <div className="partnersCarousel">
             <a>Our partners</a>
             <Carousel>{partnerItems}</Carousel>
         </div>

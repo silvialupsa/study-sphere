@@ -5,7 +5,7 @@ import image3 from '../../images/image3.jpg';
 
 const ImageCarousel = () => {
     return (
-        <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
+        <div id="imageCarousel" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="5000">
                     <img src={image1} className="d-block w-100" alt="Image 1 Description" />
