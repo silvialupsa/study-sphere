@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ParentTable from "../components/ParentTable";
+import ParentTable from "../../components/tables/ParentTable";
 
 const fetchParents = () => {
     return fetch("/parents/all").then((res) => res.json());

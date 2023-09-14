@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ImageCarousel from "../components/ImageCarousel";
-import PartnersCarousel from "../components/PartnersCarousel";
+import ImageCarousel from "../components/mainPage/ImageCarousel";
+import PartnersCarousel from "../components/mainPage/PartnersCarousel";
 
 const WelcomePage = () => {
     return (
