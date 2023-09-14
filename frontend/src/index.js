@@ -17,7 +17,7 @@ const root = document.getElementById('root');
 
 ReactDOM.render(
     <React.StrictMode>
-        <Router> {/* Wrap your entire app with Router */}
+        <Router>
             <NavBar />
             <Routes>
                 <Route path="/" element={<WelcomePage />} />
