@@ -1,6 +1,5 @@
-import {useState, useEffect} from "react";
-import { Link } from 'react-router-dom'
-import {useNavigate} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Link} from 'react-router-dom'
 import StudentTable from "../components/StudentTable";
 
 const fetchStudents = () => {
@@ -9,7 +8,6 @@ const fetchStudents = () => {
 
 const StudentList = () => {
     const [students, setStudents] = useState(null);
-    // const navigate = useNavigate();
 
     useEffect(()=>{
         fetchStudents().then((students) => {
@@ -17,14 +15,11 @@ const StudentList = () => {
         });
     },[])
 
-    // const navigateToCreateStudent = () => {
-        // 👇️ navigate to /contacts
-        // navigate('/createStudent');
-    // };
+
 
     return (
         <div>
-            {/*<button onClick={()=> {navigateToCreateStudent()}}>Create Student</button>*/}
+           <Link to='/createStudent'>Create Student</Link>
             <StudentTable
                 students={students}
                 />
