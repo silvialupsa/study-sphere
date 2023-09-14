@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import BrowserRouter as Router
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import StudentList from './Pages/StudentList';
@@ -17,18 +17,18 @@ const root = document.getElementById('root');
 
 ReactDOM.render(
     <React.StrictMode>
-        <NavBar/>
-        <Router>
-            <Switch>
-                <Route path = "/" exact component = {WelcomePage}/>
-                <Route path="/students" component={StudentList} />
-                <Route path="/grades" component={GradeList}/>
-                <Route path="/schools" component={SchoolList}/>
-                <Route path="/inspectorates" component = {InspectorateList}/>
-                <Route path="/parents" component={ParentList}/>
-                <Route path="/professors" component = {ProfessorsList}/>
-                <Route path ="/createStudent" component = {StudentCreator}/>
-            </Switch>
+        <Router> {/* Wrap your entire app with Router */}
+            <NavBar />
+            <Routes>
+                <Route path="/" element={<WelcomePage />} />
+                <Route path="/students" element={<StudentList />} />
+                <Route path="/grades" element={<GradeList />} />
+                <Route path="/schools" element={<SchoolList />} />
+                <Route path="/inspectorates" element={<InspectorateList />} />
+                <Route path="/parents" element={<ParentList />} />
+                <Route path="/professors" element={<ProfessorsList />} />
+                <Route path="/createStudent" element={<StudentCreator />} />
+            </Routes>
         </Router>
     </React.StrictMode>,
     root
