@@ -11,6 +11,7 @@ import SchoolList from "./Pages/SchoolList";
 import InspectorateList from "./Pages/InspectorateList";
 import ParentList from "./Pages/ParentList";
 import ProfessorsList from "./Pages/ProfessorList";
+import StudentCreator from "./components/StudentCreator";
 
 const root = document.getElementById('root');
 
@@ -26,6 +27,7 @@ ReactDOM.render(
                 <Route path="/inspectorates" component = {InspectorateList}/>
                 <Route path="/parents" component={ParentList}/>
                 <Route path="/professors" component = {ProfessorsList}/>
+                <Route path ="/createStudent" component = {StudentCreator}/>
             </Switch>
         </Router>
     </React.StrictMode>,

@@ -1,4 +1,6 @@
 import {useState, useEffect} from "react";
+import { Link } from 'react-router-dom'
+
 import StudentTable from "../components/StudentTable";
 
 const fetchStudents = () => {
@@ -17,6 +19,7 @@ const StudentList = () => {
 
     return (
         <div>
+            <button onClick={()=> navigate("/createStudent")}>Create Student</button>
             <StudentTable
                 students={students}
                 />
