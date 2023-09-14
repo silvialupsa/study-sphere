@@ -2,52 +2,35 @@ import logo from '../white-no-bg.png';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from "react";
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';
+import {NavDropdown} from "react-bootstrap";
 
 
 const NavBar = () => {
-    const navStyle = {
-        backgroundColor: 'rgb(28, 52, 84)',
-    };
 
-    const linkStyle = {
-        color: 'white',
-    };
-
-    const redButtonStyle = {
-        backgroundColor: 'red',
-        borderColor: 'white',
-    };
-
-    const loginButtonStyle = {
-        backgroundColor: 'green',
-        borderColor: 'green',
-    };
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light" style={navStyle}>
+        <nav className="navbar navbar-expand-lg navbar-light nav-underline">
             <img src={logo} width={80} alt="logo" />
             <div className="container d-flex justify-content-center align-items-center">
-                <a className="nav-link mx-3" href="/" style={linkStyle}>
+                <a className="nav-link mx-3" href="/">
                     Home <span className="sr-only">(current)</span>
                 </a>
-                <a className="nav-link mx-3" href="#" style={linkStyle}>
+                <a className="nav-link mx-3" href="#">
                     About Us
                 </a>
-                <DropdownButton
-                    id="dropdown-button-light-example2"
-                    variant="$blue-700"
-                    title="Features"
-                    data-bs-theme="dark"
-                    className="mx-3"
-                >
-                    <Dropdown.Item href="#/action-1">Feature 1</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Feature 2</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Feature 3</Dropdown.Item>
-                </DropdownButton>
-                <a className="nav-link disabled mx-3" href="#" style={linkStyle}>
+                <NavDropdown title="Dropdown" id="basic-nav-dropdown" >
+                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.2">
+                        Another action
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action/3.4">
+                        Separated link
+                    </NavDropdown.Item>
+                </NavDropdown>
+                <a className="nav-link mx-3" href="#">
                     Plans
                 </a>
                 <form className="form-inline my-2 my-lg-0 mx-3">
@@ -65,10 +48,10 @@ const NavBar = () => {
                 </form>
             </div>
             <div className="container justify-content-end">
-                <Button style={loginButtonStyle} className="mx-3">
+                <Button className="log-in mx-3">
                     Log in
                 </Button>
-                <Button style={redButtonStyle} className="mx-3">
+                <Button className="get-started mx-3">
                     Get started
                 </Button>
             </div>
