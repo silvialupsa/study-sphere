@@ -1,8 +1,8 @@
 import { useState } from "react";
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import StudentForm from "./StudentForm";
-import StudentList from "../Pages/StudentList";
+import StudentForm from "../forms/StudentForm";
+import StudentList from "../../pages/lists/StudentList";
 
 const createStudent = (student)=> {
     return fetch("/students/",{

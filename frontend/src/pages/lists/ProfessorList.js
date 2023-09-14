@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import ProfessorTable from "../components/ProfessorTable";
+import ProfessorTable from "../../components/tables/ProfessorTable";
 
 
 const fetchProfessors = () => {

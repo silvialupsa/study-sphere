@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SchoolTable from "../components/SchoolTable";
+import SchoolTable from "../../components/tables/SchoolTable";
 
 
 const fetchSchools = () => {

@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import BrowserRouter as Router
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import StudentList from './Pages/StudentList';
-import WelcomePage from "./Pages/WelcomePage";
-import NavBar from "./components/NavBar";
-import GradeList from "./Pages/GradeList";
-import SchoolList from "./Pages/SchoolList";
-import InspectorateList from "./Pages/InspectorateList";
-import ParentList from "./Pages/ParentList";
-import ProfessorsList from "./Pages/ProfessorList";
-import StudentCreator from "./components/StudentCreator";
+import StudentList from './pages/lists/StudentList';
+import WelcomePage from "./pages/WelcomePage";
+import NavBar from "./components/mainPage/NavBar";
+import GradeList from "./pages/lists/GradeList";
+import SchoolList from "./pages/lists/SchoolList";
+import InspectorateList from "./pages/lists/InspectorateList";
+import ParentList from "./pages/lists/ParentList";
+import ProfessorsList from "./pages/lists/ProfessorList";
+import StudentCreator from "./components/creators/StudentCreator";
 
 const root = document.getElementById('root');
 

@@ -1,4 +1,4 @@
-import logo from '../white-no-bg.png';
+import logo from '../../images/white-no-bg.png';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React from "react";

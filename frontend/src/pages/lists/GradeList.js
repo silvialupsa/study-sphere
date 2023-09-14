@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import GradeTable from "../components/GradeTable";
+import GradeTable from "../../components/tables/GradeTable";
 
 const fetchGrades = () => {
     return fetch("/grades/all").then((res) => res.json());
