@@ -2,6 +2,7 @@ package com.studysphere.backend.model.people;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.studysphere.backend.model.Message;
+import com.studysphere.backend.model.types.PersonCategory;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +22,7 @@ public class Person {
     private Long id;
     private String name;
     private LocalDate birthdate;
+    
 
     @JsonIgnore
     @OneToMany(mappedBy = "receiver")

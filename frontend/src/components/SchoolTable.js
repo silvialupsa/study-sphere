@@ -18,7 +18,7 @@ const SchoolTable = ({schools}) => {
                     <tr key={school.id}>
                         <td>{school.id}</td>
                         <td>{school.name}</td>
-                        <td>{school.schoolInspectorate.name}</td>
+                        <td>{school.schoolInspectorate?.name}</td>
                         <td>{school.schoolPrincipal}</td>
                     </tr>
                 ))}
