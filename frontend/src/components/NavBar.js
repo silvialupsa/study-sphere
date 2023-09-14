@@ -7,19 +7,17 @@ import {NavDropdown} from "react-bootstrap";
 
 
 const NavBar = () => {
-
-
     return (
         <nav className="navbar navbar-expand-lg navbar-light nav-underline">
-            <img src={logo} width={80} alt="logo" />
-            <div className="container d-flex justify-content-center align-items-center">
+            <img id="logo" src={logo} width={80} alt="logo" />
+            <div className="container justify-content-end">
                 <a className="nav-link mx-3" href="/">
-                    Home <span className="sr-only">(current)</span>
+                    Home
                 </a>
                 <a className="nav-link mx-3" href="#">
                     About Us
                 </a>
-                <NavDropdown title="Dropdown" id="basic-nav-dropdown" >
+                <NavDropdown title="Features" id="basic-nav-dropdown" >
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">
                         Another action
@@ -33,21 +31,21 @@ const NavBar = () => {
                 <a className="nav-link mx-3" href="#">
                     Plans
                 </a>
-                <form className="form-inline my-2 my-lg-0 mx-3">
-                    <div className="d-flex">
-                        <input
-                            className="form-control mr-sm-2"
-                            type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                        />
-                        <button id="search-button" type="button" className="btn btn-primary">
-                            <FontAwesomeIcon icon={faSearch} />
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <div className="container justify-content-end">
+                {/*<form className="form-inline my-2 my-lg-0 mx-3">*/}
+                {/*    <div className="d-flex">*/}
+                {/*        <input*/}
+                {/*            className="form-control mr-sm-2"*/}
+                {/*            type="search"*/}
+                {/*            placeholder="Search"*/}
+                {/*            aria-label="Search"*/}
+                {/*        />*/}
+                {/*        <button id="search-button" type="button" className="btn btn-primary">*/}
+                {/*            <FontAwesomeIcon icon={faSearch} />*/}
+                {/*        </button>*/}
+                {/*    </div>*/}
+                {/*</form>*/}
+
+
                 <Button className="log-in mx-3">
                     Log in
                 </Button>
