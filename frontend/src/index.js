@@ -12,7 +12,7 @@ import InspectorateList from "./pages/lists/InspectorateList";
 import ParentList from "./pages/lists/ParentList";
 import ProfessorsList from "./pages/lists/ProfessorList";
 import StudentCreator from "./components/creators/StudentCreator";
-
+import AuxiliaryPage from "./pages/AuxiliaryPage";
 const root = document.getElementById('root');
 
 ReactDOM.render(
@@ -21,6 +21,7 @@ ReactDOM.render(
             <NavBar />
             <Routes>
                 <Route path="/" element={<WelcomePage />} />
+                <Route path="/auxiliary" element={<AuxiliaryPage />} />
                 <Route path="/students" element={<StudentList />} />
                 <Route path="/grades" element={<GradeList />} />
                 <Route path="/schools" element={<SchoolList />} />
