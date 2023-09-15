@@ -6,8 +6,38 @@ const fetchStudents = () => {
     return fetch("/students/all").then((res)=> res.json())
 }
 
+const deleteStudent = (id) => {
+    return fetch(`/students/delete/${id}`, { method: "DELETE" })
+        .then((res) => {
+            // Handle the plain text response here
+            if (res.status === 200) {
+                console.log("Student deleted successfully");
+                // You can perform additional actions here if needed
+            } else {
+                console.error("Failed to delete student");
+            }
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+};
+
+
 const StudentList = () => {
     const [students, setStudents] = useState(null);
+
+    const handleDelete = (id) => {
+        deleteStudent(id)
+            .then(() => {
+                // Remove the deleted student from the state
+                setStudents((students) => students.filter((student) => student.id !== id));
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    };
+
+
 
     useEffect(()=>{
         fetchStudents().then((students) => {
@@ -21,6 +51,7 @@ const StudentList = () => {
             <Link to='/createStudent'>Create Student</Link>
             <StudentTable
                 students={students}
+                onDelete={handleDelete}
             />
         </div>
     )
