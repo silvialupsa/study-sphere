@@ -1,6 +1,7 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
-const StudentTable = ({ students }) => {
+const StudentTable = ({ students, onDelete }) => {
     return (
         <div className="Student-table">
             <h2>Student List</h2>
@@ -20,6 +21,15 @@ const StudentTable = ({ students }) => {
                         <td>{student.person.name}</td>
                         <td>{student.person.birthdate}</td>
                         <td>{student.gradeClass}</td>
+
+                        <td>
+                            <Link to={`/update/${student.id}`}>
+                                <button type="button">Update</button>
+                            </Link>
+                            <button type="button" onClick={() => onDelete(student.id)}>
+                                Delete
+                            </button>
+                        </td>
                     </tr>
                 ))}
                 </tbody>
