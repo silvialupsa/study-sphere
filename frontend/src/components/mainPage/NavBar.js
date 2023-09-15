@@ -6,26 +6,8 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const NavBar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
     return (
-        <nav className={`navbar navbar-expand-lg navbar-light nav-underline ${isScrolled ? 'navbar--hidden' : ''}`}>
+        <nav className={`navbar navbar-expand-lg navbar-light nav-underline`}>
             <img id="logo" src={logo} width={80} alt="logo" />
             <div className="container justify-content-end">
                 <a className="nav-link mx-3" href="/">
