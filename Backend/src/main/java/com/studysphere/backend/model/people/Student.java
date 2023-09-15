@@ -10,29 +10,31 @@ import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.types.GradeClass;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Proxy;
 
 import java.util.*;
 
 
 @Entity
 @Data
+@Proxy(lazy = false)
 public class Student {
     @Id
     @GeneratedValue
     private Long id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Person person;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<DailyGoals> dailyGoals;
 
     private GradeClass gradeClass;
 
 
     @JsonIgnore
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Attendance> attendance;
 
     private Calendar calendar;

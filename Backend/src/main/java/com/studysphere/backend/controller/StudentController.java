@@ -26,7 +26,6 @@ private final StudentService studentService;
         return ResponseEntity.ok(studentService.add(student));
     }
 
-
     @DeleteMapping("/delete/{id}")
     @CrossOrigin("*")
     public ResponseEntity<Long> deleteStudent(@PathVariable Long id){

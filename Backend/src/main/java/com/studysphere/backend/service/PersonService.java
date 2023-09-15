@@ -18,4 +18,8 @@ public class PersonService {
     public void add(Person person){
         personRepository.save(person);
     }
+
+    public void deleteById(Long id){
+        personRepository.deleteById(id);
+    }
 }

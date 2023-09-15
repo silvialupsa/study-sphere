@@ -9,10 +9,8 @@ const fetchStudents = () => {
 const deleteStudent = (id) => {
     return fetch(`/students/delete/${id}`, { method: "DELETE" })
         .then((res) => {
-            // Handle the plain text response here
             if (res.status === 200) {
                 console.log("Student deleted successfully");
-                // You can perform additional actions here if needed
             } else {
                 console.error("Failed to delete student");
             }
