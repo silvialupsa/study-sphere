@@ -21,7 +21,8 @@ private final StudentService studentService;
     }
 
     @PostMapping("/add")
-    public void add(@RequestBody Student student){
-        studentService.add(student);
+    public ResponseEntity<Student> add(@RequestBody Student student) {
+        Student savedStudent = studentService.add(student);
+        return ResponseEntity.ok(savedStudent);
     }
 }

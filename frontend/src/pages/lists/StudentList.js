@@ -15,7 +15,7 @@ const StudentList = () => {
         });
     },[])
 
-
+    console.log(students)
 
     return (
         <div>
