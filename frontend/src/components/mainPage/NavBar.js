@@ -7,7 +7,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 const NavBar = () => {
     return (<div>
-        <nav className={`navbar navbar-expand-lg navbar-light nav-underline`}>
+        <nav className={`navbar navbar-expand-md navbar-light nav-underline`}>
             <img id="logo" src={logo} width={80} alt="logo"/>
             <div className="container justify-content-end">
                 <a className="nav-link mx-3" href="/">
@@ -54,9 +54,13 @@ const NavBar = () => {
             </div>
         </nav>
 
-        {/*<nav className="navbar navbar-expand-lg bg-body-tertiary nav-underline">*/}
+        {/*<nav className="navbar navbar-expand-md navbar-light nav-underline">*/}
         {/*    <div className="container-fluid">*/}
         {/*        <img id="logo" src={logo} width={80} alt="logo"/>*/}
+        {/*        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"*/}
+        {/*                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">*/}
+        {/*            <span className="navbar-toggler-icon"></span>*/}
+        {/*        </button>*/}
         {/*        <div className="collapse navbar-collapse justify-content-end" id="navbarText">*/}
         {/*            <ul className="navbar-nav me-auto mb-2 mb-lg-0">*/}
         {/*                <li className="nav-item">*/}
@@ -88,14 +92,14 @@ const NavBar = () => {
         {/*                    </a>*/}
         {/*                </li>*/}
         {/*                <li className="nav-item">*/}
-        {/*                    <Button className="log-in mx-3">*/}
+        {/*                    <a className="nav-link mx-3" href="/" >*/}
         {/*                        Log in*/}
-        {/*                    </Button>*/}
+        {/*                    </a>*/}
         {/*                </li>*/}
         {/*                <li className="nav-item">*/}
-        {/*                    <Button className="get-started mx-3">*/}
+        {/*                    <a className="nav-link mx-3 start-button" href="/" >*/}
         {/*                        Get started*/}
-        {/*                    </Button>*/}
+        {/*                    </a>*/}
         {/*                </li>*/}
         {/*            </ul>*/}
         {/*        </div>*/}
