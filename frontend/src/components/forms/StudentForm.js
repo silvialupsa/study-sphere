@@ -74,7 +74,7 @@ const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grade
 
             <div className="control">
                 <label htmlFor="grade">Grade:</label>
-                <select
+                <input
                     name="grade"
                     id="grade"
                     value={formData.gradeClass}
@@ -82,16 +82,7 @@ const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grade
                         setFormData({ ...formData, gradeClass: e.target.value })
                     }
                 >
-                    <option value="" disabled>
-                        Select a grade
-                    </option>
-                    {grades?.map((p)=> (
-                        <option
-                            selected={student?.gradeClass === p.id}
-                            key={p.id}
-                            value={p.id}>{p.gradeClass}</option>
-                    ))}
-                </select>
+                </input>
             </div>
 
             <div className="control">
