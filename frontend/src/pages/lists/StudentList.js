@@ -18,7 +18,6 @@ const StudentList = () => {
 
     return (
         <div>
-           <Link to='/createStudent'>Create Student</Link>
             <StudentTable
                 students={students}
                 />

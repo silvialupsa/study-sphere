@@ -36,14 +36,13 @@ public class Student {
     private List<Attendance> attendance;
 
     private Calendar calendar;
-
-
-    @ManyToMany
-    @JoinTable(name = "parents_students")
+//
+//    @ManyToMany
+//    @JoinTable(name = "parents_students")
+//    @JsonBackReference
+//    private List<Parent> parents;
+//
     @JsonBackReference
-    private List<Parent> parents;
-
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "schools.id", nullable = false)
     private School school;

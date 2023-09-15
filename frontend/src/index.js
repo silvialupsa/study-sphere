@@ -28,7 +28,7 @@ ReactDOM.render(
                 <Route path="/inspectorates" element={<InspectorateList />} />
                 <Route path="/parents" element={<ParentList />} />
                 <Route path="/professors" element={<ProfessorsList />} />
-                <Route path="/createStudent" element={<StudentCreator />} />
+                {/*<Route path="/createStudent" element={<StudentCreator />} />*/}
             </Routes>
         </Router>
     </React.StrictMode>,
