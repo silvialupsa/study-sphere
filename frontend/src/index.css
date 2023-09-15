@@ -95,8 +95,19 @@
   height: auto;
   object-fit: cover;
   margin-top: -250px;
+  z-index: -1;
 }
 
 .content-container {
   background-color: white;
+}
+
+.welcome-text{
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 0 rgb(5,143,178);
+}
+
+.get-button{
+  align-content: center;
 }
