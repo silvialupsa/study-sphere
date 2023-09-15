@@ -3,6 +3,8 @@ import {useNavigate} from 'react-router-dom';
 import StudentForm from "../forms/StudentForm";
 
 const createStudent = (student) => {
+    console.log("Request Data:", JSON.stringify(student));
+
     console.log(student)
     return fetch("/students/add", {
         method: "POST",
