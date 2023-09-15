@@ -21,8 +21,9 @@ private final StudentService studentService;
     }
 
     @PostMapping("/add")
+    @CrossOrigin("*")
     public ResponseEntity<Student> add(@RequestBody Student student) {
-        Student savedStudent = studentService.add(student);
-        return ResponseEntity.ok(savedStudent);
+//        Student savedStudent = studentService.add(student);
+        return ResponseEntity.ok(studentService.add(student));
     }
 }

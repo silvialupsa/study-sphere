@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useNavigate} from 'react-router-dom';
 import StudentForm from "../forms/StudentForm";
 
@@ -10,6 +10,7 @@ const createStudent = (student) => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            "Accept": "application/json",
         },
         body: JSON.stringify(student),
     }).then((res) => res.json());
@@ -33,6 +34,8 @@ const StudentCreator = () => {
     const [schools, setSchools] = useState([]);
     const [people, setPeople] = useState([]);
     const [grades, setGrades] = useState([]);
+
+
 
     fetchSchools().then((schools) =>{ setSchools(schools);});
     fetchPeople().then((people)=>{setPeople(people); });
