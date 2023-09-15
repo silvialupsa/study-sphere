@@ -1,6 +1,3 @@
-body{
-  z-index: 1;
-}
 
 .nav-underline .nav-link.active, .nav-underline .show>.nav-link {
   --bs-nav-underline-link-active-color: white;
@@ -89,11 +86,17 @@ body{
   transform: translateY(-7px);
 }
 
-
-#imageCarousel{
-  z-index: 4;
+.video-container {
+  position: relative;
 }
 
-#partnersCarousel{
-  z-index:4;
+#backgroundVideo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-top: -250px;
+}
+
+.content-container {
+  background-color: white;
 }
