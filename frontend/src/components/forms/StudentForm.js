@@ -55,15 +55,15 @@ const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grade
                         setFormData({ ...formData, personId: e.target.value })
                     }
                 >
-                <option value="" disabled>
-                    Select a person
-                </option>
-                {people?.map((p)=> (
-                    <option
-                    selected={student?.person === p.id}
-                    key={p.id}
-                    value={p.id}>{p.name}</option>
-                ))}
+                    <option value="" disabled>
+                        Select a person
+                    </option>
+                    {people?.map((p)=> (
+                        <option
+                            selected={student?.person === p.id}
+                            key={p.id}
+                            value={p.id}>{p.name}</option>
+                    ))}
                 </select>
             </div>
 

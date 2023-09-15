@@ -23,7 +23,7 @@ public class Parent {
     @OneToOne
     private Person person;
 
-    @JsonManagedReference
-    @ManyToMany(mappedBy = "parents", fetch = FetchType.EAGER)
-    private List<Student> children;
+//    @JsonManagedReference
+//    @ManyToMany(mappedBy = "parents", fetch = FetchType.EAGER)
+//    private List<Student> children;
 }

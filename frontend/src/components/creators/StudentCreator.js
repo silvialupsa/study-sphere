@@ -5,13 +5,13 @@ import StudentForm from "../forms/StudentForm";
 const createStudent = (student) => {
     console.log("Request Data:", JSON.stringify(student));
 
-    console.log(student)
     return fetch("/students/add", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
         },
+
         body: JSON.stringify(student),
     }).then((res) => res.json());
 }
@@ -25,7 +25,7 @@ const fetchPeople = () => {
 };
 
 const fetchGrades = () => {
-  return fetch("/grades/all").then((res)=> res.json())
+    return fetch("/grades/all").then((res)=> res.json())
 };
 
 
@@ -37,10 +37,12 @@ const StudentCreator = () => {
 
 
 
-    fetchSchools().then((schools) =>{ setSchools(schools);});
-    fetchPeople().then((people)=>{setPeople(people); });
-    fetchGrades().then((grades)=>{setGrades(grades)} );
-
+    useEffect(() => {
+        // Fetch data when the component mounts
+        fetchSchools().then((schools) => { setSchools(schools); });
+        fetchPeople().then((people) => { setPeople(people); });
+        fetchGrades().then((grades) => { setGrades(grades); });
+    }, []);
     const handleCreateStudent = (student) => {
         createStudent(student).then(() => {
             navigate("/students")
