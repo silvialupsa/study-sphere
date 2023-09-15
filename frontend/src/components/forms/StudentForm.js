@@ -1,19 +1,43 @@
-const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grades})=>{
+import React, { useState } from "react";
 
+const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grades})=>{
+    const [formData, setFormData] = useState({
+        personId: "",
+        gradeClass: "",
+        schoolId: "",
+    });
 
     const onSubmit = (e) => {
         e.preventDefault();
-        const formData = new FormData(e.target);
-        const entries = [...formData.entries()];
 
-        const student = entries.reduce((acc, entry) => {
-            const [k, v] = entry;
-            acc[k] = v;
-            return acc;
-        }, {});
-
-        return onSave(student);
+        // Create the JSON object from the form data
+        const studentData = {
+            person: {
+                id: formData.personId,
+            },
+            dailyGoals: [],
+            gradeClass: formData.gradeClass,
+            school: {
+                id: formData.schoolId,
+            },
+        };
+        // Call the onSave function with the student data
+        onSave(studentData);
     };
+
+    // const onSubmit = (e) => {
+    //     e.preventDefault();
+    //     const formData = new FormData(e.target);
+    //     const entries = [...formData.entries()];
+    //
+    //     const student = entries.reduce((acc, entry) => {
+    //         const [k, v] = entry;
+    //         acc[k] = v;
+    //         return acc;
+    //     }, {});
+    //
+    //     return onSave(student);
+    // };
 
     return(
         <form className="StudentForm" onSubmit={onSubmit}>
@@ -26,7 +50,10 @@ const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grade
                 <select
                     name="person"
                     id="person"
-                    defaultValue={student?.person}
+                    value={formData.personId}
+                    onChange={(e) =>
+                        setFormData({ ...formData, personId: e.target.value })
+                    }
                 >
                 <option value="" disabled>
                     Select a person
@@ -41,11 +68,19 @@ const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grade
             </div>
 
             <div className="control">
+                <label htmlFor="dailyDoals">Daily goals</label>
+                <input/>
+            </div>
+
+            <div className="control">
                 <label htmlFor="grade">Grade:</label>
                 <select
                     name="grade"
                     id="grade"
-                    defaultValue={student?.gradeClass}
+                    value={formData.gradeClass}
+                    onChange={(e) =>
+                        setFormData({ ...formData, gradeClass: e.target.value })
+                    }
                 >
                     <option value="" disabled>
                         Select a grade
@@ -64,7 +99,10 @@ const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grade
                 <select
                     name="school"
                     id="school"
-                    defaultValue={student?.school}
+                    value={formData.schoolId}
+                    onChange={(e) =>
+                        setFormData({ ...formData, schoolId: e.target.value })
+                    }
                 >
                     <option value="" disabled>
                         Select a school
