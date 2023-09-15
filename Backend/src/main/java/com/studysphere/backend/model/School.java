@@ -32,11 +32,11 @@ public class School {
 
 
     @JsonIgnore
-    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Grade> gradeList;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Student> studentList;
 
     @Enumerated(EnumType.STRING)

@@ -8,14 +8,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.annotations.Proxy;
 
 import java.time.LocalDate;
 import java.util.List;
 
-
-
 @Data
 @Entity
+@Proxy(lazy = false)
 public class Person {
     @Id
     @GeneratedValue
@@ -24,13 +24,13 @@ public class Person {
     private LocalDate birthdate;
     
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "receiver")
-    private List<Message> messagesReceived;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "sender")
-    private List<Message> messagesSent;
+//    @JsonIgnore
+//    @OneToMany(mappedBy = "receiver")
+//    private List<Message> messagesReceived;
+//
+//    @JsonIgnore
+//    @OneToMany(mappedBy = "sender")
+//    private List<Message> messagesSent;
 
 
 }
