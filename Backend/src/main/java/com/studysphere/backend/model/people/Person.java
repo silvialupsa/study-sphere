@@ -1,7 +1,7 @@
 package com.studysphere.backend.model.people;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.studysphere.backend.model.Message;
+//import com.studysphere.backend.model.Message;
 import com.studysphere.backend.model.types.PersonCategory;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,15 +22,5 @@ public class Person {
     private Long id;
     private String name;
     private LocalDate birthdate;
-    
-
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "receiver")
-//    private List<Message> messagesReceived;
-//
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "sender")
-//    private List<Message> messagesSent;
-
 
 }

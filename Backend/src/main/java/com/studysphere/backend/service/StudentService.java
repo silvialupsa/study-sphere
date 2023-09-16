@@ -49,7 +49,7 @@ public class StudentService {
         Student student = studentRepository.findById(id).orElse(null);
         assert student != null;
         School school = student.getSchool();
-//        school.setStudentList(school.getStudentList().stream().filter(s -> !Objects.equals(s.getId(), student.getId())).toList());
+        school.setStudentList(school.getStudentList().stream().filter(s -> !Objects.equals(s.getId(), student.getId())).toList());
         studentRepository.deleteById(id);
         return false;
     }

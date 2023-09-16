@@ -2,7 +2,7 @@ package com.studysphere.backend.model.people;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.studysphere.backend.model.Message;
+//import com.studysphere.backend.model.Message;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;

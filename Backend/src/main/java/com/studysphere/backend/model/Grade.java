@@ -33,10 +33,4 @@ public class Grade {
     @JsonIgnore
     @OneToMany
     private List<Professor> professorList;
-
-    private Calendar calendar;
-
-    @JsonIgnore
-    @ManyToMany
-    private List<Message> messagesGroup;
 }

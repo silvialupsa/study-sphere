@@ -3,7 +3,7 @@ package com.studysphere.backend.model.people;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.studysphere.backend.model.Attendance;
-import com.studysphere.backend.model.DailyGoals;
+//import com.studysphere.backend.model.DailyGoals;
 import com.studysphere.backend.model.School;
 import com.studysphere.backend.model.people.Parent;
 import com.studysphere.backend.model.people.Person;
@@ -26,9 +26,6 @@ public class Student {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Person person;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<DailyGoals> dailyGoals;
 
     private GradeClass gradeClass;
 
@@ -37,8 +34,7 @@ public class Student {
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Attendance> attendance;
 
-    private Calendar calendar;
-//
+
 //    @ManyToMany
 //    @JoinTable(name = "parents_students")
 //    @JsonBackReference
