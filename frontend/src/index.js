@@ -12,6 +12,7 @@ import InspectorateList from "./pages/lists/InspectorateList";
 import ParentList from "./pages/lists/ParentList";
 import ProfessorsList from "./pages/lists/ProfessorList";
 import StudentCreator from "./components/creators/StudentCreator";
+import StudentUpdater from "./components/updaters/StudentUpdater";
 import AuxiliaryPage from "./pages/AuxiliaryPage";
 const root = document.getElementById('root');
 
@@ -29,6 +30,7 @@ ReactDOM.render(
                 <Route path="/parents" element={<ParentList />} />
                 <Route path="/professors" element={<ProfessorsList />} />
                 <Route path="/createStudent" element={<StudentCreator />} />
+                <Route path="/students/update/:id" element={<StudentUpdater/>}/>
             </Routes>
         </Router>
     </React.StrictMode>,

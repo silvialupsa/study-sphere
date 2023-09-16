@@ -23,7 +23,7 @@ const StudentTable = ({ students, onDelete }) => {
                         <td>{student.gradeClass}</td>
 
                         <td>
-                            <Link to={`/update/${student.id}`}>
+                            <Link to={`/students/update/${student.id}`}>
                                 <button type="button">Update</button>
                             </Link>
                             <button type="button" onClick={() => onDelete(student.id)}>
