@@ -1,48 +1,25 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
-const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grades})=>{
-    const [formData, setFormData] = useState({
-        personId: "",
-        gradeClass: "",
-        schoolId: "",
-    });
+const StudentForm = ({onSave, disabled, student, onCancel, schools, people, grades}) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        const formData = new FormData(e.target);
+        const entries = [...formData.entries()];
 
-        // Create the JSON object from the form data
-        const studentData = {
-            person: {
-                id: formData.personId,
-            },
-            dailyGoals: [],
-            gradeClass: formData.gradeClass,
-            school: {
-                id: formData.schoolId,
-            },
-        };
-        // Call the onSave function with the student data
-        onSave(studentData);
+        const student = entries.reduce((acc, entry) => {
+            const [k, v] = entry;
+            acc[k] = v;
+            return acc;
+        }, {});
+
+        return onSave(student);
     };
 
-    // const onSubmit = (e) => {
-    //     e.preventDefault();
-    //     const formData = new FormData(e.target);
-    //     const entries = [...formData.entries()];
-    //
-    //     const student = entries.reduce((acc, entry) => {
-    //         const [k, v] = entry;
-    //         acc[k] = v;
-    //         return acc;
-    //     }, {});
-    //
-    //     return onSave(student);
-    // };
-
-    return(
+    return (
         <form className="StudentForm" onSubmit={onSubmit}>
             {student && (
-                <input type= "hidden" name="id" defaultValue={student.id}/>
+                <input type="hidden" name="id" defaultValue={student.id}/>
             )}
 
             <div className="control">
@@ -50,17 +27,14 @@ const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grade
                 <select
                     name="person"
                     id="person"
-                    value={formData.personId}
-                    onChange={(e) =>
-                        setFormData({ ...formData, personId: e.target.value })
-                    }
+                    defaultValue={student ? student.person?.id : null}
                 >
                     <option value="" disabled>
                         Select a person
                     </option>
-                    {people?.map((p)=> (
+                    {people?.map((p) => (
                         <option
-                            selected={student?.person === p.id}
+                            selected={student?.person?.id === p.id}
                             key={p.id}
                             value={p.id}>{p.name}</option>
                     ))}
@@ -77,10 +51,7 @@ const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grade
                 <input
                     name="grade"
                     id="grade"
-                    value={formData.gradeClass}
-                    onChange={(e) =>
-                        setFormData({ ...formData, gradeClass: e.target.value })
-                    }
+                    defaultValue={student ? student.gradeClass : null}
                 >
                 </input>
             </div>
@@ -90,17 +61,14 @@ const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grade
                 <select
                     name="school"
                     id="school"
-                    value={formData.schoolId}
-                    onChange={(e) =>
-                        setFormData({ ...formData, schoolId: e.target.value })
-                    }
+                    defaultValue={student ? student.school?.id : null}
                 >
                     <option value="" disabled>
                         Select a school
                     </option>
-                    {schools?.map((p)=> (
+                    {schools?.map((p) => (
                         <option
-                            selected={student?.school === p.id}
+                            selected={student?.school?.id === p.id}
                             key={p.id}
                             value={p.id}>{p.name}</option>
                     ))}

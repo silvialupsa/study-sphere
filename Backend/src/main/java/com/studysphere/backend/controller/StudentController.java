@@ -20,6 +20,10 @@ private final StudentService studentService;
         return ResponseEntity.ok(studentService.getAll());
     }
 
+    @GetMapping("/{id}")
+    @CrossOrigin("*")
+    public ResponseEntity<Student> getById(@PathVariable Long id){return ResponseEntity.ok(studentService.findById(id));}
+
     @PostMapping("/add")
     @CrossOrigin("*")
     public ResponseEntity<Student> add(@RequestBody Student student) {
