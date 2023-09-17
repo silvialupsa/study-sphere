@@ -15,7 +15,7 @@ public class SchoolInspectorate {
     private Long id;
     private String name;
 
-    @JsonManagedReference
+    @JsonManagedReference("inspectorate-schools")
     @OneToMany(mappedBy = "schoolInspectorate", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<School> schoolList;
 }

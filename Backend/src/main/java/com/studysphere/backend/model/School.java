@@ -24,7 +24,7 @@ public class School {
 
     @ManyToOne
     @JoinColumn(name = "inspectorates.id", nullable = false)
-    @JsonBackReference
+    @JsonBackReference("inspectorate-schools")
     private SchoolInspectorate schoolInspectorate;
 
     @OneToOne
@@ -35,7 +35,7 @@ public class School {
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Grade> gradeList;
 
-    @JsonManagedReference
+    @JsonManagedReference("school-students")
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Student> studentList;
 

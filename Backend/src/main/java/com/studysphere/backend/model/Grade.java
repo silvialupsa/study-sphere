@@ -1,5 +1,6 @@
 package com.studysphere.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.studysphere.backend.model.people.Professor;
 import com.studysphere.backend.model.people.Student;
@@ -26,11 +27,11 @@ public class Grade {
     @OneToOne
     private Professor classMaster;
 
-    @JsonIgnore
+    @JsonBackReference("grade-students")
     @OneToMany
     private List<Student> studentList;
 
-    @JsonIgnore
+    @JsonBackReference("grade-professors")
     @OneToMany
     private List<Professor> professorList;
 }
