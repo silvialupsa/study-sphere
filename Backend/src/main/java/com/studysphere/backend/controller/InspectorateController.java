@@ -19,7 +19,7 @@ public class InspectorateController {
         return ResponseEntity.ok(inspectorateService.getAllInspectorates());
     }
 
-    @PostMapping("/add")
+    @PostMapping(value = "/add")
     public void postInspectorate(@RequestBody SchoolInspectorate inspectorate){
         inspectorateService.addInspectorate(inspectorate);
     }
