@@ -1,0 +1,344 @@
+[
+  {
+    "name": "Inspectoratul Şcolar Alba",
+    "email": "secretariat@isjalba.ro",
+    "phoneNumber": "0258 811 662",
+    "address": "Alba Iulia, Strada Gabriel Bethlen nr.7",
+    "county": "Alba",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Municipiul Bucureşti",
+    "email": "office@ismb.ro",
+    "phoneNumber": "021 211 8496",
+    "address": "Bucureşti, Sector 2, Strada Icoanei nr.19",
+    "county": "Bucureşti",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Arad",
+    "email": "inf_arad@yahoo.com",
+    "phoneNumber": "0257 280 866",
+    "address": "Arad, B-dul Decebal nr.32",
+    "county": "Arad",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Argeş",
+    "email": "contact@isjarges.ro",
+    "phoneNumber": "0248 218 366",
+    "address": "Piteşti, B-dul. Eroilor nr.4-6",
+    "county": "Argeş",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Bacău",
+    "email": "office@e-isjbacau.ro",
+    "phoneNumber": "0234 511 899",
+    "address": "Bacău, Strada Oituz nr.24",
+    "county": "Bacău",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Bihor",
+    "email": "isjbihor@yahoo.com",
+    "phoneNumber": "0359 436 210",
+    "address": "Oradea, Strada Mihai Eminescu nr.11",
+    "county": "Oradea",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Bistriţa-Năsăud",
+    "email": "isjbn@isjbn.ro",
+    "phoneNumber": "0263 213 529",
+    "address": "Bistrița, Strada 1 Decembrie nr.5",
+    "county": "Bistriţa",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Botoşani",
+    "email": "office.isjbt@gmail.com",
+    "phoneNumber": "0231 584 050",
+    "address": "Botoșani, Strada Nicolae Iorga nr.28",
+    "county": "Botoşani",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Braşov",
+    "email": "info@isjbrasov.ro",
+    "phoneNumber": "0268 511 111",
+    "address": "Brașov, Strada Şirul Dima nr.4",
+    "county": "Brașov",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Brăila",
+    "email": "contact@isjbraila.ro",
+    "phoneNumber": "0239 614 088",
+    "address": "Brăila, B-dul Al. I. Cuza nr.172",
+    "county": "Brăila",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Buzău",
+    "email": "office@isjbuzau.ro",
+    "phoneNumber": "0238 721 655",
+    "address": "Buzău, Strada Al. Marghiloman nr.30",
+    "county": "Buzău",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Caraş-Severin",
+    "email": "contact@isjcs.ro",
+    "phoneNumber": "0255 210 679",
+    "address": "Reșița, Strada Ateneului, Complexul 1",
+    "county": "Reșița",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Călăraşi",
+    "email": "isjcalarasi@gmail.com",
+    "phoneNumber": "0242 315 949",
+    "address": "Călărași, Strada Sloboziei nr.28",
+    "county": "Călăraşi",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Cluj",
+    "email": "contact@isjcj.ro",
+    "phoneNumber": "0264 590 999",
+    "address": "Cluj-Napoca, Piaţa Ștefan cel Mare nr.4",
+    "county": "Cluj",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Constanţa",
+    "email": "isj-cta@isjcta.ro",
+    "phoneNumber": "0241 550 582",
+    "address": "Constanța, Strada Mihai Eminescu nr.11",
+    "county": "Constanţa",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Covasna",
+    "email": "office@isj.educv.ro",
+    "phoneNumber": "0267 314 782",
+    "address": "Sfântul Gheorghe, Strada Victor Babeș nr.15C",
+    "county": "Covasna",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Dâmboviţa",
+    "email": "isjdb@isj-db.ro",
+    "phoneNumber": "0245 211 891 sau 0245 620 931",
+    "address": "Târgoviște, Calea Domnească nr. 127",
+    "county": "Dâmboviţa",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Dolj",
+    "email": "isjdolj@isjdolj.ro",
+    "phoneNumber": "0251 420 961 sau 0351 407 395",
+    "address": "Craiova, Strada Ion Maiorescu nr.6",
+    "county": "Dolj",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Galaţi",
+    "email": "info@isj.gl.edu.ro",
+    "phoneNumber": "0236 463 078 sau 0236 460 170",
+    "address": "Galați, Strada Portului nr.57 bis",
+    "county": "Galaţi",
+    "schoolList": []
+  },{
+  "name": "Inspectoratul Şcolar Giurgiu",
+  "email": "isjgiurgiu@yahoo.com",
+  "phoneNumber": "0246 214255",
+  "address": "Giurgiu, Strada Portului nr.17",
+  "county": "Giurgiu",
+  "schoolList": []
+},
+  {
+    "name": "Inspectoratul Şcolar Gorj",
+    "email": "contact@isjgorj.ro, isjgorj@yahoo.com",
+    "phoneNumber": "0253 227177",
+    "address": "Târgu Jiu, Strada Victoriei nr.132-134",
+    "county": "Gorj",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Harghita",
+    "email": "contact@isjhr.eduhr.ro",
+    "phoneNumber": "0266 312 514",
+    "address": "Miercurea Ciuc, Piaţa Libertății",
+    "county": "Harghita",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Hunedoara",
+    "email": "inspectorat@isj.hd.edu.ro",
+    "phoneNumber": "0254 229 030",
+    "address": "Deva, Strada Gheorghe Barițiu nr.2",
+    "county": "Hunedoara",
+    "schoolList": []
+  },{
+  "name": "Inspectoratul Şcolar Ialomiţa",
+  "email": "secretariat@isjialomita.ro",
+  "phoneNumber": "0243 231 825",
+  "address": "Slobozia, Strada Lacului nr.19",
+  "county": "Ialomiţa",
+  "schoolList": []
+},
+  {
+    "name": "Inspectoratul Şcolar Iaşi",
+    "email": "contact@isjiasi.ro",
+    "phoneNumber": "0232 260 098",
+    "address": "Iași, Strada Bălcescu nr.26",
+    "county": "Iaşi",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Ilfov",
+    "email": "secretariat@isjilfov.ro",
+    "phoneNumber": "021 317 3650",
+    "address": "București, Sector 5, Calea 13 Septembrie nr.209",
+    "county": "Ilfov",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Maramureş",
+    "email": "isjmm@isjmm.ro",
+    "phoneNumber": "0262 212 114",
+    "address": "Baia Mare, Strada Petofi Șandor nr. 14",
+    "county": "Maramureş",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Mehedinţi",
+    "email": "isj@mh.edu.ro, secretariat.isj@mh.edu.ro",
+    "phoneNumber": "0252 315 579",
+    "address": "Drobeta-Turnu Severin, Strada Mihai Gușiță nr.6",
+    "county": "Mehedinţi",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Mureş",
+    "email": "office@edums.ro",
+    "phoneNumber": "0265 213 779",
+    "address": "Târgu Mureș, Strada Victor Babeș nr.11",
+    "county": "Mureş",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Neamţ",
+    "email": "office@isjneamt.ro",
+    "phoneNumber": "0233 214 860",
+    "address": "Piatra Neamț, Strada Lt. Drăghiescu nr.4A",
+    "county": "Neamţ",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Olt",
+    "email": "secretariat@isjolt.ot.edu.ro",
+    "phoneNumber": "0249 410 927",
+    "address": "Slatina, Strada Ec.Teodoroiu nr.64B",
+    "county": "Olt",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Prahova",
+    "email": "isjph@isj.ph.edu.ro",
+    "phoneNumber": "0244 577 551",
+    "address": "Ploiești, Strada Democraţiei nr.35",
+    "county": "Prahova",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Satu-Mare",
+    "email": "isjsm@satmar.ro",
+    "phoneNumber": "0261 717 998",
+    "address": "Satu Mare, Strada 1 Decembrie 1918 nr.6",
+    "county": "Satu-Mare",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Sălaj",
+    "email": "isjsalaj@isj.sj.edu.ro",
+    "phoneNumber": "0260 661 391",
+    "address": "Zalău, Strada Unirii nr.2",
+    "county": "Sălaj",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Sibiu",
+    "email": "officeisj@yahoo.com",
+    "phoneNumber": "0269 210 466",
+    "address": "Sibiu, Strada Berăriei nr.2",
+    "county": "Sibiu",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Suceava",
+    "email": "isjsv@isj.sv.edu.ro",
+    "phoneNumber": "0230 216 102",
+    "address": "Suceava, Calea Unirii nr.15",
+    "county": "Suceava",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Teleorman",
+    "email": "isjteleo@yahoo.com",
+    "phoneNumber": "0247 312 712",
+    "address": "Alexandria, Strada Carpați nr.15",
+    "county": "Teleorman",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Timiş",
+    "email": "isjtimis@isjtm.ro",
+    "phoneNumber": "0256 305 799",
+    "address": "Timişoara, B-dul. C.D.Loga nr.3",
+    "county": "Timiş",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Tulcea",
+    "email": "isjtl@isjtl.edu.ro",
+    "phoneNumber": "0240 515 771",
+    "address": "Tulcea, Strada Dobrogeanu Gherea nr.3-4",
+    "county": "Tulcea",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Tulcea",
+    "email": "isjtl@isjtl.edu.ro",
+    "phoneNumber": "0240 515 771",
+    "address": "Tulcea, Strada Dobrogeanu Gherea nr.3-4",
+    "county": "Tulcea",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Vaslui",
+    "email": "isjvaslui@isj.vs.edu.ro",
+    "phoneNumber": "0235 311 928",
+    "address": "Vaslui, Strada Donici nr.2",
+    "county": "Vaslui",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Vâlcea",
+    "email": "isjvl@vl.edu.ro, isjvl@yahoo.com",
+    "phoneNumber": "0350 431 571",
+    "address": "Râmnicu Vâlcea, Strada Nicolae Bălcescu nr.30",
+    "county": "Vâlcea",
+    "schoolList": []
+  },
+  {
+    "name": "Inspectoratul Şcolar Vrancea",
+    "email": "isjvrancea@yahoo.com",
+    "phoneNumber": "0237 214 236",
+    "address": "Focşani, Strada Dornei nr.5",
+    "county": "Vrancea",
+    "schoolList": []
+  }
+]

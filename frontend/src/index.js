@@ -15,6 +15,7 @@ import StudentCreator from "./components/creators/StudentCreator";
 import StudentUpdater from "./components/updaters/StudentUpdater";
 import AuxiliaryPage from "./pages/AuxiliaryPage";
 import SchoolCreator from "./components/creators/SchoolCreator";
+import SchoolsForInspectorate from "./pages/lists/SchoolsForInspectoratesList";
 
 const root = document.getElementById('root');
 
@@ -34,6 +35,7 @@ ReactDOM.render(
                 <Route path="/createStudent" element={<StudentCreator/>}/>
                 <Route path="/students/update/:id" element={<StudentUpdater/>}/>
                 <Route path="/createSchool" element={<SchoolCreator/>}/>
+                <Route path="/checkSchools/:id" element={<SchoolsForInspectorate/>}/>
 
             </Routes>
         </Router>

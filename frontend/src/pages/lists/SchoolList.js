@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SchoolTable from "../../components/tables/SchoolTable";
+import {Link} from "react-router-dom";
 
 
 const fetchSchools = () => {
@@ -17,6 +18,10 @@ const SchoolList = () => {
 
     return (
         <div>
+            {/*<Link to='/createSchool'>Create School</Link>*/}
+            <Link to={`/createSchool`}>
+                <button type="button">Create School</button>
+            </Link>
             <SchoolTable schools={schools}/>
         </div>
     );

@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import InspectoratesTable from "../../components/tables/InspectoratesTable";
+import SchoolList from "./SchoolList";
 
 const fetchInspectorates = () => {
     return fetch("/inspectorates/all").then((res)=> res.json())

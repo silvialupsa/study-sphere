@@ -1,6 +1,7 @@
 package com.studysphere.backend.controller;
 
 import com.studysphere.backend.model.SchoolInspectorate;
+import com.studysphere.backend.model.people.Student;
 import com.studysphere.backend.service.InspectorateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,11 @@ public class InspectorateController {
     public ResponseEntity<List<SchoolInspectorate>> getAllInspectorates() {
         return ResponseEntity.ok(inspectorateService.getAllInspectorates());
     }
+
+    @GetMapping("/{id}")
+    @CrossOrigin("*")
+    public ResponseEntity<SchoolInspectorate> getById(@PathVariable Long id){return ResponseEntity.ok(inspectorateService.findById(id));}
+
 
     @PostMapping("/addAll")
     @CrossOrigin(origins = "*")
