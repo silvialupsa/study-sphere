@@ -22,7 +22,7 @@ const deleteStudent = (id) => {
 
 
 const StudentList = () => {
-    const [students, setStudents] = useState(null);
+    const [students, setStudents] = useState([]);
 
     const handleDelete = (id) => {
         deleteStudent(id)
@@ -40,9 +40,9 @@ const StudentList = () => {
     useEffect(()=>{
         fetchStudents().then((students) => {
             setStudents(students);
+    console.log(students);
         });
     },[])
-
 
     return (
         <div>

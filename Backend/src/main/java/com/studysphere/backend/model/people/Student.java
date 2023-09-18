@@ -12,6 +12,8 @@ import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.types.GradeClass;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Proxy;
 
 import java.util.*;
@@ -42,14 +44,14 @@ public class Student {
 //    @JoinTable(name = "parents_students")
 //    private List<Parent> parents;
 
-    @ManyToMany(cascade = {CascadeType.MERGE})
-    @JoinTable(name = "parents_student",
-            joinColumns = @JoinColumn(name = "students_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "parents_id", referencedColumnName = "id"),
-            uniqueConstraints = {@UniqueConstraint(columnNames = {"students_id", "parents_id"})})
-    @JsonIgnoreProperties("children")
-    private List<Parent> parents;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "children", fetch = FetchType.LAZY)
+    private Set<Parent> parents;
 
+
+
+//    @ManyToMany(mappedBy = "children")
+//    private Set<Parent> parents= new HashSet<>();
 
     @JsonBackReference("school-students")
     @ManyToOne
