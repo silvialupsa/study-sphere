@@ -15,7 +15,6 @@ import java.util.List;
 
 @Data
 @Entity
-@Proxy(lazy = false)
 public class Person {
     @Id
     @GeneratedValue

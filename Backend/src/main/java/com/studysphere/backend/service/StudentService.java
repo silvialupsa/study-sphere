@@ -29,9 +29,9 @@ public class StudentService {
     }
     @Transactional
     public Student add(Student student){
-        Person person = personRepository.findById(student.getPerson().getId()).orElse(null);
+        Person person= student.getPerson();
+        personRepository.save(person);
         student.setPerson(person);
-        System.out.println(student);
         School school = schoolRepository.findById(student.getSchool().getId()).orElse(null);
         assert school != null;
         school.getStudentList().add(student);
