@@ -29,9 +29,9 @@ public class StudentService {
     }
     @Transactional
     public Student add(Student student){
-        Person person = personRepository.findById(student.getPerson().getId()).orElse(null);
-        student.setPerson(person);
-        System.out.println(student);
+        Person person= student.getPerson();
+        personRepository.save(person);
+//        student.setPerson(person);
         School school = schoolRepository.findById(student.getSchool().getId()).orElse(null);
         assert school != null;
         school.getStudentList().add(student);
@@ -50,6 +50,7 @@ public class StudentService {
         assert student != null;
         School school = student.getSchool();
         school.setStudentList(school.getStudentList().stream().filter(s -> !Objects.equals(s.getId(), student.getId())).toList());
+        personRepository.deleteById(student.getPerson().getId());
         studentRepository.deleteById(id);
         return false;
     }

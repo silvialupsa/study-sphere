@@ -16,6 +16,8 @@ const createStudent = (student) => {
     }).then((res) => res.json());
 }
 
+
+
 const fetchSchools = () => {
     return fetch("/schools/all").then((res) => res.json());
 };
@@ -36,13 +38,13 @@ const StudentCreator = () => {
     const [grades, setGrades] = useState([]);
 
 
-
     useEffect(() => {
         // Fetch data when the component mounts
         fetchSchools().then((schools) => { setSchools(schools); });
         fetchPeople().then((people) => { setPeople(people); });
         fetchGrades().then((grades) => { setGrades(grades); });
     }, []);
+
     const handleCreateStudent = (student) => {
         createStudent(student).then(() => {
             navigate("/students")
