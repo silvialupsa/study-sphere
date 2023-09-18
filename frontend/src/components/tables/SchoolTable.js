@@ -11,6 +11,9 @@ const SchoolTable = ({schools}) => {
                     <th scope="col">Name</th>
                     <th scope="col">Inspectorate</th>
                     <th scope="col">School Principal</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone Number</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -20,6 +23,9 @@ const SchoolTable = ({schools}) => {
                         <td>{school.name}</td>
                         <td>{school.schoolInspectorate?.name}</td>
                         <td>{school.schoolPrincipal}</td>
+                        <td>{school.address}</td>
+                        <td>{school.email}</td>
+                        <td>{school.phoneNumber}</td>
                     </tr>
                 ))}
                 </tbody>

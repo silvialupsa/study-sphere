@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {useNavigate} from 'react-router-dom';
-import StudentForm from "../forms/StudentForm";
+import SchoolForm from "../forms/SchoolForm";
 
 const createSchool = (school) => {
     console.log("Request Data:", JSON.stringify(school));
@@ -29,7 +29,7 @@ const SchoolCreator = () => {
     };
 
     return (
-        <StudentForm
+        <SchoolForm
             onCancel={() => navigate("/schools")}
             onSave={handleCreateSchool}
             school={school}
