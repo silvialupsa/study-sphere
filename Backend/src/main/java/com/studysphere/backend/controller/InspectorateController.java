@@ -26,6 +26,7 @@ public class InspectorateController {
     }
 
     @PostMapping(value = "/add")
+    @CrossOrigin(origins = "*")
     public void postInspectorate(@RequestBody SchoolInspectorate inspectorate){
         inspectorateService.addInspectorate(inspectorate);
     }

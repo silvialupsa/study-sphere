@@ -3,900 +3,1350 @@
     "name": "Liceul “horea, Closca Si Crisan” Abrud",
     "address": "Abrud, Republicii, 18",
     "phoneNumber": "0258780623",
-    "email": "hcc.abrud@isjalba.ro"
+    "email": "hcc.abrud@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “avram Iancu” Abrud",
     "address": "Abrud, Cloşca, 3-5",
     "phoneNumber": "0258780791",
-    "email": "sc.abrud@isjalba.ro"
+    "email": "sc.abrud@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Colegiul National “bethlen Gabor” Aiud",
     "address": "Aiud, Bethlen Gabor, 1",
     "phoneNumber": "0258861947",
-    "email": "bg.aiud@isjalba.ro"
+    "email": "bg.aiud@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Colegiul National “titu Maiorescu” Aiud",
     "address": "Aiud, Ecaterina Varga, 10",
     "phoneNumber": "0258861946",
-    "email": "tm.aiud@isjalba.ro"
+    "email": "tm.aiud@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Prelungit Nr. 2 Aiud",
     "address": "Aiud, Unirii, 10",
     "phoneNumber": "0258861747",
-    "email": "gpp2.aiud@isjalba.ro"
+    "email": "gpp2.aiud@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Prelungit “primii Pasi” Aiud",
     "address": "Aiud, Sergent Haţegan, 3",
     "phoneNumber": "0258861465",
-    "email": "gpp.primiipasi@isjalba.ro"
+    "email": "gpp.primiipasi@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Tehnologic Aiud",
     "address": "Aiud, Ion Creangă, 14",
     "phoneNumber": "0258861018",
-    "email": "ct.aiud@isjalba.ro"
+    "email": "ct.aiud@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “axente Sever” Aiud",
     "address": "Aiud, Unirii, 9",
     "phoneNumber": "0258861585",
-    "email": "as.aiud@isjalba.ro"
+    "email": "as.aiud@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “ovidiu Hulea” Aiud",
     "address": "Aiud, Cuza Vodă, 35",
     "phoneNumber": "0258861427",
-    "email": "oh.aiud@isjalba.ro"
+    "email": "oh.aiud@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Postliceala ,, Med Farm Speranta” Aiud",
     "address": "Aiud, Ecaterina Varga, 41",
     "phoneNumber": "0745131706",
-    "email": "scoalapost.speranta.aiud@gmail.com"
+    "email": "scoalapost.speranta.aiud@gmail.com",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Centrul Scolar De Educatie Incluziva Alba Iulia",
     "address": "Alba Iulia, Tudor Vladimirescu, 39",
     "phoneNumber": "0258819383",
-    "email": "csei@isjalba.ro"
+    "email": "csei@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Colegiul Economic “dionisie Pop Martian” Alba Iulia",
     "address": "Alba Iulia, Octavian Goga, 11",
     "phoneNumber": "0258811468",
-    "email": "dpm.alba@isjalba.ro"
+    "email": "dpm.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Colegiul National “horea Closca Si Crisan” Alba Iulia",
     "address": "Alba Iulia, 1 Decembrie 1918, 11",
     "phoneNumber": "0258835164",
-    "email": "hcc.alba@isjalba.ro"
+    "email": "hcc.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Colegiul National Militar “mihai Viteazul” Alba Iulia",
     "address": "Alba Iulia, Revoluţiei 1989, 25",
     "phoneNumber": "0258834009",
-    "email": "colmil.alba@isjalba.ro"
+    "email": "colmil.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Colegiul Tehnic “apulum” Alba Iulia",
     "address": "Alba Iulia, Gheorghe Pop De Băseşti, 2",
     "phoneNumber": "0258834102",
-    "email": "cta.alba@isjalba.ro"
+    "email": "cta.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Normal “emanuel” Alba Iulia",
     "address": "Alba Iulia, Ferdinand, 18",
     "phoneNumber": "0258813979",
-    "email": "gpn.emanuel@isjalba.ro"
+    "email": "gpn.emanuel@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Normal “licurici” Alba Iulia",
     "address": "Alba Iulia, Moţilor, 2",
     "phoneNumber": "0258832931",
-    "email": "gpn.licurici@isjalba.ro"
+    "email": "gpn.licurici@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Prelungit “dumbrava Minunata” Alba Iulia",
     "address": "Alba Iulia, Str. George Bariţiu, 8",
     "phoneNumber": "0358102921",
-    "email": "gppdm.alba@isjalba.ro"
+    "email": "gppdm.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Prelungit Nr. 11 Alba Iulia",
     "address": "Alba Iulia, Vasile Goldiş, 14b",
     "phoneNumber": "0258834395",
-    "email": "gpp11.alba@isjalba.ro"
+    "email": "gpp11.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Prelungit Nr. 13 Alba Iulia",
     "address": "Alba Iulia, Energiei, 21",
     "phoneNumber": "0258820057",
-    "email": "gpp13.alba@isjalba.ro"
+    "email": "gpp13.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Prelungit Nr.16 Alba Iulia",
     "address": "Alba Iulia, Tudor Vladimirescu, 143",
     "phoneNumber": "0258815596",
-    "email": "gpp16.alba@isjalba.ro"
+    "email": "gpp16.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Prelungit Nr.8 Alba Iulia",
     "address": "Alba Iulia, Mihai Viteazul, 23",
     "phoneNumber": "0258835031",
-    "email": "gpp8.alba@isjalba.ro"
+    "email": "gpp8.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Prelungit “scufita Rosie” Alba Iulia",
     "address": "Alba Iulia, Călărașilor, 2",
     "phoneNumber": "0258811820",
-    "email": "gppsr.alba@isjalba.ro"
+    "email": "gppsr.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Prelungit Step By Step Nr. 12 Alba Iulia",
     "address": "Alba Iulia, Ştefan Cel Mare, 11",
     "phoneNumber": "0258830879",
-    "email": "gpp12.alba@isjalba.ro"
+    "email": "gpp12.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Cu Program Sportiv Alba Iulia",
     "address": "Alba Iulia, Ştefan Cel Mare, 25",
     "phoneNumber": "0258835346",
-    "email": "ls.alba@isjalba.ro"
+    "email": "ls.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul De Arte “regina Maria” Alba Iulia",
     "address": "Alba Iulia, Călăraşi, 2",
     "phoneNumber": "0258812473",
-    "email": "lmap.alba@isjalba.ro"
+    "email": "lmap.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Tehnologic “alexandru Domsa” Alba Iulia",
     "address": "Alba Iulia, Tudor Vladimirescu, 143",
     "phoneNumber": "0258816065",
-    "email": "ad.alba@isjalba.ro"
+    "email": "ad.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Tehnologic “dorin Pavel” Alba Iulia",
     "address": "Alba Iulia, Tudor Vladimirescu, 39",
     "phoneNumber": "0258816938",
-    "email": "dp.alba@isjalba.ro"
+    "email": "dp.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Teologic Romano-catolic “grof Majlath Gusztav Karoly” Alba Iulia",
     "address": "Alba Iulia, Păcii, 4",
     "phoneNumber": "0258819869",
-    "email": "cat.alba@isjalba.ro"
+    "email": "cat.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Teoretic “sfantul Iosif” Alba Iulia",
     "address": "Alba Iulia, Ferdinand I, 19",
     "phoneNumber": "0258811131",
-    "email": "lic.iosif@isjalba.ro"
+    "email": "lic.iosif@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “avram Iancu” Alba Iulia",
     "address": "Alba Iulia, Moldovei, 2",
     "phoneNumber": "0258811548",
-    "email": "scai.alba@isjalba.ro"
+    "email": "scai.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “ion Agarbiceanu” Alba Iulia",
     "address": "Alba Iulia, Vasile Goldiş, 14",
     "phoneNumber": "0258821875",
-    "email": "scia.alba@isjalba.ro"
+    "email": "scia.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “mihai Eminescu” Alba Iulia",
     "address": "Alba Iulia, Toporașilor, 18",
     "phoneNumber": "0258835093",
-    "email": "scme.alba@isjalba.ro"
+    "email": "scme.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “vasile Goldis” Alba Iulia",
     "address": "Alba Iulia, Călărașilor, 2",
     "phoneNumber": "0745596362",
-    "email": "scvg.alba@isjalba.ro"
+    "email": "scvg.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Postliceala De Afaceri Alba Iulia",
     "address": "Alba Iulia, Avram Iancu, 7a",
     "phoneNumber": "0258819799",
-    "email": "feg.alba@isjalba.ro"
+    "email": "feg.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Postliceala Feg Alba Iulia",
     "address": "Alba Iulia, Tudor Vladimirescu, 39",
     "phoneNumber": "0760663935",
-    "email": "feg.alba@isjalba.ro"
+    "email": "feg.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Postliceala “henri Coanda” Alba Iulia",
     "address": "Alba Iulia, Vasile Goldis, 14",
     "phoneNumber": "0726208024",
-    "email": "sphc.alba@isjalba.ro"
+    "email": "sphc.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Postliceala Sanitara Alba Iulia",
     "address": "Alba Iulia, Tudor Vladimirescu, 39",
     "phoneNumber": "0258812836",
-    "email": "sps.alba@isjalba.ro"
+    "email": "sps.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Primara ,,1 Decembrie 1918” Alba Iulia",
     "address": "Alba Iulia, Calea Motilor, 224",
     "phoneNumber": "0763634148",
-    "email": "gpnls.alba@isjalba.ro"
+    "email": "gpnls.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Seminarul Teologic Ortodox “sfantul Simion Stefan” Alba Iulia",
     "address": "Alba Iulia, Bulevardul Transilvaniei, 36a",
     "phoneNumber": "0258834890",
-    "email": "stor.alba@isjalba.ro"
+    "email": "stor.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Tehnologic “tara Motilor” Albac",
     "address": "Albac, Closca, 5",
     "phoneNumber": "0258700768",
-    "email": "lt.albac@isjalba.ro"
+    "email": "lt.albac@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Almasu Mare",
     "address": "Almaşu Mare, Principala, 238",
     "phoneNumber": "0258850115",
-    "email": "sc.almasu@isjalba.ro"
+    "email": "sc.almasu@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Tehnologic De Turism Si Alimentatie Arieseni",
     "address": "Arieşeni, Str. Centru, 8",
     "phoneNumber": "0258779066",
-    "email": "lt.arieseni@isjalba.ro"
+    "email": "lt.arieseni@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “avram Iancu” Avram Iancu",
     "address": "Avram Iancu, Avram Iancu, 27e",
     "phoneNumber": "0258786063",
-    "email": "sc.avramiancu@isjalba.ro"
+    "email": "sc.avramiancu@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul “dr. Lazar Chirila” Baia De Aries",
     "address": "Baia De Arieş, 22 Decembrie, 41",
     "phoneNumber": "0374555775",
-    "email": "lic.baia@isjalba.ro"
+    "email": "lic.baia@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Berghin",
     "address": "Berghin, Morii, 34",
     "phoneNumber": "0258854113",
-    "email": "sc.berghin@isjalba.ro"
+    "email": "sc.berghin@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “nicodim Ganea” Bistra",
     "address": "Bistra, Petru Pavel Aron, 6",
     "phoneNumber": "0258773106",
-    "email": "sc.bistra@isjalba.ro"
+    "email": "sc.bistra@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Colegiul National “inochentie Micu Clain” Blaj",
     "address": "Blaj, Simion Bărnuţiu, 2",
     "phoneNumber": "0258711208",
-    "email": "imc.blaj@isjalba.ro"
+    "email": "imc.blaj@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Prelungit “lumea Copiilor” Blaj",
     "address": "Blaj, Republicii, 24",
     "phoneNumber": "0258711023",
-    "email": "gpplc.blaj@isjalba.ro"
+    "email": "gpplc.blaj@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Tehnologic “stefan Manciulea” Blaj",
     "address": "Blaj, Piața 1948, 3",
     "phoneNumber": "0258710655",
-    "email": "sm.blaj@isjalba.ro"
+    "email": "sm.blaj@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Tehnologic “timotei Cipariu” Blaj",
     "address": "Blaj, Dr. Vasile Suciu, 25",
     "phoneNumber": "0258713630",
-    "email": "tc.blaj@isjalba.ro"
+    "email": "tc.blaj@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Teologic Greco-catolic “sfantul Vasile Cel Mare” Blaj",
     "address": "Blaj, Piața 1948, 3",
     "phoneNumber": "0258711904",
-    "email": "cat.blaj@isjalba.ro"
+    "email": "cat.blaj@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “toma Cocisiu” Blaj",
     "address": "Blaj, Republicii, 48",
     "phoneNumber": "0258711933",
-    "email": "sctc.blaj@isjalba.ro"
+    "email": "sctc.blaj@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Postliceala Sanitara Blaj",
     "address": "Blaj, Andrei Muresan, 5",
     "phoneNumber": "0285712162",
-    "email": "sps.blaj@isjalba.ro"
+    "email": "sps.blaj@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Blandiana",
     "address": "Blandiana, Principală, 204a",
     "phoneNumber": "0258760708",
-    "email": "sc.blandiana@isjalba.ro"
+    "email": "sc.blandiana@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “ioan Maiorescu” Bucerdea Granoasa",
     "address": "Bucerdea Grânoasă, Ioan Maiorescu, 130",
     "phoneNumber": "0258883221",
-    "email": "sc.bucerdeagr@isjalba.ro"
+    "email": "sc.bucerdeagr@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “ion Agarbiceanu” Bucium",
     "address": "Bucium, Principală, 34",
     "phoneNumber": "0799921671",
-    "email": "sc.bucium@isjalba.ro"
+    "email": "sc.bucium@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Calnic",
     "address": "Câlnic, Principală, 330",
     "phoneNumber": "0258747116",
-    "email": "sc.cilnic@isjalba.ro"
+    "email": "sc.cilnic@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Colegiul Național “avram Iancu” Câmpeni",
     "address": "Câmpeni, Oituz, 3",
     "phoneNumber": "0258771232",
-    "email": "ai.cimpeni@isjalba.ro"
+    "email": "ai.cimpeni@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Cu Program Prelungit “piticot” Cimpeni",
     "address": "Câmpeni, Plopului, 3",
     "phoneNumber": "0258771861",
-    "email": "gpp.cimpeni@isjalba.ro"
+    "email": "gpp.cimpeni@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Tehnologic Silvic Cimpeni",
     "address": "Câmpeni, Izvoarelor, 2",
     "phoneNumber": "0258771544",
-    "email": "lts.cimpeni@isjalba.ro"
+    "email": "lts.cimpeni@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Cimpeni",
     "address": "Câmpeni, Motilor, 29",
     "phoneNumber": "0258771560",
-    "email": "sc.cimpeni@isjalba.ro"
+    "email": "sc.cimpeni@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Postliceala “henri Coanda” Campeni",
     "address": "Câmpeni, Izvoarelor, 2",
     "phoneNumber": "0258771544",
-    "email": "sphc.cimpeni@isjalba.ro"
+    "email": "sphc.cimpeni@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “ion Agarbiceanu” Cenade",
     "address": "Cenade, Principală, 250",
     "phoneNumber": "0258789008",
-    "email": "sc.cenade@isjalba.ro"
+    "email": "sc.cenade@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “aron Cotrus” Cergau Mare",
     "address": "Cergău Mare, Principală, 166",
     "phoneNumber": "0258719125",
-    "email": "sc.cergau@isjalba.ro"
+    "email": "sc.cergau@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “stefan Cel Mare” Cetatea De Balta",
     "address": "Cetatea De Baltă, Postei, 18",
     "phoneNumber": "0258886114",
-    "email": "sc.cetateadebalta@isjalba.ro"
+    "email": "sc.cetateadebalta@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Ciugud",
     "address": "Ciugud, Principală, 127",
     "phoneNumber": "0258841383",
-    "email": "sc.ciugud@isjalba.ro"
+    "email": "sc.ciugud@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Tehnologic Agricol “alexandru Borza” Ciumbrud",
     "address": "Ciumbrud, Vasile Lucaciu, 42",
     "phoneNumber": "0258866002",
-    "email": "lta.ciumbrud@isjalba.ro"
+    "email": "lta.ciumbrud@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Ciuruleasa",
     "address": "Ciuruleasa, Centru, 1a",
     "phoneNumber": "0744550945",
-    "email": "sc.ciuruleasa@isjalba.ro"
+    "email": "sc.ciuruleasa@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Craciunelu De Jos",
     "address": "Crăciunelu De Jos, 6 Martie, 66",
     "phoneNumber": "0258883526",
-    "email": "sc.craciunelu@isjalba.ro"
+    "email": "sc.craciunelu@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “decebal” Cricau",
     "address": "Cricău, Principală, 319",
     "phoneNumber": "0258845105",
-    "email": "sc.cricau@isjalba.ro"
+    "email": "sc.cricau@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Colegiul Tehnic “ion D. Lazarescu” Cugir",
     "address": "Cugir, Victoriei, 9",
     "phoneNumber": "0258751028",
-    "email": "idl.cugir@isjalba.ro"
+    "email": "idl.cugir@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Teoretic “david Prodan” Cugir",
     "address": "Cugir, Victoriei, 15",
     "phoneNumber": "0258751306",
-    "email": "dp.cugir@isjalba.ro"
+    "email": "dp.cugir@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala ” Iosif Pervain” Cugir",
     "address": "Cugir, 21 Decembrie 1989, 157",
     "phoneNumber": "0258752287",
-    "email": "scip.cugir@isjalba.ro"
+    "email": "scip.cugir@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Nr.3 Cugir",
     "address": "Cugir, Aleea Constructorului, 1",
     "phoneNumber": "0258751075",
-    "email": "sc3.cugir@isjalba.ro"
+    "email": "sc3.cugir@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “singidava” Cugir",
     "address": "Cugir, Alexandru Sahia, 16",
     "phoneNumber": "0258751727",
-    "email": "scs.cugir@isjalba.ro"
+    "email": "scs.cugir@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Postliceala “med-farm Speranta” Cugir",
     "address": "Cugir, Gheorghe Asachi, 13a",
     "phoneNumber": "0722363014",
-    "email": "scsperanta.cugir@isjalba.ro"
+    "email": "scsperanta.cugir@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “septimiu Albini” Cut",
     "address": "Cut, Principala, 226",
     "phoneNumber": "0258745256",
-    "email": "sc.cut@isjalba.ro"
+    "email": "sc.cut@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Daia Romana",
     "address": "Daia Română, Școlii, 649a",
     "phoneNumber": "0258763183",
-    "email": "sc.daia@isjalba.ro"
+    "email": "sc.daia@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Dostat",
     "address": "Doştat, Principală, 235",
     "phoneNumber": "0258764601",
-    "email": "sc.dostat@isjalba.ro"
+    "email": "sc.dostat@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Drasov",
     "address": "Draşov, Principală, 98",
     "phoneNumber": "0258764020",
-    "email": "sc.drasov@isjalba.ro"
+    "email": "sc.drasov@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Farau",
     "address": "Fărău, Principală, 274",
     "phoneNumber": "0258867113",
-    "email": "sc.farau@isjalba.ro"
+    "email": "sc.farau@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “nicolae Dragan” Galda De Jos",
     "address": "Galda De Jos, Principală, 247",
     "phoneNumber": "0258846123",
-    "email": "sc.galda@isjalba.ro"
+    "email": "sc.galda@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Garbova",
     "address": "Gârbova, Scolii, 79",
     "phoneNumber": "0258748114",
-    "email": "sc.garbova@isjalba.ro"
+    "email": "sc.garbova@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “emil Racovita ” Girda De Sus",
     "address": "Gârda De Sus, Principală, 50 A",
     "phoneNumber": "0358402993",
-    "email": "sc.girda@isjalba.ro"
+    "email": "sc.girda@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Hoparta",
     "address": "Hopârta, Principală, 22",
     "phoneNumber": "0258875730",
-    "email": "sc.hopirta@isjalba.ro"
+    "email": "sc.hopirta@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “horea” Horea",
     "address": "Horea, Nicola Vasile Ursu, 22",
     "phoneNumber": "0258701071",
-    "email": "sc.horea@isjalba.ro"
+    "email": "sc.horea@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “mihai Eminescu” Ighiu",
     "address": "Ighiu, Şcolii, 32",
     "phoneNumber": "0258844207",
-    "email": "sc.ighiu@isjalba.ro"
+    "email": "sc.ighiu@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Intregalde",
     "address": "Întregalde, Principală, 6",
     "phoneNumber": "0258701000",
-    "email": "sc.intregalde@isjalba.ro"
+    "email": "sc.intregalde@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Tehnologic Jidvei",
     "address": "Jidvei, Perilor, 19",
     "phoneNumber": "0258881124",
-    "email": "lt.jidvei@isjalba.ro"
+    "email": "lt.jidvei@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Livezile",
     "address": "Livezile, Principală, 186",
     "phoneNumber": "0258868122",
-    "email": "sc.livezile@isjalba.ro"
+    "email": "sc.livezile@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Lopadea Noua",
     "address": "Lopadea Nouă, Principală, 60",
     "phoneNumber": "0258875200",
-    "email": "sc.lopadea@isjalba.ro"
+    "email": "sc.lopadea@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “simion Lazar” Lunca Muresului",
     "address": "Lunca Mureşului, Garii, 241 A",
     "phoneNumber": "0258878134",
-    "email": "sc.lunca@isjalba.ro"
+    "email": "sc.lunca@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “dr.petru Span” Lupsa",
     "address": "Lupşa, Principală, 1",
     "phoneNumber": "0258769107",
-    "email": "sc.lupsa@isjalba.ro"
+    "email": "sc.lupsa@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Metes",
     "address": "Meteş, Principală, 51",
     "phoneNumber": "0258849011",
-    "email": "sc.metes@isjalba.ro"
+    "email": "sc.metes@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “ion Breazu” Mihalt",
     "address": "Mihalţ, Principală, 341",
     "phoneNumber": "0258718108",
-    "email": "sc.mihalt@isjalba.ro"
+    "email": "sc.mihalt@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Miraslau",
     "address": "Mirăslău, Principală, 29",
     "phoneNumber": "0258879042",
-    "email": "sc.miraslau@isjalba.ro"
+    "email": "sc.miraslau@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Mogos",
     "address": "Mogoş, Principală, 38 B",
     "phoneNumber": "0258855528",
-    "email": "sc.mogos@isjalba.ro"
+    "email": "sc.mogos@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Noslac",
     "address": "Noşlac, Scolii, 1",
     "phoneNumber": "0258889109",
-    "email": "sc.noslac@isjalba.ro"
+    "email": "sc.noslac@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita Adventista Cu Program Prelungit “emanuel” Ocna Mures",
     "address": "Ocna Mureş, Avram Iancu, 52",
     "phoneNumber": "0745398766",
-    "email": "gpne.ocna@isjalba.ro"
+    "email": "gpne.ocna@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Tehnologic Ocna Mures",
     "address": "Ocna Mureş, Colonia Peste Mures, 9",
     "phoneNumber": "0258870807",
-    "email": "lt.ocna@isjalba.ro"
+    "email": "lt.ocna@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Teoretic “petru Maior” Ocna Mures",
     "address": "Ocna Mureş, Vadului, 1",
     "phoneNumber": "0258870559",
-    "email": "teo.ocna@isjalba.ro"
+    "email": "teo.ocna@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “lucian Blaga” Ocna Mures",
     "address": "Ocna Mureş, Brazilor, 9",
     "phoneNumber": "0258871141",
-    "email": "sc.ocna@isjalba.ro"
+    "email": "sc.ocna@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Postliceala “med Farm Speranta” Ocna Mures",
     "address": "Ocna Mureş, Colonia Peste Mures, 9",
     "phoneNumber": "0745131706",
-    "email": "scsperanta.ocna@isjalba.ro"
+    "email": "scsperanta.ocna@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Ocolis",
     "address": "Ocoliş, Principală, 184",
     "phoneNumber": "0258776416",
-    "email": "sc.ocolis@isjalba.ro"
+    "email": "sc.ocolis@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Ohaba",
     "address": "Ohaba, Principală, 300",
     "phoneNumber": "0258854507",
-    "email": "sc.ohaba@isjalba.ro"
+    "email": "sc.ohaba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Petresti",
     "address": "Petreşti, Mihai Viteazu, 3",
     "phoneNumber": "0258743112",
-    "email": "sc.petresti@isjalba.ro"
+    "email": "sc.petresti@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Pianu De Sus",
     "address": "Pianu De Sus, Principală, 172",
     "phoneNumber": "0258761113",
-    "email": "sc.pianu@isjalba.ro"
+    "email": "sc.pianu@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “prof. Univ. Dr. Gheorghe Beleiu” Poiana Vadului",
     "address": "Poiana Vadului, Centru, 27c",
     "phoneNumber": "0258785679",
-    "email": "sc.poianavadului@isjalba.ro"
+    "email": "sc.poianavadului@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Ponor",
     "address": "Ponor, Principală, 83",
     "phoneNumber": "0258867520",
-    "email": "sc.ponor@isjalba.ro"
+    "email": "sc.ponor@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Posaga De Jos",
     "address": "Poşaga De Jos, Principală, 237",
     "phoneNumber": "0258776025",
-    "email": "sc.posaga@isjalba.ro"
+    "email": "sc.posaga@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “demetriu Radu” Radesti",
     "address": "Rădeşti, Principală, 22",
     "phoneNumber": "0258879305",
-    "email": "sc.radesti@isjalba.ro"
+    "email": "sc.radesti@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “sebes Pal” Rimetea",
     "address": "Râmetea, Principală, 124",
     "phoneNumber": "0258701554",
-    "email": "sc.rimetea@isjalba.ro"
+    "email": "sc.rimetea@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Ramet",
     "address": "Râmeţ, Principală, 7",
     "phoneNumber": "0258880015",
-    "email": "sc.rimet@isjalba.ro"
+    "email": "sc.rimet@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Rosia De Secas",
     "address": "Roşia De Secaş, Școlii, 282",
     "phoneNumber": "0258765715",
-    "email": "sc.rosiadesecas@isjalba.ro"
+    "email": "sc.rosiadesecas@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “simion Balint” Rosia Montana",
     "address": "Roşia Montană, Principală, 188",
     "phoneNumber": "0258783113",
-    "email": "sc.rosiamontana@isjalba.ro"
+    "email": "sc.rosiamontana@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “simion Pantea” Salciua",
     "address": "Sălciua De Jos, Principală, 352",
     "phoneNumber": "0258788603",
-    "email": "sc.salciua@isjalba.ro"
+    "email": "sc.salciua@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “david Prodan” Salistea",
     "address": "Săliştea, David Prodan, 337",
     "phoneNumber": "0258762138",
-    "email": "sc.salistea@isjalba.ro"
+    "email": "sc.salistea@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Sasciori",
     "address": "Săsciori, Principala, 380",
     "phoneNumber": "0258741213",
-    "email": "sc.sasciori@isjalba.ro"
+    "email": "sc.sasciori@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “ion Pop Reteganul” Sincel",
     "address": "Sâncel, Mihai Eminescu, 27",
     "phoneNumber": "0258885151",
-    "email": "sc.sincel@isjalba.ro"
+    "email": "sc.sincel@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “ioan De Hunedoara” Santimbru",
     "address": "Sântimbru, Blajului, 102",
     "phoneNumber": "0258842103",
-    "email": "sc.sintimbru@isjalba.ro"
+    "email": "sc.sintimbru@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Scarisoara",
     "address": "Scărişoara, Principală, 194",
     "phoneNumber": "0258777529",
-    "email": "sc.scarisoara@isjalba.ro"
+    "email": "sc.scarisoara@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Colegiul National “lucian Blaga” Sebes",
     "address": "Sebeş, Călugăreni, 49",
     "phoneNumber": "0258731217",
-    "email": "colb.sebes@isjalba.ro"
+    "email": "colb.sebes@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita “heidi” Sebes",
     "address": "Sebeş, Str. Bistriţei, 1",
     "phoneNumber": "0258732446",
-    "email": "gpnheidi.sebes@isjalba.ro"
+    "email": "gpnheidi.sebes@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita „mirela” Sebes",
     "address": "Sebeş, Str. Aviator Olteanu, 7",
     "phoneNumber": "0358402845",
-    "email": "rizzolomirela@yahoo.com"
+    "email": "rizzolomirela@yahoo.com",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Gradinita “sfantul Nicolae” Sebes",
     "address": "Sebeş, Crisan, 37",
     "phoneNumber": "0358402155",
-    "email": "gpp.sfnicolae@isjalba.ro"
+    "email": "gpp.sfnicolae@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Cu Program Sportiv ” Florin Fleseriu” Sebes",
     "address": "Sebeş, Lucian Blaga, 76",
     "phoneNumber": "0258731220",
-    "email": "ls.sebes@isjalba.ro"
+    "email": "ls.sebes@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul German Sebes",
     "address": "Sebeş, Ștefan Cel Mare, 1",
     "phoneNumber": "0371348884",
-    "email": "lg.sebes@isjalba.ro"
+    "email": "lg.sebes@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Tehnologic Sebes",
     "address": "Sebeş, Dorin Pavel, 2",
     "phoneNumber": "0258731010",
-    "email": "lt.sebes@isjalba.ro"
+    "email": "lt.sebes@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “mihail Kogalniceanu” Sebes",
     "address": "Sebeş, Mihail Kogălniceanu, 114",
     "phoneNumber": "0258731506",
-    "email": "mk.sebes@isjalba.ro"
+    "email": "mk.sebes@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Nr. 2 Sebes",
     "address": "Sebeş, Piața Libertății, 1",
     "phoneNumber": "0258731922",
-    "email": "sc2.sebes@isjalba.ro"
+    "email": "sc2.sebes@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Postliceala Henri Coanda Sebes",
     "address": "Sebeş, Lucian Blaga, 76",
     "phoneNumber": "0752086020",
-    "email": "sphc.sebes@isjalba.ro"
+    "email": "sphc.sebes@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Sohodol",
     "address": "Sohodol, Sohodol, 2",
     "phoneNumber": "0258787226",
-    "email": "sc.sohodol@isjalba.ro"
+    "email": "sc.sohodol@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala „timotei Ovidiu Tarnu” Stremt",
     "address": "Stremţ, Principală, 97",
     "phoneNumber": "0258848123",
-    "email": "sc.stremt@isjalba.ro"
+    "email": "sc.stremt@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “iosif Sarbu” Sibot",
     "address": "Şibot, Principală, 151",
     "phoneNumber": "0258760115",
-    "email": "sc.sibot@isjalba.ro"
+    "email": "sc.sibot@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Sona",
     "address": "Şona, 23 August, 2",
     "phoneNumber": "0258884742",
-    "email": "sc.sona@isjalba.ro"
+    "email": "sc.sona@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Sugag",
     "address": "Şugag, Valea Frumoasei, 169",
     "phoneNumber": "0258746105",
-    "email": "sc.sugag@isjalba.ro"
+    "email": "sc.sugag@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul Teoretic Teius",
     "address": "Teiuş, Decebal, 22",
     "phoneNumber": "0258851157",
-    "email": "lt.teius@isjalba.ro"
+    "email": "lt.teius@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “simion Barnutiu” Tiur Blaj",
     "address": "Tiur, Principală, 213",
     "phoneNumber": "0258713591",
-    "email": "sc.tiur@isjalba.ro"
+    "email": "sc.tiur@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “avram Iancu ” Unirea",
     "address": "Unirea, Avram Iancu, 69",
     "phoneNumber": "0258876108",
-    "email": "ai.unirea@isjalba.ro"
+    "email": "ai.unirea@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Vadu Motilor",
     "address": "Vadu Moţilor, Centru, 2",
     "phoneNumber": "0258785016",
-    "email": "sc.vadumotilor@isjalba.ro"
+    "email": "sc.vadumotilor@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “ion Bianu” Valea Lunga",
     "address": "Valea Lungă, Victoriei, 102",
     "phoneNumber": "0258888126",
-    "email": "sc.valealunga@isjalba.ro"
+    "email": "sc.valealunga@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala Vidra",
     "address": "Vidra, Lunca Bisericii, 34",
     "phoneNumber": "0258786583",
-    "email": "sc.vidra@isjalba.ro"
+    "email": "sc.vidra@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Scoala Gimnaziala “iuliu Maniu” Vintu De Jos",
     "address": "Vinţu De Jos, Mihai Eminescu, 12",
     "phoneNumber": "0258739118",
-    "email": "sc.vintu@isjalba.ro"
+    "email": "sc.vintu@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Liceul “corneliu Medrea” Zlatna",
     "address": "Zlatna, Tudor Vladimirescu, 14",
     "phoneNumber": "0258856521",
-    "email": "lic.zlatna@isjalba.ro"
+    "email": "lic.zlatna@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Palatul Copiilor Alba Iulia",
     "address": "Alba Iulia, Decebal, 23",
     "phoneNumber": "0258811750",
-    "email": "pc.alba@isjalba.ro"
+    "email": "pc.alba@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Club Sportiv Scolar Blaj",
     "address": "Blaj, Str. Avram Iancu, 2",
     "phoneNumber": "0258710427",
-    "email": "css.blaj@isjalba.ro"
+    "email": "css.blaj@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Centrul Judetean De Resurse Si Asistenta Educationala Alba",
     "address": "Alba Iulia, Gheorghe Pop De Băsești, 2",
     "phoneNumber": "0726285728",
-    "email": "cjrae@isjalba.ro"
+    "email": "cjrae@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Centrul Judetean De Excelenta Alba",
     "address": "Alba Iulia, Gabriel Bethlen, 7",
     "phoneNumber": "0744166176",
-    "email": "cje@isjalba.ro"
+    "email": "cje@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   },
   {
     "name": "Casa Corpului Didactic Alba",
     "address": "Alba Iulia, Gabriel Bethlen, 7",
     "phoneNumber": "0258826147",
-    "email": "ccd@isjalba.ro"
+    "email": "ccd@isjalba.ro",
+    "schoolInspectorate": {
+      "id": 1
+    }
   }
 ]

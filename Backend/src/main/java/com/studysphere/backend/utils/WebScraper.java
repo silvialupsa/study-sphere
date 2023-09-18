@@ -4,13 +4,14 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.stereotype.Component;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
 public class WebScraper {
-    public void main() {
+    public void main(Long inspectorateId) {
         String url = "https://isjalba.ro/institutii-subordonate-coordonate/";
         List<String> jsonObjects = new ArrayList<>();
 
@@ -33,7 +34,8 @@ public class WebScraper {
                 jsonObjects.add("{\"name\":" + "\"" +name +"\""+ "," +
                         "\"address\":"+ "\""+address+"\","+
                         "\"phoneNumber\":"+ "\""+phoneNumber+"\","+
-                        "\"email\":"+ "\""+email+"\""+"}");
+                        "\"email\":"+ "\""+email+"\","+
+                        "\"schoolInspectorate\":"+ "{\"id\":"+ inspectorateId+ "}" +"}");
 
                 String filePath = "src/main/resources/schools.json";
 

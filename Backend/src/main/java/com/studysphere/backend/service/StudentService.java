@@ -31,7 +31,6 @@ public class StudentService {
     public Student add(Student student){
         Person person= student.getPerson();
         personRepository.save(person);
-//        student.setPerson(person);
         School school = schoolRepository.findById(student.getSchool().getId()).orElse(null);
         assert school != null;
         school.getStudentList().add(student);
