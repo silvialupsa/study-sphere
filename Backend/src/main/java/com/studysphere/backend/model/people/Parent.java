@@ -9,7 +9,10 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -30,11 +33,15 @@ public class Parent {
 //    private List<Student> children;
 
 
-    @ManyToMany( cascade = {CascadeType.MERGE})
-    @JoinTable(name = "parents_student",
-            joinColumns = @JoinColumn(name = "parents_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "students_id", referencedColumnName = "id"),
+    @ManyToMany(fetch = FetchType.EAGER, targetEntity = Student.class)
+    @JoinTable(name = "parents_students",
+            joinColumns = @JoinColumn(name = "parents_id"),
+            inverseJoinColumns = @JoinColumn(name = "students_id"),
             uniqueConstraints = {@UniqueConstraint(columnNames = {"parents_id", "students_id"})})
-    @JsonIgnoreProperties("parents")
-    private List<Student> children;
+//    @JsonIgnoreProperties("parents")
+    @Fetch(FetchMode.JOIN)
+    private Set<Student> children;
+
+//    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+//    private Set<Student> children= new HashSet<>();
 }
