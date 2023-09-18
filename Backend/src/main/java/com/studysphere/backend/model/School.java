@@ -20,7 +20,9 @@ public class School {
     @GeneratedValue
     private Long id;
     private String name;
-
+    private String address;
+    private String phoneNumber;
+    private String email;
 
     @ManyToOne
     @JoinColumn(name = "inspectorates.id", nullable = false)
