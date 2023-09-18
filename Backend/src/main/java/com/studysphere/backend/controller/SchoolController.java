@@ -27,6 +27,7 @@ public class SchoolController {
         return ResponseEntity.ok(schoolService.addAllSchools(schools));
     }
     @PostMapping("/add")
+    @CrossOrigin(origins = "*")
     public void postSchool(@RequestBody School school) {
         schoolService.addSchool(school);
     }
