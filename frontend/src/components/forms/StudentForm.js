@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const StudentForm = ({ onSave, disabled, student, onCancel, schools, people, grades }) => {
+const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) => {
     const [formData, setFormData] = useState({
         person: {
             name: "",
@@ -54,7 +54,7 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, people, gra
             <div className="birthdate">
                 <label htmlFor="birthdate">Birthdate</label>
                 <input
-                    type="text"
+                    type="date"
                     id="birthdate"
                     value={formData.person.birthdate}
                     onChange={(e) =>
