@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 
-const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grades})=>{
+const StudentForm = ({ onSave, disabled, student, onCancel, schools, people, grades }) => {
     const [formData, setFormData] = useState({
-        personId: "",
+        person: {
+            name: "",
+            birthdate: "",
+        },
         gradeClass: "",
-        schoolId: "",
+        school: {
+            id: "",
+        },
     });
 
     const onSubmit = (e) => {
@@ -13,100 +18,90 @@ const StudentForm =({ onSave,disabled, student, onCancel, schools, people, grade
         // Create the JSON object from the form data
         const studentData = {
             person: {
-                id: formData.personId,
+                name: formData.person.name,
+                birthdate: formData.person.birthdate,
             },
-            dailyGoals: [],
             gradeClass: formData.gradeClass,
+            calendar: null,
             school: {
-                id: formData.schoolId,
+                id: formData.school.id,
             },
         };
+
         // Call the onSave function with the student data
         onSave(studentData);
     };
 
-    // const onSubmit = (e) => {
-    //     e.preventDefault();
-    //     const formData = new FormData(e.target);
-    //     const entries = [...formData.entries()];
-    //
-    //     const student = entries.reduce((acc, entry) => {
-    //         const [k, v] = entry;
-    //         acc[k] = v;
-    //         return acc;
-    //     }, {});
-    //
-    //     return onSave(student);
-    // };
-
-    return(
+    return (
         <form className="StudentForm" onSubmit={onSubmit}>
-            {student && (
-                <input type= "hidden" name="id" defaultValue={student.id}/>
-            )}
+            {student && <input type="hidden" name="id" defaultValue={student.id} />}
 
-            <div className="control">
-                <label htmlFor="person">Person:</label>
-                <select
-                    name="person"
-                    id="person"
-                    value={formData.personId}
+            <div className="person">
+                <label htmlFor="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    value={formData.person.name}
                     onChange={(e) =>
-                        setFormData({ ...formData, personId: e.target.value })
+                        setFormData({
+                            ...formData,
+                            person: { ...formData.person, name: e.target.value },
+                        })
                     }
-                >
-                    <option value="" disabled>
-                        Select a person
-                    </option>
-                    {people?.map((p)=> (
-                        <option
-                            selected={student?.person === p.id}
-                            key={p.id}
-                            value={p.id}>{p.name}</option>
-                    ))}
-                </select>
+                />
             </div>
 
-            <div className="control">
-                <label htmlFor="dailyDoals">Daily goals</label>
-                <input/>
+            <div className="birthdate">
+                <label htmlFor="birthdate">Birthdate</label>
+                <input
+                    type="text"
+                    id="birthdate"
+                    value={formData.person.birthdate}
+                    onChange={(e) =>
+                        setFormData({
+                            ...formData,
+                            person: { ...formData.person, birthdate: e.target.value },
+                        })
+                    }
+                />
             </div>
 
             <div className="control">
                 <label htmlFor="grade">Grade:</label>
                 <input
-                    name="grade"
+                    type="text"
                     id="grade"
                     value={formData.gradeClass}
-                    onChange={(e) =>
-                        setFormData({ ...formData, gradeClass: e.target.value })
-                    }
-                >
-                </input>
+                    onChange={(e) => setFormData({ ...formData, gradeClass: e.target.value })}
+                />
             </div>
 
             <div className="control">
                 <label htmlFor="school">School:</label>
                 <select
-                    name="school"
                     id="school"
-                    value={formData.schoolId}
+                    value={formData.school.id}
                     onChange={(e) =>
-                        setFormData({ ...formData, schoolId: e.target.value })
+                        setFormData({
+                            ...formData,
+                            school: { ...formData.school, id: e.target.value },
+                        })
                     }
                 >
                     <option value="" disabled>
                         Select a school
                     </option>
-                    {schools?.map((p)=> (
+                    {schools?.map((p) => (
                         <option
-                            selected={student?.school === p.id}
+                            selected={student?.school.id === p.id}
                             key={p.id}
-                            value={p.id}>{p.name}</option>
+                            value={p.id}
+                        >
+                            {p.name}
+                        </option>
                     ))}
                 </select>
             </div>
-
 
             <div className="buttons">
                 <button type="submit" disabled={disabled}>
