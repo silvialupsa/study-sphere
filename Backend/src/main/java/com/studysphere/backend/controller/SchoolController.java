@@ -2,6 +2,7 @@ package com.studysphere.backend.controller;
 
 
 import com.studysphere.backend.model.School;
+import com.studysphere.backend.model.SchoolInspectorate;
 import com.studysphere.backend.service.SchoolService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,11 @@ public class SchoolController {
     public ResponseEntity<List<School>> getAllSchools() {
         return ResponseEntity.ok(schoolService.getAllSchools());
     }
-
+    @PostMapping("/addAll")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<List<School>> adAllInspectorates(@RequestBody List<School> schools){
+        return ResponseEntity.ok(schoolService.addAllSchools(schools));
+    }
     @PostMapping("/add")
     public void postSchool(@RequestBody School school) {
         schoolService.addSchool(school);
