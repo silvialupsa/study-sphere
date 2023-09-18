@@ -19,6 +19,12 @@ public class InspectorateController {
         return ResponseEntity.ok(inspectorateService.getAllInspectorates());
     }
 
+    @PostMapping("/addAll")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<List<SchoolInspectorate>> adAllInspectorates(@RequestBody List<SchoolInspectorate> inspectorates){
+        return ResponseEntity.ok(inspectorateService.addAllInspectorates(inspectorates));
+    }
+
     @PostMapping(value = "/add")
     public void postInspectorate(@RequestBody SchoolInspectorate inspectorate){
         inspectorateService.addInspectorate(inspectorate);

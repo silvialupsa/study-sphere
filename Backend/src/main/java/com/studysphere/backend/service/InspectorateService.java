@@ -12,6 +12,9 @@ import java.util.*;
 public class InspectorateService {
     private final InspectorateRepository inspectorateRepository;
 
+    public List<SchoolInspectorate> addAllInspectorates(List<SchoolInspectorate> inspectorates){
+        return inspectorateRepository.saveAll(inspectorates);
+    }
     public List<SchoolInspectorate> getAllInspectorates(){
        return inspectorateRepository.findAll();
     }
