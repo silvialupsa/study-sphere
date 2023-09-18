@@ -19,6 +19,7 @@ public class Person {
     @Id
     @GeneratedValue
     private Long id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private LocalDate birthdate;
 }
