@@ -20,7 +20,7 @@ public class SchoolInspectorate {
     private String address;
     private String county;
 
-    @JsonManagedReference("inspectorate-schools")
-    @OneToMany(mappedBy = "schoolInspectorate", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    @OneToMany(mappedBy = "schoolInspectorate", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<School> schoolList;
 }

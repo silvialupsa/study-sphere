@@ -26,7 +26,6 @@ public class School {
 
     @ManyToOne
     @JoinColumn(name = "inspectorates.id", nullable = false)
-    @JsonBackReference("inspectorate-schools")
     private SchoolInspectorate schoolInspectorate;
 
     @OneToOne
@@ -34,11 +33,11 @@ public class School {
 
 
     @JsonIgnore
-    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Grade> gradeList;
 
-    @JsonManagedReference("school-students")
-    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Student> studentList;
 
     @Enumerated(EnumType.STRING)

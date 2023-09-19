@@ -13,6 +13,7 @@ import java.util.*;
 @RequiredArgsConstructor
 public class SchoolService {
     private final SchoolRepository schoolRepository;
+    private final InspectorateRepository inspectorateRepository;
     public List<School> getAllSchools(){
         return schoolRepository.findAll();
     }
@@ -22,5 +23,10 @@ public class SchoolService {
     }
     public void addSchool(School school){
         schoolRepository.save(school);
+    }
+
+    public  List<School> findSchoolsBySchoolInspectorate(Long id){
+        SchoolInspectorate inspectorate = inspectorateRepository.findById(id).orElse(null);
+        return schoolRepository.findSchoolsBySchoolInspectorate(inspectorate);
     }
 }
