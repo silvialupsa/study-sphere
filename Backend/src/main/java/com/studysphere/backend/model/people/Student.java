@@ -53,7 +53,6 @@ public class Student {
 //    @ManyToMany(mappedBy = "children")
 //    private Set<Parent> parents= new HashSet<>();
 
-    @JsonBackReference("school-students")
     @ManyToOne
     @JoinColumn(name = "schools.id", nullable = false)
     private School school;
