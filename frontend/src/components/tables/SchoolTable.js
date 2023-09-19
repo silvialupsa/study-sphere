@@ -1,6 +1,7 @@
 import React from 'react';
 
 const SchoolTable = ({schools}) => {
+    // console.log(schools)
     return (
         <div className="School-table">
             <h2>School List</h2>

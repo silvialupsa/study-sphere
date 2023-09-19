@@ -21,15 +21,23 @@ public class SchoolController {
     public ResponseEntity<List<School>> getAllSchools() {
         return ResponseEntity.ok(schoolService.getAllSchools());
     }
+
     @PostMapping("/addAll")
     @CrossOrigin(origins = "*")
-    public ResponseEntity<List<School>> adAllInspectorates(@RequestBody List<School> schools){
+    public ResponseEntity<List<School>> adAllInspectorates(@RequestBody List<School> schools) {
         return ResponseEntity.ok(schoolService.addAllSchools(schools));
     }
+
     @PostMapping("/add")
     @CrossOrigin(origins = "*")
     public void postSchool(@RequestBody School school) {
         schoolService.addSchool(school);
+    }
+
+    @GetMapping("/inspectorate/{id}")
+    @CrossOrigin("*")
+    public ResponseEntity<List<School>> getByInspectorateId(@PathVariable Long id) {
+        return ResponseEntity.ok(schoolService.findSchoolsBySchoolInspectorate(id));
     }
 
 }
