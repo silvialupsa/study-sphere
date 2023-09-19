@@ -1,6 +1,6 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import SchoolTable from "../../components/tables/SchoolTable";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 const fetchInspectorate = (id) => {
     return fetch(`/inspectorates/${id}`).then((res)=> res.json())
@@ -21,6 +21,9 @@ const SchoolsForInspectorate = () => {
 
     return (
         <div>
+            <Link to={`/createSchool`}>
+                <button type="button">Create School</button>
+            </Link>
             <SchoolTable
             schools={schools}
             />

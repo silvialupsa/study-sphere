@@ -18,7 +18,6 @@ const SchoolList = () => {
 
     return (
         <div>
-            {/*<Link to='/createSchool'>Create School</Link>*/}
             <Link to={`/createSchool`}>
                 <button type="button">Create School</button>
             </Link>
