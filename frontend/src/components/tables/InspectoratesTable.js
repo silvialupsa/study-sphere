@@ -1,50 +1,34 @@
-import React, {useState} from 'react';
-import { useNavigate} from "react-router-dom";
+import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 const InspectoratesTable = ({ inspectorates }) => {
-const navigate = useNavigate();
-    const checkSchools = (id) =>{
-        navigate(`/checkSchools/${id}`)
+    const navigate = useNavigate();
+
+    const checkSchools = (id) => {
+        navigate(`/checkSchools/${id}`);
     }
 
     return (
         <div className="Inspectorates-table">
             <h2>Inspectorates List</h2>
-            <table className="table table-striped">
-                <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">County</th>
-                    <th scope="col">Schools</th>
-                </tr>
-                </thead>
-                <tbody>
+            <div className="row">
                 {inspectorates?.map((inspectorate) => (
-                    <tr key={inspectorate.id}>
-                        <td>{inspectorate.id}</td>
-                        <td>{inspectorate.name}</td>
-                        <td>{inspectorate.email}</td>
-                        <td>{inspectorate.phoneNumber}</td>
-                        <td>{inspectorate.address}</td>
-                        <td>{inspectorate.county}</td>
-                        <td>
-                        <button onClick={() =>checkSchools(inspectorate.id)}>Check Schools</button>
-                        </td>
-                    </tr>
+                    <div key={inspectorate.id} className="col-md-4 mb-4">
+                        <div className="card">
+                            <div className="card-body">
+                                <h5 className="card-title">{inspectorate.name}</h5>
+                                <p className="card-text">Email: {inspectorate.email}</p>
+                                <p className="card-text">Phone Number: {inspectorate.phoneNumber}</p>
+                                <p className="card-text">Address: {inspectorate.address}</p>
+                                <p className="card-text">County: {inspectorate.county}</p>
+                                <button onClick={() => checkSchools(inspectorate.id)}>Check Schools</button>
+                            </div>
+                        </div>
+                    </div>
                 ))}
-                </tbody>
-            </table>
+            </div>
         </div>
     );
 };
 
 export default InspectoratesTable;
-{/*<td>{inspectorates.schoolList?.map((school)=> (*/}
-{/*    inspectorates.schoolList.indexOf(school) === inspectorates.schoolList.length-1?*/}
-{/*    <span>{school.name} </span>  :*/}
-{/*        <span>{school.name}, </span>*/}
-{/*))}</td>*/}
