@@ -1,6 +1,18 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
-const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) => {
+const StudentForm = ({onSave, disabled, student, onCancel, schools, grades}) => {
+    const fetchGradesBySchoolId = () => {
+        return fetch(`/grades/school/${schoolId}`).then((res) => res.json())
+    };
+
+    const [gradesBySchoolId, setGradesBySchoolId] = useState([]);
+    const [schoolId, setSchoolId] = useState(0);
+    useEffect(() => {
+        fetchGradesBySchoolId().then((gradesBySchoolId) => {
+            setGradesBySchoolId(gradesBySchoolId);
+        });
+    }, [])
     const [formData, setFormData] = useState({
         person: {
             firstName: "",
@@ -29,13 +41,12 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
             },
         };
 
-        // Call the onSave function with the student data
         onSave(studentData);
     };
 
     return (
         <form className="StudentForm" onSubmit={onSubmit}>
-            {student && <input type="hidden" name="id" defaultValue={student.id} />}
+            {student && <input type="hidden" name="id" defaultValue={student.id}/>}
 
             <div className="person">
                 <label htmlFor="firstName">First name</label>
@@ -46,24 +57,24 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
                     onChange={(e) =>
                         setFormData({
                             ...formData,
-                            person: { ...formData.person, firstName: e.target.value },
+                            person: {...formData.person, firstName: e.target.value},
                         })
                     }
                 />
             </div>
             <div>
-            <label htmlFor="lastName">Last name</label>
-            <input
-                type="text"
-                id="name"
-                value={formData.person.lastName}
-                onChange={(e) =>
-                    setFormData({
-                        ...formData,
-                        person: { ...formData.person, lastName: e.target.value },
-                    })
-                }
-            />
+                <label htmlFor="lastName">Last name</label>
+                <input
+                    type="text"
+                    id="name"
+                    value={formData.person.lastName}
+                    onChange={(e) =>
+                        setFormData({
+                            ...formData,
+                            person: {...formData.person, lastName: e.target.value},
+                        })
+                    }
+                />
             </div>
             <div className="birthdate">
                 <label htmlFor="birthdate">Birthdate</label>
@@ -74,38 +85,38 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
                     onChange={(e) =>
                         setFormData({
                             ...formData,
-                            person: { ...formData.person, birthdate: e.target.value },
+                            person: {...formData.person, birthdate: e.target.value},
                         })
                     }
                 />
             </div>
 
             <div className="control">
-            <label htmlFor="school">School:</label>
-            <select
-                id="school"
-                value={formData.school.id}
-                onChange={(e) =>
-                    setFormData({
-                        ...formData,
-                        school: { ...formData.school, id: e.target.value },
-                    })
-                }
-            >
-                <option value="" disabled>
-                    Select a grade
-                </option>
-                {schools?.map((p) => (
-                    <option
-                        selected={student?.school.id === p.id}
-                        key={p.id}
-                        value={p.id}
-                    >
-                        {p.name}
+                <label htmlFor="school">School:</label>
+                <select
+                    id="school"
+                    value={formData?.school?.id}
+                    onChange={(e) =>
+                        setFormData({
+                            ...formData,
+                            schools: {...formData.schools, id: e.target.value},
+                        })
+                    }
+                >
+                    <option value="" disabled>
+                        Select a school
                     </option>
-                ))}
-            </select>
-        </div>
+                    {schools?.map((sc) => (
+                        <option
+                            selected={student?.school.id === sc.id}
+                            key={sc.id}
+                            value={sc.id}
+                        >
+                            {sc.name}
+                        </option>
+                    ))}
+                </select>
+            </div>
             <div className="control">
                 <label htmlFor="gradeClass">Grade:</label>
                 <select
@@ -114,7 +125,7 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
                     onChange={(e) =>
                         setFormData({
                             ...formData,
-                            gradeClass: { ...formData.gradeClass},
+                            gradeClass: e.target.value,
                         })
                     }
                 >
@@ -132,7 +143,6 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
                     ))}
                 </select>
             </div>
-
 
 
             <div className="buttons">

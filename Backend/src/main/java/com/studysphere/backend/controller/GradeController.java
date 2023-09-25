@@ -1,6 +1,7 @@
 package com.studysphere.backend.controller;
 
 import com.studysphere.backend.model.Grade;
+import com.studysphere.backend.model.SchoolInspectorate;
 import com.studysphere.backend.service.GradeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,12 +17,18 @@ public class GradeController {
 
     @GetMapping("/all")
     @CrossOrigin("*")
-    public ResponseEntity<List<Grade>> getAll(){
+    public ResponseEntity<List<Grade>> getAll() {
         return ResponseEntity.ok(gradeService.getAllGrades());
     }
 
     @PostMapping("/add")
-    public void postGrade(@RequestBody Grade grade){
+    public void postGrade(@RequestBody Grade grade) {
         gradeService.addGrade(grade);
+    }
+    
+    @GetMapping("/school/{id}")
+    @CrossOrigin("*")
+    public ResponseEntity<List<Grade>> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(gradeService.findGradesBySchoolId(id));
     }
 }

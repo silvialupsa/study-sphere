@@ -39,7 +39,6 @@ const StudentCreator = () => {
 
 
     useEffect(() => {
-        // Fetch data when the component mounts
         fetchSchools().then((schools) => { setSchools(schools); });
         fetchPeople().then((people) => { setPeople(people); });
         fetchGrades().then((grades) => { setGrades(grades); });
