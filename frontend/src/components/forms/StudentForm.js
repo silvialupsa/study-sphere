@@ -1,18 +1,8 @@
 import React, {useEffect, useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {logDOM} from "@testing-library/react";
 
-const StudentForm = ({onSave, disabled, student, onCancel, schools, grades}) => {
-    const fetchGradesBySchoolId = () => {
-        return fetch(`/grades/school/${schoolId}`).then((res) => res.json())
-    };
+const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) => {
 
-    const [gradesBySchoolId, setGradesBySchoolId] = useState([]);
-    const [schoolId, setSchoolId] = useState(0);
-    useEffect(() => {
-        fetchGradesBySchoolId().then((gradesBySchoolId) => {
-            setGradesBySchoolId(gradesBySchoolId);
-        });
-    }, [])
     const [formData, setFormData] = useState({
         person: {
             firstName: "",
@@ -25,6 +15,19 @@ const StudentForm = ({onSave, disabled, student, onCancel, schools, grades}) => 
         },
     });
 
+    const [gradesBySchoolId, setGradesBySchoolId] = useState([]);
+    const [schoolId, setSchoolId] = useState(1);
+
+    const fetchGradesBySchoolId = () => {
+        return fetch(`/grades/school/${schoolId}`).then((res) => res.json())
+    };
+
+    useEffect(() => {
+        fetchGradesBySchoolId().then((gradesBySchoolId) => {
+            setGradesBySchoolId(gradesBySchoolId);
+        });
+    }, [formData.school.id]);
+
     const onSubmit = (e) => {
         e.preventDefault();
 
@@ -35,7 +38,6 @@ const StudentForm = ({onSave, disabled, student, onCancel, schools, grades}) => 
                 birthdate: formData.person.birthdate,
             },
             gradeClass: formData.gradeClass,
-            calendar: null,
             school: {
                 id: formData.school.id,
             },
@@ -46,18 +48,18 @@ const StudentForm = ({onSave, disabled, student, onCancel, schools, grades}) => 
 
     return (
         <form className="StudentForm" onSubmit={onSubmit}>
-            {student && <input type="hidden" name="id" defaultValue={student.id}/>}
+            {student && <input type="hidden" name="id" defaultValue={student.id} />}
 
             <div className="person">
                 <label htmlFor="firstName">First name</label>
                 <input
                     type="text"
                     id="name"
-                    value={formData.person.firstName}
+                    value={formData?.person?.firstName}
                     onChange={(e) =>
                         setFormData({
                             ...formData,
-                            person: {...formData.person, firstName: e.target.value},
+                            person: { ...formData.person, firstName: e.target.value },
                         })
                     }
                 />
@@ -67,11 +69,11 @@ const StudentForm = ({onSave, disabled, student, onCancel, schools, grades}) => 
                 <input
                     type="text"
                     id="name"
-                    value={formData.person.lastName}
+                    value={formData?.person?.lastName}
                     onChange={(e) =>
                         setFormData({
                             ...formData,
-                            person: {...formData.person, lastName: e.target.value},
+                            person: { ...formData.person, lastName: e.target.value },
                         })
                     }
                 />
@@ -81,11 +83,11 @@ const StudentForm = ({onSave, disabled, student, onCancel, schools, grades}) => 
                 <input
                     type="date"
                     id="birthdate"
-                    value={formData.person.birthdate}
+                    value={formData?.person?.birthdate}
                     onChange={(e) =>
                         setFormData({
                             ...formData,
-                            person: {...formData.person, birthdate: e.target.value},
+                            person: { ...formData.person, birthdate: e.target.value },
                         })
                     }
                 />
@@ -96,23 +98,25 @@ const StudentForm = ({onSave, disabled, student, onCancel, schools, grades}) => 
                 <select
                     id="school"
                     value={formData?.school?.id}
-                    onChange={(e) =>
+                    onChange={(e) => {
                         setFormData({
                             ...formData,
-                            schools: {...formData.schools, id: e.target.value},
+                            school: {...formData.school, id: e.target.value},
                         })
+                        setSchoolId(e.target.value);
+                    }
                     }
                 >
                     <option value="" disabled>
                         Select a school
                     </option>
-                    {schools?.map((sc) => (
+                    {schools?.map((p) => (
                         <option
-                            selected={student?.school.id === sc.id}
-                            key={sc.id}
-                            value={sc.id}
+                            selected={student?.school.id === p.id}
+                            key={p.id}
+                            value={p.id}
                         >
-                            {sc.name}
+                            {p.name}
                         </option>
                     ))}
                 </select>
@@ -121,7 +125,7 @@ const StudentForm = ({onSave, disabled, student, onCancel, schools, grades}) => 
                 <label htmlFor="gradeClass">Grade:</label>
                 <select
                     id="grade"
-                    value={formData.gradeClass}
+                    value={formData?.gradeClass}
                     onChange={(e) =>
                         setFormData({
                             ...formData,
@@ -132,17 +136,18 @@ const StudentForm = ({onSave, disabled, student, onCancel, schools, grades}) => 
                     <option value="" disabled>
                         Select a grade
                     </option>
-                    {grades?.map((g) => (
+                    {gradesBySchoolId?.map((g) => (
                         <option
                             selected={student?.gradeClass === g.gradeClass}
                             key={g.id}
-                            value={g.id}
+                            value={g.gradeClass}
                         >
                             {g.gradeClass}
                         </option>
                     ))}
                 </select>
             </div>
+
 
 
             <div className="buttons">
