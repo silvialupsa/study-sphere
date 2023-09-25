@@ -1,6 +1,19 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
+import {logDOM} from "@testing-library/react";
 
 const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) => {
+    // const fetchGradesBySchoolId = () => {
+    //     return fetch(`/grades/school/${schoolId}`).then((res) => res.json())
+    // };
+    //
+    // const [gradesBySchoolId, setGradesBySchoolId] = useState([]);
+    // const [schoolId, setSchoolId] = useState(0);
+    // useEffect(() => {
+    //     fetchGradesBySchoolId().then((gradesBySchoolId) => {
+    //         setGradesBySchoolId(gradesBySchoolId);
+    //     });
+    // }, []);
+
     const [formData, setFormData] = useState({
         person: {
             firstName: "",
@@ -23,7 +36,6 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
                 birthdate: formData.person.birthdate,
             },
             gradeClass: formData.gradeClass,
-            calendar: null,
             school: {
                 id: formData.school.id,
             },
@@ -42,7 +54,7 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
                 <input
                     type="text"
                     id="name"
-                    value={formData.person.firstName}
+                    value={formData?.person?.firstName}
                     onChange={(e) =>
                         setFormData({
                             ...formData,
@@ -56,7 +68,7 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
             <input
                 type="text"
                 id="name"
-                value={formData.person.lastName}
+                value={formData?.person?.lastName}
                 onChange={(e) =>
                     setFormData({
                         ...formData,
@@ -70,7 +82,7 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
                 <input
                     type="date"
                     id="birthdate"
-                    value={formData.person.birthdate}
+                    value={formData?.person?.birthdate}
                     onChange={(e) =>
                         setFormData({
                             ...formData,
@@ -84,16 +96,17 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
             <label htmlFor="school">School:</label>
             <select
                 id="school"
-                value={formData.school.id}
+                value={formData?.school?.id}
                 onChange={(e) =>
                     setFormData({
                         ...formData,
                         school: { ...formData.school, id: e.target.value },
                     })
+
                 }
             >
                 <option value="" disabled>
-                    Select a grade
+                    Select a school
                 </option>
                 {schools?.map((p) => (
                     <option
@@ -110,11 +123,11 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
                 <label htmlFor="gradeClass">Grade:</label>
                 <select
                     id="grade"
-                    value={formData.gradeClass}
+                    value={formData?.gradeClass}
                     onChange={(e) =>
                         setFormData({
                             ...formData,
-                            gradeClass: { ...formData.gradeClass},
+                            gradeClass: e.target.value,
                         })
                     }
                 >
@@ -125,7 +138,7 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
                         <option
                             selected={student?.gradeClass === g.gradeClass}
                             key={g.id}
-                            value={g.id}
+                            value={g.gradeClass}
                         >
                             {g.gradeClass}
                         </option>

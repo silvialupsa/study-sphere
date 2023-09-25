@@ -54,7 +54,8 @@ const StudentTable = ({ students, onDelete }) => {
                     <div key={student.id} className="col-md-4 mb-4">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">{student.person.name}</h5>
+                                <h5 className="card-title">{student.person.firstName}</h5>
+                                <h5 className="card-title">{student.person.lastName}</h5>
                                 <p className="card-text">Birthdate: {student.person.birthdate}</p>
                                 <p className="card-text">Grade Class: {student.gradeClass}</p>
                                 <div className="d-flex justify-content-between">
