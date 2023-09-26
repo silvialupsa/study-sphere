@@ -14,7 +14,10 @@ import java.util.*;
 @RequiredArgsConstructor
 public class GradeService {
     private final GradeRepository gradeRepository;
+<<<<<<< Updated upstream
     private final SchoolRepository schoolRepository;
+=======
+>>>>>>> Stashed changes
 
     public List<Grade> getAllGrades(){
         return gradeRepository.findAll();
