@@ -47,17 +47,7 @@ private final StudentService studentService;
     @PutMapping("/update/{id}")
     @CrossOrigin("*")
     public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Student updatedStudent) {
-        Student existingStudent = studentService.findById(id);
-        if (existingStudent == null) {
-            return ResponseEntity.notFound().build();
-        }
-
-        // Update the existing student's information
-        existingStudent.setGradeClass(updatedStudent.getGradeClass());
-
-        // Add more fields to update as needed
-
-        studentService.update(existingStudent);
+        studentService.update(id, updatedStudent);
         return ResponseEntity.ok("Student with ID " + id + " updated successfully");
     }
 }

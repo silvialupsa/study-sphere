@@ -41,13 +41,15 @@ const fetchStudent = (id) => {
 const StudentUpdater =() =>{
     const {id} = useParams();
     const navigate = useNavigate();
-    const [student, setStudent] = useState(null);
+    const [student, setStudent] = useState({});
     const [schools, setSchools] = useState([]);
     const [people, setPeople] = useState([]);
     const [grades, setGrades] = useState([]);
 
     useEffect(() => {
-        fetchStudent(id).then((student)=> setStudent(student))
+        fetchStudent(id).then(student=> {
+            console.log(student);
+            setStudent(student)})
         // Fetch data when the component mounts
         fetchSchools().then((schools) => { setSchools(schools); });
         fetchPeople().then((people) => { setPeople(people); });
@@ -56,10 +58,6 @@ const StudentUpdater =() =>{
 
     const handleUpdateStudent = (student) => {
         console.log(student)
-        if (!student.id || student.id === "") {
-            console.error("Student ID is missing or invalid.");
-            return;
-        }
         updateStudent(student).then(()=>{
             navigate("/students");
         })
@@ -76,7 +74,6 @@ const StudentUpdater =() =>{
             grades={grades}
         />
     )
-
 }
 
 export default StudentUpdater

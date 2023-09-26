@@ -3,20 +3,24 @@ import {logDOM} from "@testing-library/react";
 
 const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) => {
 
+    console.log(student);
     const [formData, setFormData] = useState({
         person: {
-            firstName: "",
-            lastName: "",
-            birthdate: "",
+            firstName: student?.person?.firstName || "",
+            lastName: student?.person?.lastName || "",
+            birthdate: student?.person?.birthdate || "",
         },
-        gradeClass: "",
+        gradeClass: student?.gradeClass || "",
         school: {
-            id: "",
-        },
+            id: student?.school?.id || ""
+        }
     });
+
+    console.log(formData)
 
     const [gradesBySchoolId, setGradesBySchoolId] = useState([]);
     const [schoolId, setSchoolId] = useState(1);
+
 
     const fetchGradesBySchoolId = () => {
         return fetch(`/grades/school/${schoolId}`).then((res) => res.json())
@@ -33,13 +37,13 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
 
         const studentData = {
             person: {
-                firstName: formData.person.firstName,
-                lastName: formData.person.lastName,
-                birthdate: formData.person.birthdate,
+                firstName: formData?.person?.firstName,
+                lastName: formData?.person.lastName,
+                birthdate: formData?.person.birthdate,
             },
-            gradeClass: formData.gradeClass,
+            gradeClass: formData?.gradeClass,
             school: {
-                id: formData.school.id,
+                id: formData?.school?.id,
             },
         };
 
@@ -56,11 +60,12 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
                     type="text"
                     id="name"
                     value={formData?.person?.firstName}
-                    onChange={(e) =>
+                    onChange={(e) => {
                         setFormData({
                             ...formData,
-                            person: { ...formData.person, firstName: e.target.value },
+                            person: {...formData.person, firstName: e.target.value},
                         })
+                    }
                     }
                 />
             </div>
@@ -112,7 +117,7 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
                     </option>
                     {schools?.map((p) => (
                         <option
-                            selected={student?.school.id === p.id}
+                            // selected={student?.school.id === p.id}
                             key={p.id}
                             value={p.id}
                         >
@@ -138,7 +143,7 @@ const StudentForm = ({ onSave, disabled, student, onCancel, schools, grades }) =
                     </option>
                     {gradesBySchoolId?.map((g) => (
                         <option
-                            selected={student?.gradeClass === g.gradeClass}
+                            // selected={student?.gradeClass === g.gradeClass}
                             key={g.id}
                             value={g.gradeClass}
                         >
