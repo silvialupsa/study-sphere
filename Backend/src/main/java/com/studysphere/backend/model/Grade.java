@@ -20,6 +20,10 @@ public class Grade {
     private GradeClass gradeClass;
     private String name;
 
+<<<<<<< Updated upstream
+=======
+   @JsonIgnore
+>>>>>>> Stashed changes
     @ManyToOne
     @JoinColumn(name = "school.id")
     private School school;

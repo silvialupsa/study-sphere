@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 import {useNavigate, useParams} from 'react-router-dom';
 import StudentForm from "../forms/StudentForm";
 const updateStudent = (student) => {
-    console.log("Request Data:", JSON.stringify(student.id));
+    console.log("Request Data:", JSON.stringify(student));
 
     return fetch(`/students/update/${student.id}`, {
         method: "PUT",
