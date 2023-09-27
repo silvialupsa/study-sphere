@@ -58,9 +58,8 @@ public class StudentService {
         studentRepository.deleteAll();
     }
 
+    @Transactional
     public Student update(Student student) {
-
         return studentRepository.save(student);
     }
-
 }
