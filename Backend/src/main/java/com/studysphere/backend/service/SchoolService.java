@@ -13,11 +13,8 @@ import java.util.*;
 @RequiredArgsConstructor
 public class SchoolService {
     private final SchoolRepository schoolRepository;
-<<<<<<< Updated upstream
     private final InspectorateRepository inspectorateRepository;
-=======
 
->>>>>>> Stashed changes
     public List<School> getAllSchools(){
         return schoolRepository.findAll();
     }

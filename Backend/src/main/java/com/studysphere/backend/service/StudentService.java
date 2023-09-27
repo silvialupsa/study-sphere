@@ -59,8 +59,7 @@ public class StudentService {
     }
 
     @Transactional
-    public Student update(Long id, Student updatedStudent) {
-        updatedStudent.setId(id);
-        return studentRepository.save(updatedStudent);
+    public Student update(Student student) {
+        return studentRepository.save(student);
     }
 }
