@@ -4,8 +4,13 @@ import {NavDropdown} from "react-bootstrap";
 import logo from '../../images/white-no-bg.png';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {useNavigate} from 'react-router-dom';
 
 const NavBar = () => {
+    const navigate = useNavigate();
+    const handleLogInButton = (school) => {
+            navigate("/login")
+    };
     return (<div>
         {/*<nav className={`navbar navbar-expand-md navbar-light nav-underline`}>*/}
         {/*    <img id="logo" src={logo} width={80} alt="logo"/>*/}
@@ -92,7 +97,7 @@ const NavBar = () => {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <button className="log-in mx-3">
+                            <button className="log-in mx-3" onClick={handleLogInButton}>
                                 Log in
                             </button>
                         </li>

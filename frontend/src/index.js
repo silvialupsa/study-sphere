@@ -16,6 +16,7 @@ import StudentUpdater from "./components/updaters/StudentUpdater";
 import AuxiliaryPage from "./pages/AuxiliaryPage";
 import SchoolCreator from "./components/creators/SchoolCreator";
 import SchoolsForInspectorate from "./pages/lists/SchoolsForInspectoratesList";
+import LogIn from "./pages/LogIn";
 
 const root = document.getElementById('root');
 
@@ -36,7 +37,7 @@ ReactDOM.render(
                 <Route path="/students/update/:id" element={<StudentUpdater/>}/>
                 <Route path="/createSchool" element={<SchoolCreator/>}/>
                 <Route path="/checkSchools/:id" element={<SchoolsForInspectorate/>}/>
-
+                <Route path="/login" element={<LogIn/>}/>
             </Routes>
         </Router>
     </React.StrictMode>,

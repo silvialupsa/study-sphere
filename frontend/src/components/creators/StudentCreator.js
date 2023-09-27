@@ -16,8 +16,6 @@ const createStudent = (student) => {
     }).then((res) => res.json());
 }
 
-
-
 const fetchSchools = () => {
     return fetch("/schools/all").then((res) => res.json());
 };

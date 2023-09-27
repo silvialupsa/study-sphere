@@ -18,9 +18,10 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
 
     public AuthenticationResponse register(RegisterRequest request) {
+        System.out.println(request);
         var user= Person.builder()
-                .firstName(request.getFirstname())
-                .lastName(request.getLastname())
+                .firstName(request.getFirstName())
+                    .lastName(request.getLastName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(request.getRole())
