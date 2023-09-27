@@ -13,11 +13,10 @@ import java.util.List;
 @RequestMapping("/students")
 @RequiredArgsConstructor
 public class StudentController {
-    private final StudentService studentService;
-
+private final StudentService studentService;
     @GetMapping("/all")
     @CrossOrigin("*")
-    public ResponseEntity<List<Student>> getAll() {
+    public ResponseEntity<List<Student>> getAll(){
         return ResponseEntity.ok(studentService.getAll());
     }
 
@@ -35,9 +34,9 @@ public class StudentController {
 
     @DeleteMapping("/delete/{id}")
     @CrossOrigin("*")
-    public ResponseEntity<Long> deleteStudent(@PathVariable Long id) {
+    public ResponseEntity<Long> deleteStudent(@PathVariable Long id){
         boolean isRemoved = studentService.removeById(id);
-        if (isRemoved) {
+        if(isRemoved){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(id, HttpStatus.OK);
