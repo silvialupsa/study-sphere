@@ -1,9 +1,8 @@
 package com.studysphere.backend.security.auth;
 
+import com.studysphere.backend.repository.PersonRepository;
 import com.studysphere.backend.security.config.JwtService;
-import com.studysphere.backend.security.user.Role;
-import com.studysphere.backend.security.user.User;
-import com.studysphere.backend.security.user.UserRepository;
+import com.studysphere.backend.model.people.Person;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,18 +12,18 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
-    private final UserRepository repository;
+    private final PersonRepository repository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
     public AuthenticationResponse register(RegisterRequest request) {
-        var user= User.builder()
-                .firstname(request.getFirstname())
-                .lastname(request.getLastname())
+        var user= Person.builder()
+                .firstName(request.getFirstname())
+                .lastName(request.getLastname())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.USER)
+                .role(request.getRole())
                 .build();
         repository.save(user);
         var jwtToken = jwtService.generateToken(user);

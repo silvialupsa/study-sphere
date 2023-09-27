@@ -53,7 +53,7 @@ const StudentForm = ({
             <div className="mb-3">
                 <label htmlFor="person.firstName" className="form-label">First Name:</label>
                 <input
-                    defaultValue={student ? student.person.firstName : ""}
+                    defaultValue={student ? student.person?.firstName : ""}
                     name="person.firstName"
                     id="person.firstName"
                     className="form-control"
@@ -63,7 +63,7 @@ const StudentForm = ({
             <div className="mb-3">
                 <label htmlFor="person.lastName" className="form-label">Last Name:</label>
                 <input
-                    defaultValue={student ? student.person.lastName : ""}
+                    defaultValue={student ? student.person?.lastName : ""}
                     name="person.lastName"
                     id="person.lastName"
                     className="form-control"
@@ -73,7 +73,7 @@ const StudentForm = ({
             <div className="mb-3">
                 <label htmlFor="person.birthdate" className="form-label">Birthdate:</label>
                 <input
-                    defaultValue={student ? student.person.birthdate : ""}
+                    defaultValue={student ? student.person?.birthdate : ""}
                     type="date"
                     name="person.birthdate"
                     id="person.birthdate"
@@ -86,12 +86,12 @@ const StudentForm = ({
                 <select
                     name="school"
                     id="school"
-                    defaultValue={student ? student.school.name : ""}
+                    defaultValue={student ? student.school?.name : ""}
                     onChange={(e) => setSchoolId(e.target.value)}
                     className="form-select"
                 >
                     <option value="" disabled>
-                        {student && student.school ? student.school.name : "Select a school"}
+                        {student && student.school ? student.school?.name : "Select a school"}
                     </option>
                     {schools?.map((sc) => (
                         <option
