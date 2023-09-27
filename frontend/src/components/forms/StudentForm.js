@@ -10,16 +10,26 @@ const StudentForm = ({
 
     const [gradesBySchoolId, setGradesBySchoolId] = useState([]);
     const [schoolId, setSchoolId] = useState(student?.school?.id);
+    const [showGrades, setShowGrades] = useState(false);
 
     const fetchGradesBySchoolId = () => {
         return fetch(`/grades/school/${schoolId}`).then((res) => res.json())
     };
 
+
     useEffect(() => {
-        fetchGradesBySchoolId().then((gradesBySchoolId) => {
-            setGradesBySchoolId(gradesBySchoolId);
-        });
-    }, [student?.school?.id]);
+        if (schoolId) {
+            fetchGradesBySchoolId().then((grades) => {
+                setGradesBySchoolId(grades);
+                setShowGrades(true);
+                console.log(grades)
+            });
+        } else {
+            // Reset grades and show message if schoolId is empty or undefined
+            setGradesBySchoolId([]);
+            setShowGrades(false);
+        }
+    }, [schoolId]);
 
     console.log(gradesBySchoolId)
     const onSubmit = (e) => {
@@ -29,12 +39,12 @@ const StudentForm = ({
         const studentData = {
             id: formData.get("id"),
             person: {
-                id: formData.get("person.id"),
+                // id: formData.get("person.id"),
                 firstName: formData.get("person.firstName"),
                 lastName: formData.get("person.lastName"),
                 birthdate: formData.get("person.birthdate"),
             },
-            gradeClass: formData.get("gradeClass"),
+            gradeClass: formData.get("gradeClass") ,
             school: {
                 id: parseInt(formData.get("school")),
             },
@@ -78,9 +88,14 @@ const StudentForm = ({
 
             <div className="control">
                 <label htmlFor="school">School:</label>
-                <select name="school" id="school" defaultValue={student?.school?.id}>
+                <select
+                    name="school"
+                    id="school"
+                    defaultValue={student ? student.school.name : ""}
+                    onChange={(e) => setSchoolId(e.target.value)}
+                >
                     <option value="" disabled>
-                        Select a school
+                        {student && student.school ? student.school.name : "Select a school"}
                     </option>
                     {schools?.map((sc) => (
                         <option
@@ -93,23 +108,41 @@ const StudentForm = ({
                 </select>
             </div>
 
-            
-            {/*<div className="control">*/}
-            {/*    <label htmlFor="gradeClass">Grade:</label>*/}
-            {/*    <select name="gradeClass" id="gradeClass" defaultValue={student?.gradeClass}>*/}
-            {/*        <option value="" disabled>*/}
-            {/*            Select a grade*/}
-            {/*        </option>*/}
-            {/*        {gradesBySchoolId?.map((gr) => (*/}
-            {/*            <option*/}
-            {/*                key={gr.id}*/}
-            {/*                value={gr.id}*/}
-            {/*            >*/}
-            {/*                {gr.name}*/}
-            {/*            </option>*/}
-            {/*        ))}*/}
-            {/*    </select>*/}
-            {/*</div>*/}
+
+            {showGrades && (
+                <div className="control">
+                    <label htmlFor="gradeClass">New Grade:</label>
+                    <select name="gradeClass"
+                            id="gradeClass"
+                            defaultValue= {student? student.gradeClass : "" }>
+                        <option value="" disabled selected>
+                            Select a new grade
+                        </option>
+                        {gradesBySchoolId?.map((gr) => {
+                            return (
+                                <option
+                                    selected={student?.gradeClass === gr.gradeClass}
+                                    key={gr.gradeClass}
+                                    value={gr.gradeClass}
+                                >
+                                    {gr.gradeClass}
+                                </option>
+                            );
+                        })}
+                    </select>
+                </div>
+            )}
+
+            <div className="control">
+                <label htmlFor="gradeClass">Existing grade:</label>
+                <input
+                    type="text"
+                    name="gradeClass"
+                    id="gradeClass"
+                    value={student ? student.gradeClass : ""}
+                    readOnly
+                />
+            </div>
 
             <div className="buttons">
                 <button type="submit" disabled={disabled}>
