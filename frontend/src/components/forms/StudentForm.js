@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const StudentForm = ({
                          onSave,
@@ -7,7 +7,6 @@ const StudentForm = ({
                          onCancel,
                          schools
                      }) => {
-
     const [gradesBySchoolId, setGradesBySchoolId] = useState([]);
     const [schoolId, setSchoolId] = useState(student?.school?.id);
     const [showGrades, setShowGrades] = useState(false);
@@ -16,22 +15,18 @@ const StudentForm = ({
         return fetch(`/grades/school/${schoolId}`).then((res) => res.json())
     };
 
-
     useEffect(() => {
         if (schoolId) {
             fetchGradesBySchoolId().then((grades) => {
                 setGradesBySchoolId(grades);
                 setShowGrades(true);
-                console.log(grades)
             });
         } else {
-            // Reset grades and show message if schoolId is empty or undefined
             setGradesBySchoolId([]);
             setShowGrades(false);
         }
     }, [schoolId]);
 
-    console.log(gradesBySchoolId)
     const onSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -39,7 +34,6 @@ const StudentForm = ({
         const studentData = {
             id: formData.get("id"),
             person: {
-                // id: formData.get("person.id"),
                 firstName: formData.get("person.firstName"),
                 lastName: formData.get("person.lastName"),
                 birthdate: formData.get("person.birthdate"),
@@ -54,45 +48,47 @@ const StudentForm = ({
     };
 
     return (
-        <form className="StudentForm" onSubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
             {student && <input type="hidden" name="id" defaultValue={student.id} />}
-            <div className="control">
-                <label htmlFor="person.firstName">First Name:</label>
+            <div className="mb-3">
+                <label htmlFor="person.firstName" className="form-label">First Name:</label>
                 <input
                     defaultValue={student ? student.person.firstName : ""}
                     name="person.firstName"
                     id="person.firstName"
+                    className="form-control"
                 />
             </div>
 
-            <div className="control">
-                <label htmlFor="person.lastName">Last Name:</label>
+            <div className="mb-3">
+                <label htmlFor="person.lastName" className="form-label">Last Name:</label>
                 <input
                     defaultValue={student ? student.person.lastName : ""}
                     name="person.lastName"
                     id="person.lastName"
+                    className="form-control"
                 />
             </div>
 
-            <div className="control">
-                <label htmlFor="person.birthdate">Birthdate:</label>
+            <div className="mb-3">
+                <label htmlFor="person.birthdate" className="form-label">Birthdate:</label>
                 <input
                     defaultValue={student ? student.person.birthdate : ""}
                     type="date"
                     name="person.birthdate"
                     id="person.birthdate"
+                    className="form-control"
                 />
             </div>
 
-
-
-            <div className="control">
-                <label htmlFor="school">School:</label>
+            <div className="mb-3">
+                <label htmlFor="school" className="form-label">School:</label>
                 <select
                     name="school"
                     id="school"
                     defaultValue={student ? student.school.name : ""}
                     onChange={(e) => setSchoolId(e.target.value)}
+                    className="form-select"
                 >
                     <option value="" disabled>
                         {student && student.school ? student.school.name : "Select a school"}
@@ -108,14 +104,15 @@ const StudentForm = ({
                 </select>
             </div>
 
-
             {showGrades && (
-                <div className="control">
-                    <label htmlFor="gradeClass">New Grade:</label>
+                <div className="mb-3">
+                    <label htmlFor="gradeClass" className="form-label">New Grade:</label>
                     <select name="gradeClass"
                             id="gradeClass"
-                            defaultValue= {student? student.gradeClass : "" }>
-                        <option value="" disabled selected>
+                            defaultValue={student ? student.gradeClass : ""}
+                            className="form-select"
+                    >
+                        <option value="" disabled>
                             Select a new grade
                         </option>
                         {gradesBySchoolId?.map((gr) => {
@@ -133,28 +130,30 @@ const StudentForm = ({
                 </div>
             )}
 
-            <div className="control">
-                <label htmlFor="gradeClass">Existing grade:</label>
+            <div className="mb-3">
+                <label htmlFor="gradeClass" className="form-label">Existing grade:</label>
                 <input
                     type="text"
                     name="gradeClass"
                     id="gradeClass"
                     value={student ? student.gradeClass : ""}
                     readOnly
+                    className="form-control"
                 />
             </div>
 
-            <div className="buttons">
-                <button type="submit" disabled={disabled}>
-                    {student ? "Update Student" : "Create Student"}
-                </button>
-                <button type="button" onClick={onCancel}>
-                    Cancel
-                </button>
+            <div className="mb-3">
+                <div className="d-flex justify-content-between">
+                    <button type="submit" disabled={disabled} className="btn btn-primary">
+                        {student ? "Update Student" : "Create Student"}
+                    </button>
+                    <button type="button" onClick={onCancel} className="btn btn-secondary">
+                        Cancel
+                    </button>
+                </div>
             </div>
         </form>
     );
 };
 
 export default StudentForm;
-
