@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 
 public enum Role {
     STUDENT,
-    PROFESSOR
+    PROFESSOR,
+    ADMIN
 
 }
