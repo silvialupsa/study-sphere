@@ -1,6 +1,7 @@
 package com.studysphere.backend.controller;
 
 import com.studysphere.backend.model.people.Student;
+import com.studysphere.backend.security.auth.*;
 import com.studysphere.backend.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -13,10 +14,12 @@ import java.util.List;
 @RequestMapping("/students")
 @RequiredArgsConstructor
 public class StudentController {
-private final StudentService studentService;
+    private final StudentService studentService;
+    private final AuthenticationService service;
+
     @GetMapping("/all")
     @CrossOrigin("*")
-    public ResponseEntity<List<Student>> getAll(){
+    public ResponseEntity<List<Student>> getAll() {
         return ResponseEntity.ok(studentService.getAll());
     }
 
@@ -34,9 +37,9 @@ private final StudentService studentService;
 
     @DeleteMapping("/delete/{id}")
     @CrossOrigin("*")
-    public ResponseEntity<Long> deleteStudent(@PathVariable Long id){
+    public ResponseEntity<Long> deleteStudent(@PathVariable Long id) {
         boolean isRemoved = studentService.removeById(id);
-        if(isRemoved){
+        if (isRemoved) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(id, HttpStatus.OK);
@@ -63,5 +66,19 @@ private final StudentService studentService;
 
 
         return ResponseEntity.ok(studentService.update(existingStudent));
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<AuthenticationResponse> register(
+            @RequestBody StudentRegisterRequest request
+    ) {
+        return ResponseEntity.ok(service.studentRegister(request));
+    }
+
+    @PostMapping("/authenticate")
+    public ResponseEntity<AuthenticationResponse> register(
+            @RequestBody AuthenticationRequest request
+    ) {
+        return ResponseEntity.ok(service.authenticate(request));
     }
 }
