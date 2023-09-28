@@ -24,7 +24,6 @@ import java.util.*;
 
 @Entity
 @Data
-@Proxy(lazy = false)
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
