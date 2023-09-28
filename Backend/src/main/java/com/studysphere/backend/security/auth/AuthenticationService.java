@@ -1,8 +1,10 @@
 package com.studysphere.backend.security.auth;
 
 import com.studysphere.backend.model.people.Person;
+import com.studysphere.backend.model.people.Professor;
 import com.studysphere.backend.model.people.Student;
 import com.studysphere.backend.repository.PersonRepository;
+import com.studysphere.backend.repository.ProfessorRepository;
 import com.studysphere.backend.repository.StudentRepository;
 import com.studysphere.backend.security.config.JwtService;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
 public class AuthenticationService {
     private final PersonRepository personRepository;
     private final StudentRepository studentRepository;
+    private final ProfessorRepository professorRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
@@ -38,7 +41,6 @@ public class AuthenticationService {
     }
 
     public AuthenticationResponse studentRegister(StudentRegisterRequest request) {
-        System.out.println(request);
         var person = Person.builder()
                 .firstName(request.getPerson().getFirstName())
                 .lastName(request.getPerson().getLastName())
@@ -55,6 +57,28 @@ public class AuthenticationService {
                 .build();
 
         studentRepository.save(user);
+        var jwtToken = jwtService.generateToken(user);
+        return AuthenticationResponse.builder()
+                .token(jwtToken)
+                .build();
+    }
+
+    public AuthenticationResponse professorRegister(ProfessorRegisterRequest request) {
+        var person = Person.builder()
+                .firstName(request.getPerson().getFirstName())
+                .lastName(request.getPerson().getLastName())
+                .email(request.getPerson().getEmail())
+                .password(passwordEncoder.encode(request.getPerson().getPassword()))
+                .role(request.getPerson().getRole())
+                .birthdate(request.getPerson().getBirthdate())
+                .build();
+
+        var user = Professor.builder()
+                .person(person)
+                .subjectList(request.getSubjectList())
+                .build();
+
+        professorRepository.save(user);
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(jwtToken)

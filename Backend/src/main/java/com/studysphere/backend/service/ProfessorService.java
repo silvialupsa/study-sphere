@@ -5,6 +5,7 @@ import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.people.Professor;
 import com.studysphere.backend.repository.PersonRepository;
 import com.studysphere.backend.repository.ProfessorRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,7 @@ public class ProfessorService {
         return professorRepository.findAll();
     }
 
+    @Transactional
     public void addProfessor(Professor professor){
         Person person= professor.getPerson();
         personRepository.save(person);
