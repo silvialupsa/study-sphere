@@ -17,11 +17,18 @@ import AuxiliaryPage from "./pages/AuxiliaryPage";
 import SchoolCreator from "./components/creators/SchoolCreator";
 import SchoolsForInspectorate from "./pages/lists/SchoolsForInspectoratesList";
 import LogIn from "./pages/LogIn";
+import {AuthProvider} from "react-auth-kit";
 
 const root = document.getElementById('root');
 
 ReactDOM.render(
     <React.StrictMode>
+        <AuthProvider
+            authType={"cookie"}
+            authName={"_auth`"}
+            cookieDomain={window.location.hostname}
+            cookieSecure={false}
+         >
         <Router>
             <NavBar/>
             <Routes>
@@ -40,6 +47,7 @@ ReactDOM.render(
                 <Route path="/login" element={<LogIn/>}/>
             </Routes>
         </Router>
+        </AuthProvider>
     </React.StrictMode>,
     root
 );

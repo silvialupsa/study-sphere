@@ -33,11 +33,4 @@ public class ProfessorController {
     ) {
         return ResponseEntity.ok(service.professorRegister(request));
     }
-
-    @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> register(
-            @RequestBody AuthenticationRequest request
-    ) {
-        return ResponseEntity.ok(service.authenticate(request));
-    }
 }
