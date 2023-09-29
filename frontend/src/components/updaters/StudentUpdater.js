@@ -1,17 +1,18 @@
-
 import React, {useState, useEffect} from "react";
 import {useNavigate, useParams} from 'react-router-dom';
 import StudentForm from "../forms/StudentForm";
+
 const updateStudent = (student) => {
     console.log("Request Data:", JSON.stringify(student));
 
     return fetch(`/students/update/${student.id}`, {
         method: "PUT",
         headers: {
-            "Content-Type": "application/json",},
+            "Content-Type": "application/json",
+        },
 
         body: JSON.stringify(student),
-    }) .then((res) => {
+    }).then((res) => {
         if (!res.ok) {
             throw new Error(`HTTP error! Status: ${res.status}`);
         }
@@ -32,33 +33,47 @@ const fetchPeople = () => {
 };
 
 const fetchGrades = () => {
-    return fetch("/grades/all").then((res)=> res.json())
+    return fetch("/grades/all").then((res) => res.json())
+};
+const fetchAvailableRoles = () => {
+    return fetch("/people/availableRoles").then((res) => res.json());
 };
 
 const fetchStudent = (id) => {
-    return fetch(`/students/${id}`).then((res)=> res.json())
+    return fetch(`/students/${id}`).then((res) => res.json())
 }
-const StudentUpdater =() =>{
+const StudentUpdater = () => {
     const {id} = useParams();
     const navigate = useNavigate();
     const [student, setStudent] = useState({});
     const [schools, setSchools] = useState([]);
     const [people, setPeople] = useState([]);
     const [grades, setGrades] = useState([]);
+    const [roles, setRoles] = useState([]);
 
     useEffect(() => {
-        fetchStudent(id).then(student=> {
+        fetchStudent(id).then(student => {
             console.log(student);
-            setStudent(student)})
+            setStudent(student)
+        })
         // Fetch data when the component mounts
-        fetchSchools().then((schools) => { setSchools(schools); });
-        fetchPeople().then((people) => { setPeople(people); });
-        fetchGrades().then((grades) => { setGrades(grades); });
+        fetchSchools().then((schools) => {
+            setSchools(schools);
+        });
+        fetchPeople().then((people) => {
+            setPeople(people);
+        });
+        fetchGrades().then((grades) => {
+            setGrades(grades);
+        });
+        fetchAvailableRoles().then((roles) => {
+            setRoles(roles)
+        })
     }, [id]);
 
     const handleUpdateStudent = (student) => {
         console.log(student)
-        updateStudent(student).then(()=>{
+        updateStudent(student).then(() => {
             navigate("/students");
         })
     }
@@ -72,6 +87,7 @@ const StudentUpdater =() =>{
             schools={schools}
             people={people}
             grades={grades}
+            roles={roles}
         />
     )
 }
