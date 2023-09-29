@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const StudentTable = ({ students, onDelete }) => {
+    let currentDate = new Date();
+    const formattedDate = currentDate.toLocaleString();
     return (
         <div className="Student-table">
+            <h2>Curent date : {formattedDate}</h2>
             <h2>Student List</h2>
             <div className="row">
                 {students?.map((student) => (

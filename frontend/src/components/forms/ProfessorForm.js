@@ -6,26 +6,43 @@ const ProfessorForm = ({
                            onCancel,
                            subjects,
                            professor,
-                           roles
+                           roles,
+                           people
                        }) => {
 
     const [selectedSubjects, setSelectedSubjects] = useState([]);
     const [newSubject, setNewSubject] = useState("");
+    const [isEmailUnique, setIsEmailUnique] = useState(true);
+    const [errorMessage, setErrorMessage] = useState("");
 
+
+    const checkEmailUniqueness = (email) => {
+        const isUnique = !people.some((person) => person.email === email);
+        setIsEmailUnique(isUnique);
+        if (!isUnique) {
+            setErrorMessage("Email already exists. Please choose a different email.");
+        } else {
+            setErrorMessage("");
+        }
+    };
     const onSubmit = (e) => {
         e.preventDefault();
+
+        if(!isEmailUnique){
+            return;
+        }
         const formData = new FormData(e.target);
 
         const professorData = {
             id: formData.get("id"),
             person: {
-                id:professor? professor.person?.id : "",
+                id: professor ? professor.person?.id : "",
                 firstName: formData.get("person.firstName"),
                 lastName: formData.get("person.lastName"),
                 birthdate: formData.get("person.birthdate"),
                 email: formData.get("person.email"),
                 password: formData.get("person.password"),
-                role:formData.get("person.role")
+                role: formData.get("person.role")
             },
             subjectList: professor ? [...professor.subjectList, ...selectedSubjects] : selectedSubjects,
         };
@@ -81,7 +98,11 @@ const ProfessorForm = ({
                     name="person.email"
                     id="person.email"
                     className="form-control"
+                    onChange={(e) => checkEmailUniqueness(e.target.value)}
                 />
+                {!isEmailUnique && (
+                    <div className="alert alert-danger">{errorMessage}</div>
+                )}
             </div>
 
             <div className="mb-3">
@@ -139,8 +160,6 @@ const ProfessorForm = ({
                     </div>
                 )}
             </div>
-
-
 
 
             <div className="mb-3">
