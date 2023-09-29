@@ -1,7 +1,7 @@
-import { useNavigate } from 'react-router-dom';
-import { useSignIn } from 'react-auth-kit';
-import { useState } from 'react';
-import axios, { AxiosError } from 'axios';
+import {useNavigate} from 'react-router-dom';
+import {useSignIn} from 'react-auth-kit';
+import {useEffect, useState} from 'react';
+import axios, {AxiosError} from 'axios';
 
 const LogIn = () => {
     const [error, setError] = useState('');
@@ -13,17 +13,18 @@ const LogIn = () => {
         setError('');
 
         try {
-            console.log(values);
             const response = await axios.post('/people/authenticate', values);
             signIn({
                 token: response.data.token,
                 expiresIn: 3600,
                 tokenType: 'Bearer',
-                authState: { email: values.email },
+                authState: {email: values.email, role: response.data.role}
+
             });
-            console.log("Role from data: ",  response.data.role)
-            setRole(response.data.role);
-            console.log("Role: ", role);
+
+            // useEffect(()=>{
+            //     setRole(response.data.role);
+            // }, [response])
             navigate('/auxiliary');
         } catch (err) {
             if (err instanceof AxiosError) setError(err.response?.data.message);
