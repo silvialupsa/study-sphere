@@ -17,6 +17,7 @@ import AuxiliaryPage from "./pages/AuxiliaryPage";
 import SchoolCreator from "./components/creators/SchoolCreator";
 import SchoolsForInspectorate from "./pages/lists/SchoolsForInspectoratesList";
 import LogIn from "./pages/LogIn";
+import {AuthProvider} from "react-auth-kit";
 import ProfessorCreator from "./components/creators/ProfessorCreator";
 import ProfessorUpdater from "./components/updaters/ProfessorUpdater";
 import {createRoot} from "react-dom/client";
@@ -25,6 +26,12 @@ const root =createRoot( document.getElementById('root'));
 
 root.render(
     <React.StrictMode>
+        <AuthProvider
+            authType={"cookie"}
+            authName={"_auth`"}
+            cookieDomain={window.location.hostname}
+            cookieSecure={false}
+         >
         <Router>
             <NavBar/>
             <Routes>
@@ -45,6 +52,7 @@ root.render(
                 <Route path="/login" element={<LogIn/>}/>
             </Routes>
         </Router>
+        </AuthProvider>
     </React.StrictMode>,
 
 );

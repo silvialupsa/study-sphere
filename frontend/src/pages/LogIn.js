@@ -1,40 +1,41 @@
 import {useNavigate} from 'react-router-dom';
-const logInPost = (personDetails) => {
-    console.log("Request Data:", JSON.stringify(personDetails));
 
-    return fetch("/api/v1/auth/authenticate", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-        },
-
-        body: JSON.stringify(personDetails),
-    }).then((res) => res.json());
-}
-
-const onSave = (authenticate) => {
-    // const navigate = useNavigate();
-    logInPost(authenticate).then(() => {
-        // navigate("/home")
-    });
-};
-
-const onSubmit = (e) => {
-    e.preventDefault();
-    console.log(e.target);
-    const formData = new FormData(e.target);
-    console.log(formData.get("email"));
-    console.log(formData.get("password"));
-    const authenticateData = {
-       "email": formData.get("email"),
-        "password" :formData.get("password")
-    };
-    console.log(authenticateData);
-    onSave(authenticateData);
-};
 
 const LogIn = () => {
+    const navigate = useNavigate();
+    const logInPost = (personDetails) => {
+        console.log("Request Data:", JSON.stringify(personDetails));
+
+        return fetch("/people/authenticate", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+
+            body: JSON.stringify(personDetails),
+        }).then((res) => res.json());
+    }
+
+    const onSave = (authenticate) => {
+        logInPost(authenticate).then((response) => {
+            console.log("Parsed Response:", response);
+
+            navigate("/");
+        });
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const authenticateData = {
+            "email": formData.get("email"),
+            "password" :formData.get("password")
+        };
+        console.log(authenticateData);
+        onSave(authenticateData);
+    };
+
     return (
         <div>
             <form onSubmit={onSubmit}>
