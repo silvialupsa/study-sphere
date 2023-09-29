@@ -45,7 +45,7 @@ public class ProfessorController {
     }
 
 
-}
+
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
