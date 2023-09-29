@@ -21,13 +21,13 @@ public class ProfessorService {
     private final ProfessorRepository professorRepository;
     private final PersonRepository personRepository;
 
-
-    public List<Professor> getAllProfessors() {
+    public List<Professor> getAllProfessors(){
         return professorRepository.findAll();
     }
 
-    public void addProfessor(Professor professor) {
-        Person person = professor.getPerson();
+    @Transactional
+    public void addProfessor(Professor professor){
+        Person person= professor.getPerson();
         personRepository.save(person);
         professorRepository.save(professor);
     }

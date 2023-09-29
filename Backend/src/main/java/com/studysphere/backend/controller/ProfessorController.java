@@ -1,6 +1,7 @@
 package com.studysphere.backend.controller;
 
 import com.studysphere.backend.model.people.Professor;
+import com.studysphere.backend.security.auth.*;
 import com.studysphere.backend.model.types.Subject;
 import com.studysphere.backend.service.ProfessorService;
 import lombok.RequiredArgsConstructor;
@@ -14,15 +15,16 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProfessorController {
     private final ProfessorService professorService;
+    private final AuthenticationService service;
 
     @GetMapping("/all")
     @CrossOrigin("*")
-    public ResponseEntity<List<Professor>> getAll() {
+    public ResponseEntity<List<Professor>> getAll(){
         return ResponseEntity.ok(professorService.getAllProfessors());
     }
 
     @PostMapping("/add")
-    public void add(@RequestBody Professor professor) {
+    public void add(@RequestBody Professor professor){
         professorService.addProfessor(professor);
     }
 
@@ -43,4 +45,19 @@ public class ProfessorController {
     }
 
 
+}
+
+    @PostMapping("/register")
+    public ResponseEntity<AuthenticationResponse> register(
+            @RequestBody ProfessorRegisterRequest request
+    ) {
+        return ResponseEntity.ok(service.professorRegister(request));
+    }
+
+    @PostMapping("/authenticate")
+    public ResponseEntity<AuthenticationResponse> register(
+            @RequestBody AuthenticationRequest request
+    ) {
+        return ResponseEntity.ok(service.authenticate(request));
+    }
 }
