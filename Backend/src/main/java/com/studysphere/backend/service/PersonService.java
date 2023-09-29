@@ -1,10 +1,12 @@
 package com.studysphere.backend.service;
 
 import com.studysphere.backend.model.people.Person;
+import com.studysphere.backend.model.types.Role;
 import com.studysphere.backend.repository.PersonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -21,5 +23,9 @@ public class PersonService {
 
     public void deleteById(Long id){
         personRepository.deleteById(id);
+    }
+
+    public List<Role> getAllAvailableRoles(){
+        return Arrays.asList(Role.values());
     }
 }

@@ -17,10 +17,13 @@ import AuxiliaryPage from "./pages/AuxiliaryPage";
 import SchoolCreator from "./components/creators/SchoolCreator";
 import SchoolsForInspectorate from "./pages/lists/SchoolsForInspectoratesList";
 import LogIn from "./pages/LogIn";
+import ProfessorCreator from "./components/creators/ProfessorCreator";
+import ProfessorUpdater from "./components/updaters/ProfessorUpdater";
+import {createRoot} from "react-dom/client";
 
-const root = document.getElementById('root');
+const root =createRoot( document.getElementById('root'));
 
-ReactDOM.render(
+root.render(
     <React.StrictMode>
         <Router>
             <NavBar/>
@@ -35,13 +38,15 @@ ReactDOM.render(
                 <Route path="/professors" element={<ProfessorsList/>}/>
                 <Route path="/createStudent" element={<StudentCreator/>}/>
                 <Route path="/students/update/:id" element={<StudentUpdater/>}/>
+                <Route path="/professors/update/:id" element={<ProfessorUpdater/>}/>
                 <Route path="/createSchool" element={<SchoolCreator/>}/>
+                <Route path="/createProfessor" element={<ProfessorCreator/>}/>
                 <Route path="/checkSchools/:id" element={<SchoolsForInspectorate/>}/>
                 <Route path="/login" element={<LogIn/>}/>
             </Routes>
         </Router>
     </React.StrictMode>,
-    root
+
 );
 
 reportWebVitals();

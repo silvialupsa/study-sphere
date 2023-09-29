@@ -13,6 +13,8 @@ const StudentTable = ({ students, onDelete }) => {
                                 <h5 className="card-title">{student.person.firstName}</h5>
                                 <h5 className="card-title">{student.person.lastName}</h5>
                                 <p className="card-text">Birthdate: {student.person.birthdate}</p>
+                                <p className="card-text">Birthdate: {student.person.email}</p>
+                                <p className="card-text">Birthdate: {student.person.password}</p>
                                 <p className="card-text">School: {student.school.name}</p>
                                 <p className="card-text">Grade Class: {student.gradeClass}</p>
                                 <div className="d-flex justify-content-between">
