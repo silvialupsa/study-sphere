@@ -6,14 +6,27 @@ const StudentForm = ({
                          student,
                          onCancel,
                          schools,
-                         roles
+                         roles,
+                         people
                      }) => {
     const [gradesBySchoolId, setGradesBySchoolId] = useState([]);
     const [schoolId, setSchoolId] = useState(student?.school?.id);
     const [showGrades, setShowGrades] = useState(false);
+    const [isEmailUnique, setIsEmailUnique] = useState(true);
+    const [errorMessage, setErrorMessage] = useState("");
 
     const fetchGradesBySchoolId = () => {
         return fetch(`/grades/school/${schoolId}`).then((res) => res.json())
+    };
+
+    const checkEmailUniqueness = (email) => {
+        const isUnique = !people.some((person) => person.email === email);
+        setIsEmailUnique(isUnique);
+        if (!isUnique) {
+            setErrorMessage("Email already exists. Please choose a different email.");
+        } else {
+            setErrorMessage("");
+        }
     };
 
     useEffect(() => {
@@ -30,6 +43,11 @@ const StudentForm = ({
 
     const onSubmit = (e) => {
         e.preventDefault();
+
+        if(!isEmailUnique){
+            return;
+        }
+
         const formData = new FormData(e.target);
 
         const studentData = {
@@ -92,7 +110,11 @@ const StudentForm = ({
                     name="person.email"
                     id="person.email"
                     className="form-control"
+                    onChange={(e) => checkEmailUniqueness(e.target.value)}
                 />
+                {!isEmailUnique && (
+                    <div className="alert alert-danger">{errorMessage}</div>
+                )}
             </div>
 
             <div className="mb-3">
