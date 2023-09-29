@@ -5,6 +5,7 @@ import com.studysphere.backend.security.auth.AuthenticationRequest;
 import com.studysphere.backend.security.auth.AuthenticationResponse;
 import com.studysphere.backend.security.auth.AuthenticationService;
 import com.studysphere.backend.security.auth.PersonRegisterRequest;
+import com.studysphere.backend.model.types.Role;
 import com.studysphere.backend.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -37,5 +38,11 @@ public class PersonController {
             @RequestBody AuthenticationRequest request
     ) {
         return ResponseEntity.ok(service.authenticate(request));
+    }
+
+
+    @GetMapping("/availableRoles")
+    public ResponseEntity<List<Role>> getAllEnumRole() {
+        return ResponseEntity.ok(personService.getAllAvailableRoles());
     }
 }
