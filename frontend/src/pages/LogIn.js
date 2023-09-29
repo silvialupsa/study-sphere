@@ -1,38 +1,43 @@
-import {useNavigate} from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
+import { useSignIn } from 'react-auth-kit';
+import { useState } from 'react';
+import axios, { AxiosError } from 'axios';
 
 const LogIn = () => {
+    const [error, setError] = useState('');
     const navigate = useNavigate();
-    const logInPost = (personDetails) => {
-        console.log("Request Data:", JSON.stringify(personDetails));
+    const signIn = useSignIn();
+    const [role, setRole] = useState(''); // Corrected initialization of role state
 
-        return fetch("/people/authenticate", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            },
+    const onSave = async (values) => {
+        setError('');
 
-            body: JSON.stringify(personDetails),
-        }).then((res) => res.json());
-    }
-
-    const onSave = (authenticate) => {
-        logInPost(authenticate).then((response) => {
-            console.log("Parsed Response:", response);
-
-            navigate("/");
-        });
+        try {
+            console.log(values);
+            const response = await axios.post('/people/authenticate', values);
+            signIn({
+                token: response.data.token,
+                expiresIn: 3600,
+                tokenType: 'Bearer',
+                authState: { email: values.email },
+            });
+            console.log("Role from data: ",  response.data.role)
+            setRole(response.data.role);
+            console.log("Role: ", role);
+            navigate('/auxiliary');
+        } catch (err) {
+            if (err instanceof AxiosError) setError(err.response?.data.message);
+            else if (err instanceof Error) setError(err.message);
+        }
     };
 
     const onSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const authenticateData = {
-            "email": formData.get("email"),
-            "password" :formData.get("password")
+            email: formData.get('email'),
+            password: formData.get('password'),
         };
-        console.log(authenticateData);
         onSave(authenticateData);
     };
 
@@ -40,21 +45,47 @@ const LogIn = () => {
         <div>
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" id="email" name="email" aria-describedby="emailHelp" />
-                    <div id="email" className="form-text">We'll never share your email with anyone else.</div>
+                    <label htmlFor="email" className="form-label">
+                        Email address
+                    </label>
+                    <input
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        name="email"
+                        aria-describedby="emailHelp"
+                    />
+                    <div id="email" className="form-text">
+                        We'll never share your email with anyone else.
+                    </div>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" id="password" name="password" />
+                    <label htmlFor="password" className="form-label">
+                        Password
+                    </label>
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="password"
+                        name="password"
+                    />
                 </div>
                 <div className="mb-3 form-check">
-                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                    <label className="form-check-label" htmlFor="exampleCheck1">I accept terms and conditions.</label>
+                    <input
+                        type="checkbox"
+                        className="form-check-input"
+                        id="exampleCheck1"
+                    />
+                    <label className="form-check-label" htmlFor="exampleCheck1">
+                        I accept terms and conditions.
+                    </label>
                 </div>
-                <button type="submit" className="btn btn-primary">Log In</button>
+                <button type="submit" className="btn btn-primary">
+                    Log In
+                </button>
             </form>
         </div>
     );
 };
+
 export default LogIn;
