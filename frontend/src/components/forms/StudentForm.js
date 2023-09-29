@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 
 const StudentForm = ({
                          onSave,
                          disabled,
                          student,
                          onCancel,
-                         schools
+                         schools,
+                         roles
                      }) => {
     const [gradesBySchoolId, setGradesBySchoolId] = useState([]);
     const [schoolId, setSchoolId] = useState(student?.school?.id);
@@ -32,13 +33,16 @@ const StudentForm = ({
         const formData = new FormData(e.target);
 
         const studentData = {
-            id: formData.get("id"),
+            id: student ? student.id : "",
             person: {
                 firstName: formData.get("person.firstName"),
                 lastName: formData.get("person.lastName"),
                 birthdate: formData.get("person.birthdate"),
+                email: formData.get("person.email"),
+                password: formData.get("person.password"),
+                role: formData.get("person.role")
             },
-            gradeClass: formData.get("gradeClass") ,
+            gradeClass: formData.get("gradeClass"),
             school: {
                 id: parseInt(formData.get("school")),
             },
@@ -49,7 +53,7 @@ const StudentForm = ({
 
     return (
         <form onSubmit={onSubmit}>
-            {student && <input type="hidden" name="id" defaultValue={student.id} />}
+            {student && <input type="hidden" name="id" defaultValue={student.id}/>}
             <div className="mb-3">
                 <label htmlFor="person.firstName" className="form-label">First Name:</label>
                 <input
@@ -77,6 +81,62 @@ const StudentForm = ({
                     type="date"
                     name="person.birthdate"
                     id="person.birthdate"
+                    className="form-control"
+                />
+            </div>
+
+            <div className="mb-3">
+                <label htmlFor="person.email" className="form-label">Email:</label>
+                <input
+                    defaultValue={student ? student.person?.email : ""}
+                    name="person.email"
+                    id="person.email"
+                    className="form-control"
+                />
+            </div>
+
+            <div className="mb-3">
+                <label htmlFor="person.password" className="form-label">Password:</label>
+                <input
+                    defaultValue={student ? student.person?.password : ""}
+                    name="person.password"
+                    id="person.password"
+                    className="form-control"
+                    type="password"
+                    autoComplete="current-password"
+                />
+            </div>
+
+            <div className="mb-3">
+                <label htmlFor="person.role" className="form-label">Change Role:</label>
+                <select
+                    name="person.role"
+                    id="person.role"
+                    defaultValue={student ? student.person?.role : ""}
+                    className="form-select"
+                >
+                    <option value="" disabled>
+                        {student && student.person?.role ? student.person.role : "Add a role"}
+                    </option>
+                    {roles?.map((rol) => (
+                        <option
+                            key={rol}
+                            value={rol}
+                        >
+                            {rol}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
+            <div className="mb-3">
+                <label htmlFor="person.role" className="form-label">Existing role:</label>
+                <input
+                    type="text"
+                    name="person.role"
+                    id="person.role"
+                    value={student ? student.person?.role : ""}
+                    readOnly
                     className="form-control"
                 />
             </div>
