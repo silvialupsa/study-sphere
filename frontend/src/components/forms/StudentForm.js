@@ -15,9 +15,12 @@ const StudentForm = ({
     const [isEmailUnique, setIsEmailUnique] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
 
+
     const fetchGradesBySchoolId = () => {
         return fetch(`/grades/school/${schoolId}`).then((res) => res.json())
     };
+
+
 
     const checkEmailUniqueness = (email) => {
         const isUnique = !people.some((person) => person.email === email);
