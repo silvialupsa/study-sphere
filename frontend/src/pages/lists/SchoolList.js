@@ -19,7 +19,7 @@ const SchoolList = () => {
     return (
         <div>
             <Link to={`/createSchool`}>
-                <button type="button">Create School</button>
+                <button type="button" className="btn btn-info">Create School</button>
             </Link>
             <SchoolTable schools={schools}/>
         </div>

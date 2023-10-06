@@ -6,7 +6,6 @@ const StudentTable = ({students, onDelete}) => {
     const [attendanceStatus, setAttendanceStatus] = useState({});
 
     const toggleAttendance = (studentId) => {
-        // Toggle attendance status for the student with the given ID
         setAttendanceStatus((prevStatus) => ({
             ...prevStatus,
             [studentId]: !prevStatus[studentId],

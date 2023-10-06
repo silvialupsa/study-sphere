@@ -46,7 +46,9 @@ const StudentList = () => {
 
     return (
         <div>
-            <Link to='/createStudent'>Create Student</Link>
+            <Link to={`/createStudent`}>
+                <button type="button" className="btn btn-info">Create Student</button>
+            </Link>
             <StudentTable
                 students={students}
                 onDelete={handleDelete}

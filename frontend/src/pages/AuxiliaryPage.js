@@ -23,7 +23,7 @@ const WelcomePage = () => {
     }, []);
 
     return (
-        <div className="container" backgroundColor="red">
+        <div className="container" backgroundcolor="red">
             <div className="row">
                 <div className="col-md-6 offset-md-3 text-center">
                     <h1>Welcome to Our School</h1>
