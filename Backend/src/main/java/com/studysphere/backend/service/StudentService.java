@@ -1,8 +1,10 @@
 package com.studysphere.backend.service;
 
+import com.studysphere.backend.model.Attendance;
 import com.studysphere.backend.model.School;
 import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.people.Student;
+import com.studysphere.backend.repository.AttendanceRepository;
 import com.studysphere.backend.repository.PersonRepository;
 import com.studysphere.backend.repository.SchoolRepository;
 import com.studysphere.backend.repository.StudentRepository;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,16 +23,19 @@ public class StudentService {
     private final StudentRepository studentRepository;
     private final SchoolRepository schoolRepository;
     private final PersonRepository personRepository;
-    public List<Student> getAll(){
+    private final AttendanceRepository attendanceRepository;
+
+    public List<Student> getAll() {
         return studentRepository.findAll();
     }
 
     public Student findById(Long id) {
         return studentRepository.findById(id).orElse(null);
     }
+
     @Transactional
-    public Student add(Student student){
-        Person person= student.getPerson();
+    public Student add(Student student) {
+        Person person = student.getPerson();
         personRepository.save(person);
         School school = schoolRepository.findById(student.getSchool().getId()).orElse(null);
         assert school != null;
@@ -37,7 +43,7 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    public void remove(Student student){
+    public void remove(Student student) {
         studentRepository.delete(student);
     }
 
@@ -62,7 +68,6 @@ public class StudentService {
     public Student update(Student student) {
         return studentRepository.save(student);
     }
-
 
 
 }

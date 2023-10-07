@@ -59,19 +59,9 @@ public class StudentController {
         existingStudent.setGradeClass(updatedStudent.getGradeClass());
         existingStudent.setSchool(updatedStudent.getSchool());
         existingStudent.setPerson(updatedStudent.getPerson());
+        existingStudent.setAttendance(updatedStudent.getAttendance());
         return ResponseEntity.ok(studentService.update(existingStudent));
     }
-
-//    @PatchMapping("/updateAttendance/{id}")
-//    @CrossOrigin("*")
-//    public ResponseEntity<Student> updateAttendance(@PathVariable Long id, @RequestBody Student updatedStudent) {
-//        Student existingStudent = studentService.findById(id);
-//        if (existingStudent == null) {
-//            return ResponseEntity.notFound().build();
-//        }
-//        existingStudent.setAttendance(updatedStudent.getAttendance());
-//        return ResponseEntity.ok(studentService.update(existingStudent));
-//    }
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
