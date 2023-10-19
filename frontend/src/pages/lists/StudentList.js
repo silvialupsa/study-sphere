@@ -23,6 +23,10 @@ const deleteStudent = (id) => {
 
 const StudentList = () => {
     const [students, setStudents] = useState([]);
+    const specificDate = new Date("2023-10-08"); // Get the current date in a readable format
+    const formattedDate = `${specificDate.getFullYear()}-${(specificDate.getMonth() + 1)
+        .toString()
+        .padStart(2, "0")}-${specificDate.getDate().toString().padStart(2, "0")}`;
 
     const handleDelete = (id) => {
         deleteStudent(id)
@@ -40,16 +44,18 @@ const StudentList = () => {
     useEffect(()=>{
         fetchStudents().then((students) => {
             setStudents(students);
-    console.log(students);
         });
     },[])
 
     return (
         <div>
-            <Link to='/createStudent'>Create Student</Link>
+            <Link to={`/createStudent`}>
+                <button type="button" className="btn btn-info">Create Student</button>
+            </Link>
             <StudentTable
                 students={students}
                 onDelete={handleDelete}
+                date ={formattedDate}
             />
         </div>
     )

@@ -19,7 +19,7 @@ const ProfessorsList = () => {
     return (
         <div>
             <Link to={`/createProfessor`}>
-                <button type="button">Create Professor</button>
+                <button type="button" className="btn btn-info">Create Professor</button>
             </Link>
             <ProfessorTable
                 professors={professors}

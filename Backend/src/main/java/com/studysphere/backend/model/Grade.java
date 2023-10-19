@@ -17,13 +17,14 @@ public class Grade {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private GradeClass gradeClass;
     private String name;
 
 
-   @JsonIgnore
+    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "school.id")
+    @JoinColumn(name = "school_id")
     private School school;
 
     @OneToOne

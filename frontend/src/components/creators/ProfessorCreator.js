@@ -5,7 +5,7 @@ import ProfessorForm from "../forms/ProfessorForm";
 const professorCreator = (professor) => {
     console.log("Request Data:", JSON.stringify(professor));
 
-    return fetch("/professors/add", {
+    return fetch("/professors/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

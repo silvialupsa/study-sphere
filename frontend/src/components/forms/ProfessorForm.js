@@ -53,11 +53,16 @@ const ProfessorForm = ({
     const handleAddSubject = () => {
         if (newSubject) {
             setSelectedSubjects([...selectedSubjects, newSubject]);
-            setNewSubject(""); // Clear the input field
         }
+        setNewSubject("");
     };
 
     return (
+        <div className="card">
+            <div className="card-body">
+                <h5 className="card-title">
+                    {professor ? "Edit Professor" : "Create Professor"}
+                </h5>
         <form onSubmit={onSubmit}>
             {professor && <input type="hidden" name="id" defaultValue={professor.id}/>}
             <div className="mb-3">
@@ -125,7 +130,7 @@ const ProfessorForm = ({
                     <select
                         name="subjectList"
                         id="subjectList.id"
-                        value={professor ? professor.subjectList : ""}
+                        // value={professor ? professor.subjectList : ""}
                         className="form-select"
                         onChange={(e) => setNewSubject(e.target.value)}
                         // value={newSubject}
@@ -220,6 +225,8 @@ const ProfessorForm = ({
                 </div>
             </div>
         </form>
+            </div>
+        </div>
     );
 };
 

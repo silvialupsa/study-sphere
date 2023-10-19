@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 //import com.studysphere.backend.model.Message;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Cascade;
@@ -25,6 +26,7 @@ public class Parent {
     @GeneratedValue
     private Long id;
 
+    @NotNull
     @OneToOne
     private Person person;
 

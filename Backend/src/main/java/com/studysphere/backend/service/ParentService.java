@@ -12,10 +12,11 @@ import java.util.List;
 public class ParentService {
     private final ParentRepository parentRepository;
 
-        public List<Parent> getAll(){
+    public List<Parent> getAll() {
         return parentRepository.findAll();
     }
-    public void add(Parent parent){
+
+    public void add(Parent parent) {
         parentRepository.save(parent);
     }
 }

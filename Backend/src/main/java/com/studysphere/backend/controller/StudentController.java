@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/students")
@@ -52,26 +53,20 @@ public class StudentController {
     @PutMapping("/update/{id}")
     @CrossOrigin("*")
     public ResponseEntity<Student> update(@PathVariable Long id, @RequestBody Student updatedStudent) {
+
         Student existingStudent = studentService.findById(id);
         if (existingStudent == null) {
             return ResponseEntity.notFound().build();
         }
-
-        // Update the existing student's information
-        existingStudent.setGradeClass(updatedStudent.getGradeClass());
-        existingStudent.setSchool(updatedStudent.getSchool());
-        existingStudent.setPerson(updatedStudent.getPerson());
-
-        // Add more fields to update as needed
-
-
-        return ResponseEntity.ok(studentService.update(existingStudent));
+        updatedStudent.setId(id);
+        return ResponseEntity.ok(studentService.update(updatedStudent));
     }
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody StudentRegisterRequest request
     ) {
+
         return ResponseEntity.ok(service.studentRegister(request));
     }
 
