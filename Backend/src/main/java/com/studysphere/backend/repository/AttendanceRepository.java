@@ -8,5 +8,4 @@ import java.time.LocalDate;
 
 public interface AttendanceRepository  extends JpaRepository<Attendance, Long> {
 Attendance findAttendanceByDateAndStudentId(LocalDate date, Long studentId);
-
 }

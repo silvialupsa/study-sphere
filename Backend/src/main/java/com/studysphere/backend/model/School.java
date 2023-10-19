@@ -19,6 +19,7 @@ public class School {
     @Id
     @GeneratedValue
     private Long id;
+
     private String name;
     private String address;
     private String phoneNumber;
@@ -27,6 +28,8 @@ public class School {
     @ManyToOne
     @JoinColumn(name = "inspectorates.id", nullable = false)
     private SchoolInspectorate schoolInspectorate;
+//Todo refactor tabel on join column names
+
 
     @OneToOne
     private Professor schoolPrincipal;

@@ -2,6 +2,7 @@ package com.studysphere.backend.model.people;
 
 import com.studysphere.backend.model.types.Subject;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,6 +25,7 @@ public class Professor implements UserDetails {
     @GeneratedValue
     private Long id;
 
+    @NotNull
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Person person;
 

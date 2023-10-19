@@ -1,6 +1,7 @@
 package com.studysphere.backend.controller;
 
 import com.studysphere.backend.model.Attendance;
+import com.studysphere.backend.model.people.Student;
 import com.studysphere.backend.service.AttendanceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -56,15 +57,25 @@ public class AttendanceController {
         return ResponseEntity.ok(attendanceService.findAttendanceById(id));
     }
 
-    @PutMapping("/update/{id}")
+//    @PutMapping("/update/{id}")
+//    @CrossOrigin("*")
+//    public ResponseEntity<Attendance> update(@PathVariable Long id, @RequestBody Attendance updatedAttendance) {
+//        Attendance attendance = attendanceService.findAttendanceById(id);
+//        if (attendance == null) {
+//            return ResponseEntity.notFound().build();
+//        }
+//        attendance.setPresent(updatedAttendance.isPresent());
+//        return ResponseEntity.ok(attendanceService.update(attendance));
+//    }
+
+    @PutMapping("/update/student/{studentId}/date/{date}")
     @CrossOrigin("*")
-    public ResponseEntity<Attendance> update(@PathVariable Long id, @RequestBody Attendance updatedAttendance) {
-        Attendance attendance = attendanceService.findAttendanceById(id);
+    public ResponseEntity<Attendance> updateByStudentAndDate (@PathVariable Long studentId, @PathVariable LocalDate date, @RequestBody Attendance updatedAttendance){
+        Attendance attendance = attendanceService.findAttendanceByStudentIdAndDate(date, studentId);
         if (attendance == null) {
             return ResponseEntity.notFound().build();
         }
         attendance.setPresent(updatedAttendance.isPresent());
         return ResponseEntity.ok(attendanceService.update(attendance));
     }
-
 }

@@ -14,12 +14,11 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Getter
-@Setter
 public class Attendance {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private LocalDate date;
 
     @Column(name = "present")

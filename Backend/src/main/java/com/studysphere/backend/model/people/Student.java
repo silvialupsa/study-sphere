@@ -11,6 +11,7 @@ import com.studysphere.backend.model.people.Parent;
 import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.types.GradeClass;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -32,6 +33,7 @@ public class Student implements UserDetails {
     @GeneratedValue
     private Long id;
 
+    @NotNull
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Person person;
 
