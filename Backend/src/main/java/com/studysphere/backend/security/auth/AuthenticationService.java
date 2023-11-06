@@ -3,6 +3,7 @@ package com.studysphere.backend.security.auth;
 import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.people.Professor;
 import com.studysphere.backend.model.people.Student;
+import com.studysphere.backend.model.types.Role;
 import com.studysphere.backend.repository.PersonRepository;
 import com.studysphere.backend.repository.ProfessorRepository;
 import com.studysphere.backend.repository.StudentRepository;
@@ -10,6 +11,9 @@ import com.studysphere.backend.security.config.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +26,7 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    private final UserDetailsService userDetailsService;
 
     public AuthenticationResponse personRegister(PersonRegisterRequest request) {
         System.out.println(request);
@@ -37,7 +42,6 @@ public class AuthenticationService {
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
-                .role(user.getRole())
                 .build();
     }
 
@@ -61,7 +65,6 @@ public class AuthenticationService {
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
-                .role(user.getPerson().getRole())
                 .build();
     }
 
@@ -84,7 +87,6 @@ public class AuthenticationService {
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
-                .role(user.getPerson().getRole())
                 .build();
     }
 
@@ -101,9 +103,11 @@ public class AuthenticationService {
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
-                .role(user.getRole())
                 .build();
     }
 
-
+    public UserDetails getUser(AuthenticationResponse jwt){
+        String userEmail = jwtService.extractUsername(jwt.getToken());
+        return userDetailsService.loadUserByUsername(userEmail);
+    }
 }

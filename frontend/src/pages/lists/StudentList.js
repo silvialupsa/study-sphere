@@ -3,8 +3,17 @@ import {Link} from 'react-router-dom'
 import StudentTable from "../../components/tables/StudentTable";
 
 const fetchStudents = () => {
-    return fetch("/students/all").then((res)=> res.json())
-}
+    return fetch("/students/all", {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${localStorage.getItem("token")}`,
+        },
+    })
+        .then((res) => res.json())
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+};
 
 const deleteStudent = (id) => {
     return fetch(`/students/delete/${id}`, { method: "DELETE" })

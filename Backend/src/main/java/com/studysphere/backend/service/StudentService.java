@@ -11,6 +11,7 @@ import com.studysphere.backend.repository.StudentRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,16 +34,25 @@ public class StudentService {
     }
 
     @Transactional
+    @Modifying
     public Student add(Student student) {
+        System.out.println(student);
         Person person = student.getPerson();
-        if (personRepository.findByEmail(person.getEmail()).isPresent()) {
-            throw new EmailAlreadyExistsException("Email already exists: " + person.getEmail());
+//        if (personRepository.findByEmail(person.getEmail()).isPresent()) {
+//            throw new EmailAlreadyExistsException("Email already exists: " + person.getEmail());
+//        }
+        if(personRepository.findById(student.getPerson().getId()).isPresent()){
+            System.out.println("student is present");
+            student.setPerson(personRepository.findById(student.getPerson().getId()).get());
+        }else{
+            personRepository.save(person);
         }
-        personRepository.save(person);
+        System.out.println("student after ifs");
         School school = schoolRepository.findById(student.getSchool().getId())
                 .orElseThrow(() -> new EntityNotFoundException("School not found with ID: " + student.getSchool().getId()));
         
         school.getStudentList().add(student);
+        System.out.println("sudent before return");
         return studentRepository.save(student);
     }
 
