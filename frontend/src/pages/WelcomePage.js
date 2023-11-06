@@ -1,13 +1,14 @@
 import React from 'react';
 import ImageCarousel from "../components/mainPage/ImageCarousel";
 import PartnersCarousel from "../components/mainPage/PartnersCarousel";
-import splash from "../images/bg.png"
 import videoBg from "../videos/video.mp4"
 import Button from "react-bootstrap/Button";
+import NavBar from "../components/mainPage/NavBar";
 
 const WelcomePage = () => {
     return (
         <div>
+            <NavBar/>
             <div className="video-container">
                 <video id="backgroundVideo" className="card-img" src={videoBg} autoPlay loop muted/>
                 <div className="card-img-overlay m-auto position-absolute top-50 start-0">

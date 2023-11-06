@@ -1,4 +1,4 @@
-import React, {createContext} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -21,6 +21,7 @@ import ProfessorUpdater from './components/updaters/ProfessorUpdater';
 import {createRoot} from 'react-dom/client';
 
 const root = createRoot(document.getElementById('root'));
+
 function App() {
     return (
         <React.StrictMode>

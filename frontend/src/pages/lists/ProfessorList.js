@@ -1,20 +1,20 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import ProfessorTable from "../../components/tables/ProfessorTable";
 import {Link} from "react-router-dom";
 
 
 const fetchProfessors = () => {
-    return fetch("/professors/all").then((res)=> res.json())
+    return fetch("/professors/all").then((res) => res.json())
 }
 
 const ProfessorsList = () => {
     const [professors, setProfessors] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchProfessors().then((professors) => {
             setProfessors(professors);
         });
-    },[])
+    }, [])
 
     return (
         <div>

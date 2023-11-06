@@ -1,20 +1,19 @@
-import {useState, useEffect} from "react";
+import {useEffect, useState} from "react";
 import InspectoratesTable from "../../components/tables/InspectoratesTable";
-import SchoolList from "./SchoolList";
 
 const fetchInspectorates = () => {
-    return fetch("/inspectorates/all").then((res)=> res.json())
+    return fetch("/inspectorates/all").then((res) => res.json())
 }
 
 const InspectorateList = () => {
     const [inspectorates, setInspectorates] = useState(null);
 
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchInspectorates().then((inspectorates) => {
             setInspectorates(inspectorates);
         });
-    },[])
+    }, [])
 
     return (
         <div>

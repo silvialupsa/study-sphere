@@ -8,20 +8,22 @@ const ImageCarousel = () => {
         <div id="imageCarousel" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="5000">
-                    <img src={image1} className="d-block w-100" alt="Image 1 Description" />
+                    <img src={image1} className="d-block w-100" alt="Image 1 Description"/>
                 </div>
                 <div className="carousel-item" data-bs-interval="5000">
-                    <img src={image2} className="d-block w-100" alt="Image 2 Description" />
+                    <img src={image2} className="d-block w-100" alt="Image 2 Description"/>
                 </div>
                 <div className="carousel-item" data-bs-interval="5000">
-                    <img src={image3} className="d-block w-100" alt="Image 3 Description" />
+                    <img src={image3} className="d-block w-100" alt="Image 3 Description"/>
                 </div>
             </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+            <button className="carousel-control-prev" type="button" data-bs-target="#imageCarousel"
+                    data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Previous</span>
             </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+            <button className="carousel-control-next" type="button" data-bs-target="#imageCarousel"
+                    data-bs-slide="next">
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Next</span>
             </button>

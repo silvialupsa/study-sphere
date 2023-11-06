@@ -16,7 +16,7 @@ const fetchStudents = () => {
 };
 
 const deleteStudent = (id) => {
-    return fetch(`/students/delete/${id}`, { method: "DELETE" })
+    return fetch(`/students/delete/${id}`, {method: "DELETE"})
         .then((res) => {
             if (res.status === 200) {
                 console.log("Student deleted successfully");
@@ -49,12 +49,11 @@ const StudentList = () => {
     };
 
 
-
-    useEffect(()=>{
+    useEffect(() => {
         fetchStudents().then((students) => {
             setStudents(students);
         });
-    },[])
+    }, [])
 
     return (
         <div>
@@ -64,7 +63,7 @@ const StudentList = () => {
             <StudentTable
                 students={students}
                 onDelete={handleDelete}
-                date ={formattedDate}
+                date={formattedDate}
             />
         </div>
     )
