@@ -9,6 +9,8 @@ import com.studysphere.backend.model.types.Role;
 import com.studysphere.backend.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,5 +46,11 @@ public class PersonController {
     @GetMapping("/availableRoles")
     public ResponseEntity<List<Role>> getAllEnumRole() {
         return ResponseEntity.ok(personService.getAllAvailableRoles());
+    }
+
+    @GetMapping("/getUserWithToken")
+    public ResponseEntity<UserDetails> getUser(@RequestHeader("Authorization") String authHeader){
+        System.out.println("getUserWithToken");
+        return ResponseEntity.ok(service.getUser(authHeader));
     }
 }

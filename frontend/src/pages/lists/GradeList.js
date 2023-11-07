@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import GradeTable from "../../components/tables/GradeTable";
 
 const fetchGrades = () => {
@@ -20,7 +20,7 @@ const GradeList = () => {
     console.log(grades)
     return (
         <div>
-            <GradeTable grades={grades} />
+            <GradeTable grades={grades}/>
         </div>
     );
 };

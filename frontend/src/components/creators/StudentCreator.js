@@ -31,7 +31,6 @@ const fetchGrades = () => {
     return fetch("/grades/all").then((res) => res.json())
 };
 
-
 const StudentCreator = () => {
     const navigate = useNavigate();
     const [schools, setSchools] = useState([]);

@@ -4,7 +4,9 @@ import com.studysphere.backend.exceptions.EmailAlreadyExistsException;
 import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.types.Role;
 import com.studysphere.backend.repository.PersonRepository;
+import com.studysphere.backend.security.auth.AuthenticationResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -34,4 +36,5 @@ public class PersonService {
     public List<Role> getAllAvailableRoles(){
         return Arrays.asList(Role.values());
     }
+
 }

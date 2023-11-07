@@ -12,6 +12,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import static com.studysphere.backend.model.types.PersonCategory.STUDENT;
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -26,8 +28,8 @@ public class SecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth ->
                         auth
-                                .requestMatchers("/students/**", "/people/authenticate", "/grades/**", "/inspectorates/**", "/professor/**", "/schools/**", "/people/**", "/**", "/attendance/**").permitAll()
-                                .requestMatchers("/professors/all").hasRole("PROFESSOR")
+                                .requestMatchers("people/**").permitAll()
+                                .requestMatchers("/students/all").hasRole(STUDENT.name())
                                 .anyRequest()
                                 .authenticated()
                 ).sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -36,21 +38,3 @@ public class SecurityConfiguration {
         return http.build();
     }
 }
-
-//hasAnyRole("STUDENT", "ADMIN", "PROFESSOR")
-
-//    @Bean
-//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//        http
-//                .cors(Customizer.withDefaults())
-//                .csrf(AbstractHttpConfigurer::disable)
-//                .authorizeHttpRequests( auth->
-//                        auth.requestMatchers( "/students/**", "/parents/**", "/schools/**", "/people/**", "/grades/**","/professors/**", "/**")
-//                                .permitAll()
-//                                .anyRequest()
-//                                .authenticated())
-//                .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//                .authenticationProvider(authenticationProvider)
-//                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
-//        return http.build();
-//    }

@@ -1,36 +1,53 @@
 import {useNavigate} from 'react-router-dom';
-import {useSignIn} from 'react-auth-kit';
-import {useEffect, useState} from 'react';
-import axios, {AxiosError} from 'axios';
+import React, {useState} from 'react';
+import NavBar from "../components/mainPage/NavBar";
 
 const LogIn = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
-    const signIn = useSignIn();
-    const [role, setRole] = useState(''); // Corrected initialization of role state
 
     const onSave = async (values) => {
         setError('');
-
         try {
-            const response = await axios.post('/people/authenticate', values);
-            signIn({
-                token: response.data.token,
-                expiresIn: 3600,
-                tokenType: 'Bearer',
-                authState: {email: values.email, role: response.data.role}
-
+            const response = await fetch('/people/authenticate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(values),
             });
+            if (response.ok) {
+                const responseData = await response.json();
+                localStorage.setItem("token", responseData.token);
+                console.log(responseData.token)
+                const tokenResponse = await fetch('/people/getUserWithToken', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${responseData.token}`,
+                    }
+                });
 
-            // useEffect(()=>{
-            //     setRole(response.data.role);
-            // }, [response])
-            navigate('/auxiliary');
+                console.log(tokenResponse)
+                if (tokenResponse.ok) {
+                    const dataWithUser = await tokenResponse.json();
+                    localStorage.setItem("user", JSON.stringify(dataWithUser))
+                    navigate('/auxiliary');
+                } else {
+                    const errorData = await tokenResponse.json();
+                    setError(errorData.message);
+                    console.log(error);
+                }
+            } else {
+                const errorData = await response.json();
+                setError(errorData.message);
+                console.log(error);
+            }
         } catch (err) {
-            if (err instanceof AxiosError) setError(err.response?.data.message);
-            else if (err instanceof Error) setError(err.message);
+            setError(err.message);
+            console.log(error);
         }
     };
+
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -44,6 +61,7 @@ const LogIn = () => {
 
     return (
         <div>
+            <NavBar/>
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">
