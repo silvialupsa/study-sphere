@@ -2,7 +2,6 @@ import {useNavigate} from 'react-router-dom';
 import React, {useState} from 'react';
 import NavBar from "../components/mainPage/NavBar";
 
-
 const LogIn = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
@@ -20,26 +19,32 @@ const LogIn = () => {
             if (response.ok) {
                 const responseData = await response.json();
                 localStorage.setItem("token", responseData.token);
-
-                const tokenResponse = await fetch('/people/token', {
-                    method: 'POST',
+                console.log(responseData.token)
+                const tokenResponse = await fetch('/people/getUserWithToken', {
+                    method: 'GET',
                     headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(responseData),
+                        'Authorization': `Bearer ${responseData.token}`,
+                    }
                 });
 
+                console.log(tokenResponse)
                 if (tokenResponse.ok) {
                     const dataWithUser = await tokenResponse.json();
                     localStorage.setItem("user", JSON.stringify(dataWithUser))
+                    navigate('/auxiliary');
+                } else {
+                    const errorData = await tokenResponse.json();
+                    setError(errorData.message);
+                    console.log(error);
                 }
-                navigate('/auxiliary');
             } else {
                 const errorData = await response.json();
                 setError(errorData.message);
+                console.log(error);
             }
         } catch (err) {
             setError(err.message);
+            console.log(error);
         }
     };
 

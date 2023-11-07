@@ -1,15 +1,14 @@
-import React, {useState, useEffect} from "react";
-import Button from 'react-bootstrap/Button';
+import React from "react";
 import {NavDropdown} from "react-bootstrap";
 import logo from '../../images/white-no-bg.png';
-import {faSearch} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useNavigate} from 'react-router-dom';
 
 const NavBar = () => {
     const navigate = useNavigate();
-    const handleLogInButton = (school) => {
-            navigate("/login")
+    const handleLogOutButton = (school) => {
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        navigate("/login")
     };
     return (<div>
         <nav className="navbar navbar-expand-md navbar-light nav-underline">
@@ -50,13 +49,13 @@ const NavBar = () => {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <button className="log-in mx-3" onClick={handleLogInButton}>
-                                Log in
-                            </button>
+                            <div className="thumbnail" style={{backgroundColor: "#f1b708"}}>
+
+                            </div>
                         </li>
                         <li className="nav-item">
-                            <button className="get-started mx-3">
-                                Get started
+                            <button className="get-started mx-3" onClick={handleLogOutButton}>
+                                Log out
                             </button>
                         </li>
                     </ul>

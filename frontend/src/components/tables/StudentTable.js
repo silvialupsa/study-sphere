@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 
-const fetchAttendanceByStudentIdAndDate = (studentId, date) => {
-    return fetch(`/attendance/student/${studentId}/date/${date}`)
-        .then((res) => res.json());
-};
+// const fetchAttendanceByStudentIdAndDate = (studentId, date) => {
+//     return fetch(`/attendance/student/${studentId}/date/${date}`)
+//         .then((res) => res.json());
+// };
 
 const updateAttendance = (studentId, date, attendance) => {
     return fetch(`/attendance/student/${studentId}/date/${date}`, {
@@ -24,23 +24,23 @@ const StudentTable = ({students, onDelete, date}) => {
     useEffect(() => {
         // Fetch and initialize the attendance status for each student
         const initialStatus = {};
-
-        students.forEach((student) => {
-            fetchAttendanceByStudentIdAndDate(student.id, date)
-                .then((attendance) => {
-                    if (attendance) {
-                        initialStatus[student.id] = attendance.present;
-                    } else {
-                        initialStatus[student.id] = false; // Default to false if no attendance data
-                    }
-                })
-                .catch((error) => {
-                    console.error('Error fetching attendance:', error);
-                    initialStatus[student.id] = false;
-                    // Handle the error as needed
-                });
-        });
-        setAttendanceStatus(initialStatus);
+        //
+        // students.forEach((student) => {
+        //     fetchAttendanceByStudentIdAndDate(student.id, date)
+        //         .then((attendance) => {
+        //             if (attendance) {
+        //                 initialStatus[student.id] = attendance.present;
+        //             } else {
+        //                 initialStatus[student.id] = false; // Default to false if no attendance data
+        //             }
+        //         })
+        //         .catch((error) => {
+        //             console.error('Error fetching attendance:', error);
+        //             initialStatus[student.id] = false;
+        //             // Handle the error as needed
+        //         });
+        // });
+        // setAttendanceStatus(initialStatus);
     }, [students, date]);
 
     const handleUpdateAttendance = (studentId, date) => {

@@ -48,8 +48,9 @@ public class PersonController {
         return ResponseEntity.ok(personService.getAllAvailableRoles());
     }
 
-    @PostMapping("/token")
-    public ResponseEntity<UserDetails> getUser(@RequestBody AuthenticationResponse response){
-        return ResponseEntity.ok(service.getUser(response));
+    @GetMapping("/getUserWithToken")
+    public ResponseEntity<UserDetails> getUser(@RequestHeader("Authorization") String authHeader){
+        System.out.println("getUserWithToken");
+        return ResponseEntity.ok(service.getUser(authHeader));
     }
 }

@@ -2,11 +2,13 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import ImageCarousel from "../components/mainPage/ImageCarousel";
 import PartnersCarousel from "../components/mainPage/PartnersCarousel";
+import NavBarUser from "../components/mainPage/NavBarUser";
 
 const WelcomePage = () => {
     const [role, setRole] = useState(JSON.parse(localStorage.getItem("user")).role);
     return (
         <div>
+            <NavBarUser/>
             <div className="container" backgroundcolor="red">
                 <div className="row">
                     <div className="col-md-6 offset-md-3 text-center">

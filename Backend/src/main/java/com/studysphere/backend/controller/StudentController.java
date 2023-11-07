@@ -66,8 +66,6 @@ public class StudentController {
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody StudentRegisterRequest request
     ) {
-        System.out.println("student register request: "+ request);
         return ResponseEntity.ok(service.studentRegister(request));
     }
-
 }

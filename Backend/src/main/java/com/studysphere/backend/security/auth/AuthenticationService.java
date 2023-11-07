@@ -106,8 +106,9 @@ public class AuthenticationService {
                 .build();
     }
 
-    public UserDetails getUser(AuthenticationResponse jwt){
-        String userEmail = jwtService.extractUsername(jwt.getToken());
+    public UserDetails getUser(String authHeader){
+        String token = authHeader.substring(7);
+        String userEmail = jwtService.extractUsername(token);
         return userDetailsService.loadUserByUsername(userEmail);
     }
 }

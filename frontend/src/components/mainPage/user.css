@@ -1,0 +1,13 @@
+.thumbnail {
+    position: absolute;
+    overflow: hidden;
+    display: block;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    text-align: center;
+    z-index: 1;
+    color: inherit!important;
+    text-decoration: none!important;
+}
