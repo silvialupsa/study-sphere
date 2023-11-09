@@ -27,6 +27,7 @@ public class Person implements UserDetails {
     private LocalDate birthdate;
 
     @NotNull
+    @Column(unique = true)
     private String email;
 
     @NotNull

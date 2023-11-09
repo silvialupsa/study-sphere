@@ -28,10 +28,11 @@ public class SecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth ->
                         auth
-                                .requestMatchers("people/**").permitAll()
-                                .requestMatchers("/students/all").hasRole(STUDENT.name())
+//                                .requestMatchers("people/**", "students/**", "professors/**", "schools/**", "grades/**", "attendance/**", "inspectorates/**").permitAll()
+//                                .requestMatchers("/students/all").hasRole(STUDENT.name())
                                 .anyRequest()
-                                .authenticated()
+                                .permitAll()
+//                                .authenticated()
                 ).sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);

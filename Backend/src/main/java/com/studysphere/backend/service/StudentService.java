@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -32,6 +33,7 @@ public class StudentService {
     public Student findById(Long id) {
         return studentRepository.findById(id).orElse(null);
     }
+    public Optional<Person> findByEmail(String email){ return personRepository.findByEmail(email);};
 
     @Transactional
     @Modifying

@@ -31,6 +31,7 @@ public class ProfessorService {
         personRepository.save(person);
         professorRepository.save(professor);
     }
+    public Optional<Person> findByEmail(String email){ return personRepository.findByEmail(email);};
 
     public List<Subject> getAllAvailableSubjects() {
         return Arrays.asList(Subject.values());
