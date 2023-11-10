@@ -1,6 +1,5 @@
 package com.studysphere.backend.service;
 
-import com.studysphere.backend.exceptions.EmailAlreadyExistsException;
 import com.studysphere.backend.model.School;
 import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.people.Student;

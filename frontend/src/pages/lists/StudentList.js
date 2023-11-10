@@ -32,7 +32,7 @@ const deleteStudent = (id) => {
 
 const StudentList = () => {
     const [students, setStudents] = useState([]);
-    const specificDate = new Date("2023-10-08"); // Get the current date in a readable format
+    const specificDate = new Date("2023-10-09"); // Get the current date in a readable format
     const formattedDate = `${specificDate.getFullYear()}-${(specificDate.getMonth() + 1)
         .toString()
         .padStart(2, "0")}-${specificDate.getDate().toString().padStart(2, "0")}`;
@@ -49,22 +49,22 @@ const StudentList = () => {
     let i=0;
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
-
-        CheckToken(navigate, token).then((validToken) => {
-            if (validToken) {
-                console.log("getting students")
+        // const token = localStorage.getItem("token");
+        //
+        // CheckToken(navigate, token).then((validToken) => {
+        //     if (validToken) {
+        //         console.log("getting students")
                 fetchStudents(navigate).then((students) => {
                     setStudents(students);
                 });
-                console.log("i from true:" + i)
-                i++;
-            } else {
-                console.log("i from false:" + i)
-                i++;
-            }
-        });
-    }, [navigate]);
+        //         console.log("i from true:" + i)
+        //         i++;
+        //     } else {
+        //         console.log("i from false:" + i)
+        //         i++;
+        //     }
+        // });
+    }, []);
 
     return (
         <div>

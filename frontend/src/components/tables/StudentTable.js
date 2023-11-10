@@ -1,73 +1,106 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 
-// const fetchAttendanceByStudentIdAndDate = (studentId, date) => {
-//     return fetch(`/attendance/student/${studentId}/date/${date}`)
-//         .then((res) => res.json());
-// };
+const fetchAttendanceByStudentIdAndDate = (studentId, date) => {
+    return fetch(`/attendance/student/${studentId}/date/${date}`)
+        .then((res) => {
+            if (res.ok) {
+                return res.json();
+            } else {
+                return fetch(`/attendance/add`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        date: date,
+                        attendanceStatus: "PENDING",
+                        student: {
+                            id: studentId,
+                        },
+                    }),
+                }).then((res) => res.json());
 
-const updateAttendance = (studentId, date, attendance) => {
-    return fetch(`/attendance/student/${studentId}/date/${date}`, {
+            }
+        });
+};
+
+const updateAttendance = async (studentId, date, attendanceStatus) => {
+    const attendance = {
+        date: date,
+        attendanceStatus: attendanceStatus,
+        student: {
+            id: studentId,
+        },
+    };
+    console.log('Request Body:', JSON.stringify(attendance));
+
+    const res = await fetch(`/attendance/update/student/${studentId}/date/${date}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(attendance),
-    }).then((res) => res.json());
+    });
+
+    return res.json();
 };
 
-const StudentTable = ({students, onDelete, date}) => {
 
+const StudentTable = ({ students, onDelete, date }) => {
     const [attendanceStatus, setAttendanceStatus] = useState({});
-    const [attendance, setAttendance] = useState({});
+
 
     useEffect(() => {
-        // Fetch and initialize the attendance status for each student
         const initialStatus = {};
-        //
-        // students.forEach((student) => {
-        //     fetchAttendanceByStudentIdAndDate(student.id, date)
-        //         .then((attendance) => {
-        //             if (attendance) {
-        //                 initialStatus[student.id] = attendance.present;
-        //             } else {
-        //                 initialStatus[student.id] = false; // Default to false if no attendance data
-        //             }
-        //         })
-        //         .catch((error) => {
-        //             console.error('Error fetching attendance:', error);
-        //             initialStatus[student.id] = false;
-        //             // Handle the error as needed
-        //         });
-        // });
-        // setAttendanceStatus(initialStatus);
+
+        const fetchAttendance = async () => {
+            const promises = students.map(async (student) => {
+                try {
+                    const attendance = await fetchAttendanceByStudentIdAndDate(student.id, date);
+                    if (attendance) {
+                        initialStatus[student.id] = attendance.attendanceStatus;
+                    } else {
+                        initialStatus[student.id] = "PENDING";
+                        const defaultAttendance = {
+                            date: date,
+                            attendanceStatus: "PENDING",
+                            student: {
+                                id: student.id,
+                            },
+                        };
+                        await updateAttendance(student.id, date, defaultAttendance);
+                    }
+                } catch (error) {
+                    console.error('Error fetching attendance:', error);
+                }
+            });
+
+            await Promise.all(promises);
+            setAttendanceStatus(initialStatus);
+        };
+
+        fetchAttendance();
     }, [students, date]);
 
-    const handleUpdateAttendance = (studentId, date) => {
-        updateAttendance(studentId, date, attendance).then(() => {
-            console.log(studentId)
-            console.log(attendance)
-            console.log("Status "+ attendanceStatus.id)
-            toggleAttendance(students);
-        })
-    }
-    const toggleAttendance = (students) => {
-        // Toggle the attendance status for the student
-        students.forEach((student) => {
-            setAttendanceStatus({
-                ...attendanceStatus,
-                [student]: !attendanceStatus[student.id],
-            });
-        })
-
+    const handleUpdateAttendance = (studentId, attendanceStatus) => {
+        updateAttendance(studentId, date, attendanceStatus).then(() => {
+            setAttendanceStatus((prevStatus) => ({
+                ...prevStatus,
+                [studentId]: attendanceStatus,
+            }));
+        });
+        console.log(attendanceStatus)
     };
+
+
 
 
     return (
         <div className="Student-table">
             <h2>Student List</h2>
             <h2>Current date: {date}</h2>
-            <button className='btn-group' onClick={() => toggleAttendance(students)}>Update Attendance</button>
+            {/*<button className='btn-group' onClick={() =>handleUpdateAttendanceClick()}>Update Attendance</button>*/}
 
             <div className="row">
                 {students?.map((student) => (
@@ -80,22 +113,22 @@ const StudentTable = ({students, onDelete, date}) => {
                                     <div className="attendance-buttons">
                                         <button
                                             className={`btn ${
-                                                attendanceStatus[student.id] ? 'btn-success' : 'btn-secondary'
+                                                attendanceStatus[student.id] === "PRESENT" ? 'btn-success' : 'btn-secondary'
                                             }`}
                                             onClick={() => {
-                                                handleUpdateAttendance(student.id, date);
-                                                setAttendanceStatus(true);
+                                                // setAttendanceStatus(true);
+                                                handleUpdateAttendance(student.id, "PRESENT");
                                             }}
                                         >
                                             Present
                                         </button>
                                         <button
                                             className={`btn ${
-                                                attendanceStatus[student.id] === false ? 'btn-danger' : 'btn-secondary'
+                                                attendanceStatus[student.id] === "ABSENT" ? 'btn-danger' : 'btn-secondary'
                                             }`}
                                             onClick={() => {
-                                                handleUpdateAttendance(student.id, date)
-                                                setAttendanceStatus(false)
+                                                // setAttendanceStatus(false)
+                                                handleUpdateAttendance(student.id, "ABSENT")
                                             }}
                                         >
                                             Absent
