@@ -34,6 +34,7 @@ public class StudentService {
     }
     public Optional<Person> findByEmail(String email){ return personRepository.findByEmail(email);};
 
+    public Student findByPersonId(Long id){ return studentRepository.findByPersonId(id);};
     @Transactional
     @Modifying
     public Student add(Student student) {

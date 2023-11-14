@@ -47,8 +47,9 @@ const updateAttendance = async (studentId, date, attendanceStatus) => {
 };
 
 
-const StudentTable = ({ students, onDelete, date }) => {
+const StudentTable = ({students, onDelete, date}) => {
     const [attendanceStatus, setAttendanceStatus] = useState({});
+    const [attendanceOn, setAttendanceOn] = useState(false);
 
 
     useEffect(() => {
@@ -79,9 +80,11 @@ const StudentTable = ({ students, onDelete, date }) => {
             await Promise.all(promises);
             setAttendanceStatus(initialStatus);
         };
+        if (attendanceOn) {
+            fetchAttendance();
+        }
 
-        fetchAttendance();
-    }, [students, date]);
+    }, [students, date, attendanceOn]);
 
     const handleUpdateAttendance = (studentId, attendanceStatus) => {
         updateAttendance(studentId, date, attendanceStatus).then(() => {
@@ -93,14 +96,16 @@ const StudentTable = ({ students, onDelete, date }) => {
         console.log(attendanceStatus)
     };
 
-
+    const handleUpdateAttendanceClick = () => {
+        setAttendanceOn(true)
+    }
 
 
     return (
         <div className="Student-table">
             <h2>Student List</h2>
             <h2>Current date: {date}</h2>
-            {/*<button className='btn-group' onClick={() =>handleUpdateAttendanceClick()}>Update Attendance</button>*/}
+            <button className='btn-group' onClick={() => handleUpdateAttendanceClick()}>Update Attendance</button>
 
             <div className="row">
                 {students?.map((student) => (

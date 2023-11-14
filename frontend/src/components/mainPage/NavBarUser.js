@@ -2,6 +2,7 @@ import React from "react";
 import {NavDropdown} from "react-bootstrap";
 import logo from '../../images/white-no-bg.png';
 import {useNavigate} from 'react-router-dom';
+import profilePicture from "../../images/profilePicture.png";
 
 const NavBar = () => {
     const navigate = useNavigate();
@@ -9,6 +10,15 @@ const NavBar = () => {
         localStorage.removeItem("user");
         localStorage.removeItem("token");
         navigate("/login")
+    };
+
+    const goToMyProfile = () => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user && user.id) {
+            navigate(`/myProfile/${user.id}`);
+        } else {
+            console.error("User ID not found");
+        }
     };
     return (<div>
         <nav className="navbar navbar-expand-md navbar-light nav-underline">
@@ -58,6 +68,15 @@ const NavBar = () => {
                                 Log out
                             </button>
                         </li>
+                        <div className="d-flex align-items-center">
+                            <img
+                                src={profilePicture}
+                                alt="profile"
+                                style={{ width: '50px', height: '50px', borderRadius: '50%', marginRight: '10px' }}
+                            />
+                            <li className="nav-item">
+                                <button className="my-profile mx-3" onClick={goToMyProfile}>My Profile </button></li>
+                        </div>
                     </ul>
                 </div>
             </div>

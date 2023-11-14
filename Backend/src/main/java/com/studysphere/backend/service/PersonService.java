@@ -18,6 +18,7 @@ public class PersonService {
     public List<Person> getAll(){
         return personRepository.findAll();
     }
+    public Optional<Person> findById(Long id){return personRepository.findById(id);}
 
     public Optional<Person> findByEmail(String email){ return personRepository.findByEmail(email);};
 

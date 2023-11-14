@@ -37,6 +37,13 @@ public class StudentController {
         return ResponseEntity.ok(studentService.add(student));
     }
 
+    @GetMapping("/personId/{id}")
+    @CrossOrigin("*")
+    public ResponseEntity<Student> getByPErsonId(@PathVariable Long id) {
+        return ResponseEntity.ok(studentService.findByPersonId(id));
+    }
+
+
     @DeleteMapping("/delete/{id}")
     @CrossOrigin("*")
     public ResponseEntity<Long> deleteStudent(@PathVariable Long id) {
@@ -68,7 +75,7 @@ public class StudentController {
             @RequestBody StudentRegisterRequest request
     ) {
         Optional<Person> existingPerson = studentService.findByEmail(request.getPerson().getEmail());
-        if (existingPerson.isPresent()){
+        if (existingPerson.isPresent()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new AuthenticationResponse("Email already in use"));
         }
         return ResponseEntity.ok(service.studentRegister(request));

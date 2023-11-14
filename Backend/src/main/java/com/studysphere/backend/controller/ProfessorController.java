@@ -2,6 +2,7 @@ package com.studysphere.backend.controller;
 
 import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.people.Professor;
+import com.studysphere.backend.model.people.Student;
 import com.studysphere.backend.security.auth.*;
 import com.studysphere.backend.model.types.Subject;
 import com.studysphere.backend.service.ProfessorService;
@@ -35,6 +36,12 @@ public class ProfessorController {
     @GetMapping("/availableSubjects")
     public ResponseEntity<List<Subject>> getAllEnumSubjects() {
         return ResponseEntity.ok(professorService.getAllAvailableSubjects());
+    }
+
+    @GetMapping("/personId/{id}")
+    @CrossOrigin("*")
+    public ResponseEntity<Professor> getByPErsonId(@PathVariable Long id) {
+        return ResponseEntity.ok(professorService.findByPersonId(id));
     }
 
     @GetMapping("/{id}")

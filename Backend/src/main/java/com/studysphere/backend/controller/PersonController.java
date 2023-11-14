@@ -47,7 +47,14 @@ public class PersonController {
     ) {
         return ResponseEntity.ok(service.authenticate(request));
     }
-
+//   @GetMapping("/{id}")
+//    public ResponseEntity<Professor> getProfById(@PathVariable Long id){
+//        return ResponseEntity.ok(professorService.findById(id));
+//    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<Person>> getByID(@PathVariable Long id){
+        return ResponseEntity.ok(personService.findById(id));
+    }
 
     @GetMapping("/availableRoles")
     public ResponseEntity<List<Role>> getAllEnumRole() {

@@ -2,6 +2,7 @@ package com.studysphere.backend.service;
 
 import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.people.Professor;
+import com.studysphere.backend.model.people.Student;
 import com.studysphere.backend.model.types.Role;
 import com.studysphere.backend.repository.PersonRepository;
 import com.studysphere.backend.repository.ProfessorRepository;
@@ -40,6 +41,8 @@ public class ProfessorService {
     public Professor findById(Long id){
         return professorRepository.findById(id).orElse(null);
     }
+
+    public Professor findByPersonId(Long id){ return professorRepository.findByPersonId(id);};
 
     @Transactional
     public Professor update(Long id, Professor updatedProfessor) {
