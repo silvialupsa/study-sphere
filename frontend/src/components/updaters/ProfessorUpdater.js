@@ -1,6 +1,3 @@
-
-
-
 import React, {useEffect, useState} from "react";
 import {useNavigate, useParams} from 'react-router-dom';
 import ProfessorForm from "../forms/ProfessorForm";
@@ -11,10 +8,11 @@ const updateProfessor = (professor) => {
     return fetch(`/professors/update/${professor.id}`, {
         method: "PUT",
         headers: {
-            "Content-Type": "application/json",},
+            "Content-Type": "application/json",
+        },
 
         body: JSON.stringify(professor),
-    }) .then((res) => {
+    }).then((res) => {
         if (!res.ok) {
             throw new Error(`HTTP error! Status: ${res.status}`);
         }
@@ -38,7 +36,7 @@ const fetchPeople = () => {
 };
 
 const fetchProfessor = (id) => {
-    return fetch(`/professors/${id}`).then((res)=> res.json())
+    return fetch(`/professors/${id}`).then((res) => res.json())
 }
 
 
@@ -51,9 +49,9 @@ const ProfessorUpdater = () => {
     const [professor, setProfessor] = useState([])
 
     useEffect(() => {
-              fetchProfessor(id).then(professor=> {
-                    console.log(professor);
-                    setProfessor(professor)})
+        fetchProfessor(id).then(professor => {
+            setProfessor(professor)
+        })
         fetchAvailableSubjects().then((subjects) => {
             setSubjects(subjects);
         });
@@ -64,7 +62,7 @@ const ProfessorUpdater = () => {
             setRoles(roles)
         })
 
-    }, []);
+    }, [id]);
 
     const handleUpdateProfessor = (professor) => {
         updateProfessor(professor).then(() => {
