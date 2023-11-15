@@ -100,8 +100,14 @@
 	<build>
 		<plugins>
 			<plugin>
+
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<!--                    <classifier>exec</classifier>-->
+					<mainClass>com.studysphere.backend.BackendApplication</mainClass>
+					<layout>JAR</layout>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

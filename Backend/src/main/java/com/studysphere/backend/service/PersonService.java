@@ -1,12 +1,9 @@
 package com.studysphere.backend.service;
 
-import com.studysphere.backend.exceptions.EmailAlreadyExistsException;
 import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.types.Role;
 import com.studysphere.backend.repository.PersonRepository;
-import com.studysphere.backend.security.auth.AuthenticationResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -21,14 +18,13 @@ public class PersonService {
     public List<Person> getAll(){
         return personRepository.findAll();
     }
+    public Optional<Person> findById(Long id){return personRepository.findById(id);}
+
+    public Optional<Person> findByEmail(String email){ return personRepository.findByEmail(email);};
+
     public void add(Person person){
-        Optional<Person> existingPerson = personRepository.findByEmail(person.getEmail());
-        if (existingPerson.isPresent()) {
-            throw new EmailAlreadyExistsException("Email already exists: " + person.getEmail());
-        }
-        personRepository.save(person);
+            personRepository.save(person);
     }
-    //todo first check if person with email exists and throw "email already exists
     public void deleteById(Long id){
         personRepository.deleteById(id);
     }

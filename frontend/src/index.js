@@ -19,6 +19,7 @@ import {AuthProvider} from 'react-auth-kit';
 import ProfessorCreator from './components/creators/ProfessorCreator';
 import ProfessorUpdater from './components/updaters/ProfessorUpdater';
 import {createRoot} from 'react-dom/client';
+import UserProfile from "./pages/UserProfile";
 
 const root = createRoot(document.getElementById('root'));
 
@@ -48,6 +49,7 @@ function App() {
                         <Route path="/createSchool" element={<SchoolCreator/>}/>
                         <Route path="/createProfessor" element={<ProfessorCreator/>}/>
                         <Route path="/checkSchools/:id" element={<SchoolsForInspectorate/>}/>
+                        <Route path="/myProfile/:id" element={<UserProfile/>}/>
                     </Routes>
                 </Router>
             </AuthProvider>

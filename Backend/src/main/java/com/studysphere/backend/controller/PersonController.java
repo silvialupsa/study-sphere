@@ -8,13 +8,16 @@ import com.studysphere.backend.security.auth.PersonRegisterRequest;
 import com.studysphere.backend.model.types.Role;
 import com.studysphere.backend.service.PersonService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/people")
 @RequiredArgsConstructor
@@ -23,7 +26,6 @@ public class PersonController {
     private final AuthenticationService service;
 
     @GetMapping("/all")
-    @CrossOrigin("*")
         public ResponseEntity<List<Person>> getAll(){
         return ResponseEntity.ok(personService.getAll());
     }
@@ -32,6 +34,10 @@ public class PersonController {
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody PersonRegisterRequest request
     ) {
+        Optional<Person> existingPerson = personService.findByEmail(request.getEmail());
+        if (existingPerson.isPresent()){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new AuthenticationResponse("Email already in use"));
+        }
         return ResponseEntity.ok(service.personRegister(request));
     }
 
@@ -41,7 +47,14 @@ public class PersonController {
     ) {
         return ResponseEntity.ok(service.authenticate(request));
     }
-
+//   @GetMapping("/{id}")
+//    public ResponseEntity<Professor> getProfById(@PathVariable Long id){
+//        return ResponseEntity.ok(professorService.findById(id));
+//    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<Person>> getByID(@PathVariable Long id){
+        return ResponseEntity.ok(personService.findById(id));
+    }
 
     @GetMapping("/availableRoles")
     public ResponseEntity<List<Role>> getAllEnumRole() {

@@ -1,6 +1,5 @@
 package com.studysphere.backend.service;
 
-import com.studysphere.backend.exceptions.EmailAlreadyExistsException;
 import com.studysphere.backend.model.School;
 import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.people.Student;
@@ -16,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -32,7 +32,9 @@ public class StudentService {
     public Student findById(Long id) {
         return studentRepository.findById(id).orElse(null);
     }
+    public Optional<Person> findByEmail(String email){ return personRepository.findByEmail(email);};
 
+    public Student findByPersonId(Long id){ return studentRepository.findByPersonId(id);};
     @Transactional
     @Modifying
     public Student add(Student student) {

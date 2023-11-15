@@ -42,7 +42,8 @@ public class Student implements UserDetails {
 
 
     @JsonIgnore
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<Attendance> attendance;
 
 

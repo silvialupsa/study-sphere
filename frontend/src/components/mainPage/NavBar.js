@@ -1,6 +1,7 @@
 import React from "react";
 import {NavDropdown} from "react-bootstrap";
 import logo from '../../images/white-no-bg.png';
+import profilePicture from '../../images/profilePicture.png';
 import {useNavigate} from 'react-router-dom';
 
 const NavBar = () => {

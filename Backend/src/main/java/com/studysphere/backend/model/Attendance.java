@@ -1,16 +1,14 @@
 package com.studysphere.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.studysphere.backend.model.people.Student;
+import com.studysphere.backend.model.types.AttendanceStatus;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -21,12 +19,14 @@ public class Attendance {
 
     private LocalDate date;
 
-    @Column(name = "present")
-    private boolean present;
+    @Column(name = "attendance_status")
+    @Enumerated(EnumType.STRING)
+    private AttendanceStatus attendanceStatus;
 
+//        @JsonIdentityReference(alwaysAsId = true)
     @ManyToOne
-    @JsonBackReference
-    @JoinColumn(name = "student_id", nullable = false)
+    @JoinColumn(name = "student_id")
     private Student student;
+
 
 }

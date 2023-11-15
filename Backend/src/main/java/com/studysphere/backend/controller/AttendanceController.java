@@ -75,7 +75,7 @@ public class AttendanceController {
         if (attendance == null) {
             return ResponseEntity.notFound().build();
         }
-        attendance.setPresent(updatedAttendance.isPresent());
+        attendance.setAttendanceStatus(updatedAttendance.getAttendanceStatus());
         return ResponseEntity.ok(attendanceService.update(attendance));
     }
 }
