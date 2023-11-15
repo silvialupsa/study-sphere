@@ -33,8 +33,8 @@ public class AttendanceController {
 
     @GetMapping("/student/{id}")
     @CrossOrigin("*")
-    public ResponseEntity<Attendance> getByStudentId(@PathVariable Long id) {
-        return ResponseEntity.ok(attendanceService.findAttendanceById(id));
+    public ResponseEntity<List<Attendance>> getByStudentId(@PathVariable Long id) {
+  return ResponseEntity.ok(attendanceService.findByStudentId(id));
     }
 
     @GetMapping("/student/{studentId}/date/{date}")

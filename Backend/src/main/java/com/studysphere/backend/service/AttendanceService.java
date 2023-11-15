@@ -36,9 +36,11 @@ public class AttendanceService {
         return attendanceRepository.findAttendanceByDateAndStudentId(date, studentId);
     }
 
-    public Attendance update( Attendance updatedAttendance) {
+    public Attendance update(Attendance updatedAttendance) {
         return attendanceRepository.save(updatedAttendance);
     }
 
-
+    public List<Attendance> findByStudentId(Long id) {
+        return attendanceRepository.findAttendanceByStudentId(id);
+    }
 }
