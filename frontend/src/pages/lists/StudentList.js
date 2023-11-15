@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Link, useNavigate} from 'react-router-dom'
 import StudentTable from "../../components/tables/StudentTable";
-import {CheckToken} from "../../components/CheckToken";
+// import {CheckToken} from "../../components/CheckToken";
 const fetchStudents = (navigate) => {
     return fetch("/students/all", {
         method: "GET",
@@ -32,11 +32,12 @@ const deleteStudent = (id) => {
 
 const StudentList = () => {
     const [students, setStudents] = useState([]);
-    const specificDate = new Date("2023-10-09"); // Get the current date in a readable format
+    const specificDate = new Date();
     const formattedDate = `${specificDate.getFullYear()}-${(specificDate.getMonth() + 1)
         .toString()
         .padStart(2, "0")}-${specificDate.getDate().toString().padStart(2, "0")}`;
     const navigate = useNavigate();
+
     const handleDelete = (id) => {
         deleteStudent(id)
             .then(() => {
@@ -46,7 +47,7 @@ const StudentList = () => {
                 console.error("Error:", error);
             });
     };
-    let i=0;
+    // let i=0;
 
     useEffect(() => {
         // const token = localStorage.getItem("token");
@@ -64,7 +65,8 @@ const StudentList = () => {
         //         i++;
         //     }
         // });
-    }, []);
+    }, [navigate]);
+
 
     return (
         <div>
