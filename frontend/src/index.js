@@ -20,6 +20,7 @@ import ProfessorCreator from './components/creators/ProfessorCreator';
 import ProfessorUpdater from './components/updaters/ProfessorUpdater';
 import {createRoot} from 'react-dom/client';
 import UserProfile from "./pages/UserProfile";
+import GradedMarksList from "./pages/lists/GradedMarksList";
 
 const root = createRoot(document.getElementById('root'));
 
@@ -50,6 +51,7 @@ function App() {
                         <Route path="/createProfessor" element={<ProfessorCreator/>}/>
                         <Route path="/checkSchools/:id" element={<SchoolsForInspectorate/>}/>
                         <Route path="/myProfile/:id" element={<UserProfile/>}/>
+                        <Route path="/gradedMarkList" element={<GradedMarksList/>}/>
                     </Routes>
                 </Router>
             </AuthProvider>

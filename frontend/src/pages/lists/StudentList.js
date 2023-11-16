@@ -73,6 +73,10 @@ const StudentList = () => {
             <Link to={`/createStudent`}>
                 <button type="button" className="btn btn-info">Create Student</button>
             </Link>
+            <Link to={`/gradedMarkList`}>
+                <button type="button" className="btn btn-info">Add grades to students</button>
+
+            </Link>
             <StudentTable
                 students={students}
                 onDelete={handleDelete}

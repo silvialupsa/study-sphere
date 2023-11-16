@@ -1,5 +1,8 @@
 package com.studysphere.backend.model.people;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.studysphere.backend.model.GradedMark;
 import com.studysphere.backend.model.types.Subject;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -30,6 +33,12 @@ public class Professor implements UserDetails {
     private Person person;
 
     private List<Subject> subjectList;
+
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "professor", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<GradedMark> gradedMarks;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -1,23 +1,18 @@
 package com.studysphere.backend.service;
 
 import com.studysphere.backend.model.Attendance;
-import com.studysphere.backend.model.people.Student;
 import com.studysphere.backend.repository.AttendanceRepository;
 import com.studysphere.backend.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.lang.model.util.AbstractTypeVisitor14;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class AttendanceService {
     private final AttendanceRepository attendanceRepository;
-    private final StudentRepository studentRepository;
 
 
     public List<Attendance> getAllAttendance() {
