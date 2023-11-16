@@ -1,21 +1,15 @@
 package com.studysphere.backend.model.people;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.studysphere.backend.model.Attendance;
 //import com.studysphere.backend.model.DailyGoals;
+import com.studysphere.backend.model.GradedMark;
 import com.studysphere.backend.model.School;
-import com.studysphere.backend.model.people.Parent;
-import com.studysphere.backend.model.people.Person;
 import com.studysphere.backend.model.types.GradeClass;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-import org.hibernate.annotations.Proxy;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -56,7 +50,10 @@ public class Student implements UserDetails {
     @ManyToMany(mappedBy = "children", fetch = FetchType.LAZY)
     private Set<Parent> parents;
 
-
+    @JsonIgnore
+    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<GradedMark> gradedMarks;
 
 //    @ManyToMany(mappedBy = "children")
 //    private Set<Parent> parents= new HashSet<>();
@@ -72,7 +69,7 @@ public class Student implements UserDetails {
 
     @Override
     public String getPassword() {
-            return person.getPassword();
+        return person.getPassword();
     }
 
     @Override

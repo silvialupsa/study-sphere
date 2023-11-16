@@ -100,7 +100,7 @@ const StudentTable = ({students, onDelete, date}) => {
     const handleUpdateAttendanceClick = () => {
         setAttendanceOn(true)
     }
-
+    console.log("Date"+ date)
 
     return (
         <div className="Student-table">

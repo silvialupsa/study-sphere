@@ -1,6 +1,6 @@
 package com.studysphere.backend.model.types;
 
-public enum GradeMark {
+public enum GradeMarkType {
     ONE(1),
     TWO(2),
     THREE(3),
@@ -13,7 +13,7 @@ public enum GradeMark {
     TEN(10);
     private final int value;
 
-    GradeMark(int value) {
+    GradeMarkType(int value) {
         this.value = value;
     }
 
